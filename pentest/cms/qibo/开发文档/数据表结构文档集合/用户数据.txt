@@ -1,0 +1,68 @@
+无论是否整合UC或PHPWIND论坛,必须要用到的表是qb_memberdata
+
+如果整合了UC或者PHPWIND论坛,这个表qb_members就会作废,否则就很重要
+
+
+qb_members
+保存用户的UID与帐号及密码
+
+
+qb_memberdata的字段讲解如下:
+
+  `uid` mediumint(7) unsigned NOT NULL default '0',		用户的UID,这是唯一的,其它所有功能都与此关连
+  `username` varchar(50) NOT NULL default '',			用户的帐号,也是不可以修改的,也是唯一的
+  `question` varchar(32) NOT NULL default '',			暂时没使用
+  `groupid` smallint(4) NOT NULL default '0',			用户组ID,3为管理员
+  `grouptype` tinyint(1) NOT NULL default '0',			扩展功能,1为企业用户
+  `groups` varchar(255) NOT NULL default '',			扩展用户组功能,暂时没用到
+  `yz` tinyint(1) NOT NULL default '0',				用户审核与否,1为已审核,0为待审核
+  `newpm` tinyint(1) NOT NULL default '0',			暂时没使用
+  `medals` varchar(255) NOT NULL default '',			暂时没使用
+  `money` mediumint(7) unsigned NOT NULL default '0',		用户的财富积分,如果整合了论坛并指定了论坛的积分,就不使用这个
+  `totalspace` bigint(13) NOT NULL default '0',			用户空间,为空时使用默认的空间大小,大于0时与默认的累加
+  `usespace` bigint(13) NOT NULL default '0',			已使用的空间容量
+  `oltime` int(10) NOT NULL default '0',			暂时没使用
+  `lastvist` int(10) NOT NULL default '0',			上次访问时间
+  `lastip` varchar(15) NOT NULL default '',			上次访问IP
+  `regdate` int(10) NOT NULL default '0',			注册日期
+  `regip` varchar(15) NOT NULL default '',			注册时的IP
+  `sex` tinyint(1) NOT NULL default '0',			性别,1为男,2为女,0为未知
+  `bday` date NOT NULL default '0000-00-00',			出生日期
+  `icon` varchar(150) NOT NULL default '',			头像
+  `introduce` text NOT NULL,					自我介绍
+  `hits` int(7) NOT NULL default '0',				个人主页浏览量
+  `lastview` int(10) NOT NULL default '0',			个人主页最后一次被访问的日期
+  `oicq` varchar(11) NOT NULL default '',			联系QQ
+  `msn` varchar(50) NOT NULL default '',			联系MSN
+  `homepage` varchar(150) NOT NULL default '',			个人外部博客地址
+  `email` varchar(50) NOT NULL default '',			联系邮箱,很重要,取回密码要用这个
+  `provinceid` mediumint(6) NOT NULL default '0',		所在省份的ID
+  `cityid` mediumint(7) NOT NULL default '0',			所在城市的ID
+  `address` varchar(255) NOT NULL default '',			联系地址
+  `postalcode` varchar(6) NOT NULL default '',			邮政编码
+  `mobphone` varchar(12) NOT NULL default '',			联系手机号码
+  `telephone` varchar(25) NOT NULL default '',			电话号码
+  `idcard` varchar(20) NOT NULL default '',			身份证复印件
+  `truename` varchar(20) NOT NULL default '',			真实姓名
+  `config` text NOT NULL,					扩展用,比如用户组有效日期会以序列化数组保存在这里
+  `moneycard` mediumint(7) unsigned NOT NULL default '0',	作废
+  `email_yz` tinyint(1) NOT NULL default '0',			邮箱验证与否
+  `mob_yz` tinyint(1) NOT NULL default '0',			手机号码验证与否
+  `idcard_yz` tinyint(1) NOT NULL default '0',			身份证信息验证与否
+
+
+
+
+qb_group用户组数据表
+
+  `gid` smallint(4) NOT NULL auto_increment,		用户组ID
+  `gptype` tinyint(1) NOT NULL default '0',		用户组类型，1为系统用户组，0为会员用户组
+  `grouptitle` varchar(50) NOT NULL default '',		用户组名称
+  `levelnum` mediumint(7) NOT NULL default '0',		会员组升级积分数
+  `totalspace` int(10) NOT NULL default '0',		会员组空间大小
+  `allowsearch` tinyint(1) NOT NULL default '0',	是否允许搜索文章
+  `powerdb` text NOT NULL,				前台权限，数组已序列化
+  `allowadmin` tinyint(1) NOT NULL default '0',		是否允许进后台
+  `allowadmindb` text,					后台权限，数组已序列化
+
+

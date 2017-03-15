@@ -1,0 +1,24 @@
+数据库的常用操作方法,使用$db类
+
+读取一条记录的方法为
+
+$rsdb = $db->get_one("SELECT * FROM table WHERE id=1");
+
+
+读取多条记录的方法为
+
+$query = $db->query("SELECT * FROM table WHERE fid=2");
+while($rs = $db->fetch_array($query)){
+	$listdb[]=$rs;
+}
+
+删除数据表中某条记录的方法为
+
+$db->query("DELETE FROM table WHERE fid=2");
+
+更新数据表某条记录的方法为
+$db->query("UPDATE table SET name='2222' WHERE id=1");
+
+
+务必要注意的是,数据库的关键字要大写比较规范些,如
+SELECT FROM WHERE DELETE UPDATE ORDER BY DESC ASC LIMIT

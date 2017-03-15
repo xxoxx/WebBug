@@ -1,0 +1,334 @@
+.MainContainer{
+	clear:both;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+
+.MainContainer .MainL{
+	width:720px;
+}
+.MainContainer .SideR{
+	padding-left:10px;
+}
+/*
+*带背景框的内容
+*/
+.FocusVideo{
+	background:url(corner_dr.gif) right bottom  no-repeat;
+}
+.FocusVideo .left{
+	width:330px;
+	background:url(corner_tl.gif) left top  no-repeat;
+}
+.slidecontainer{
+	width:318px;
+	height:248px;
+	overflow:hidden;
+	border:#FFF solid 1px;
+	margin:10px 0 10px 10px;
+}
+.FocusVideo .left .morevideo{
+	background:url(corner_dl.gif) left bottom  no-repeat;
+	padding:0 0 10px 10px;
+}
+.FocusVideo .left .morevideo .morevidein{
+	background:#f7f7f7;
+	border:#FFF solid 1px;
+	height:215px;
+}
+.FocusVideo .left .morevideo .morevidein td{
+	padding:5px;
+}
+.FocusVideo .left .morevideo .morevidein .list{
+	height:24px;
+	line-height:24px;
+	padding-left:25px;
+	overflow:hidden;
+	background:url(icon1.gif) 3px 5px no-repeat;
+	border-bottom:#ddd dotted 1px;
+}
+.FocusVideo .left .morevideo .morevidein .list a{
+	float:left;
+}
+.FocusVideo .left .morevideo .morevidein .list span{
+	float:right;
+	color:#999;
+	padding-right:5px;
+}
+.FocusVideo .left .morevideo .morevidein .list .title{
+	color:#2898C0;
+	margin-left:5px;
+}
+.FocusVideo .right{
+	background:url(corner_tr.gif) right top  no-repeat;
+}
+.FocusVideo .right .listvideo{
+	width:152px;
+	height:165px;
+	overflow:hidden;
+	float:left;
+	padding-left:38px;
+}
+.FocusVideo .right .listvideo .img{
+	padding-top:10px;
+}
+.FocusVideo .right .listvideo .img a{
+	display:block;
+	width:150px;
+	height:100px;
+	border:#FFF solid 1px;
+}
+.FocusVideo .right .listvideo .t,.FocusVideo .right .listvideo .m{
+	height:18px;
+	line-height:18px;
+	background:#FFF;
+	overflow:hidden;
+	color:#666;
+}
+.FocusVideo .right .listvideo .t{
+	padding-top:5px;
+}
+.FocusVideo .right .listvideo .t a{
+	color:#2898C0;
+}
+.FocusVideo .right .listvideo .m span{
+	color:#c00;
+}
+/*
+*用户中心通道
+*/
+.usercenter .head{
+	height:35px;
+	line-height:35px;
+	background:url(userhead.gif) right bottom no-repeat;
+}
+.usercenter .head .FL{
+	display:block;
+	width:160px;
+	background:url(userhead.gif) left bottom no-repeat;
+	padding-left:15px;
+	color:#EBF7FF;
+}
+.usercenter .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+}
+.usercenter .Button{
+	width:90%;
+	margin:auto;
+}
+.usercenter .Button td{
+	padding-top:10px;
+	padding-bottom:5px;
+}
+.usercenter .Button span{
+	display:block;
+	width:49%;
+	height:32px;
+	line-height:28px;
+	float:left;
+	background:url(botton.gif) center top no-repeat;
+}
+.usercenter .Button span a{
+	display:block;
+	padding-left:35px;
+	color:#666;
+	height:28px;
+	text-decoration:none;
+}
+.usercenter .Button span.but1 a{
+	background:url(icon.gif) 8px -3px no-repeat;
+}
+.usercenter .Button span.but2 a{
+	background:url(icon.gif) 8px -29px no-repeat;
+}
+.usercenter .Button span.but3 a{
+	background:url(icon.gif) 8px -60px no-repeat;
+}
+.usercenter .Button span.but4 a{
+	background:url(icon.gif) 10px -90px no-repeat;
+}
+.usercenter .Button span.but5 a{
+	background:url(icon.gif) 10px -115px no-repeat;
+}
+.usercenter .Button span.but6 a{
+	background:url(icon.gif) 10px -146px no-repeat;
+}
+
+/*
+*视频排行
+*/
+.sidetable .head{
+	height:35px;
+	background:url(tophead.gif) left top no-repeat;
+}
+.sidetable .head span{
+	padding:5px 10px 0 15px;
+	line-height:30px;
+}
+.sidetable .head span.FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .head span.FR{
+	background:url(tophead.gif) right top no-repeat;
+}
+.sidetable .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.lista1,.lista2,.lista3,.lista4,.lista5,.lista6,.lista7,.lista8,.lista9,.lista10{
+	height:28px;
+	line-height:28px;
+	overflow:hidden;
+	border-bottom:#DDD dotted 1px;
+	padding-left:25px;
+}
+.lista1 a,.lista2 a,.lista3 a,.lista4 a,.lista5 a,.lista6 a,.lista7 a,.lista8 a,.lista9 a,.lista10 a{
+	float:left;
+}
+.lista1 span,.lista2 span,.lista3 span,.lista4 span,.lista5 span,.lista6 span,.lista7 span,.lista8 span,.lista9 span,.lista10 span{
+	float:right;
+	padding-right:8px;
+	color:#999;
+}
+.sidetable .cont .lista1{
+	background:url(num1-10.gif) left top no-repeat;
+}
+.sidetable .cont .lista2{
+	background:url(num1-10.gif) left -30px no-repeat;
+}
+.sidetable .cont .lista3{
+	background:url(num1-10.gif) left -60px no-repeat;
+}
+.sidetable .cont .lista4{
+	background:url(num1-10.gif) left -90px no-repeat;
+}
+.sidetable .cont .lista5{
+	background:url(num1-10.gif) left -120px no-repeat;
+}
+.sidetable .cont .lista6{
+	background:url(num1-10.gif) left -150px no-repeat;
+}
+.sidetable .cont .lista7{
+	background:url(num1-10.gif) left -180px no-repeat;
+}
+.sidetable .cont .lista8{
+	background:url(num1-10.gif) left -210px no-repeat;
+}
+.sidetable .cont .lista9{
+	background:url(num1-10.gif) left -240px no-repeat;
+}
+.sidetable .cont .lista10{
+	background:url(num1-10.gif) left -270px no-repeat;
+}
+/*
+*精选视频
+*/
+.BoutiqueVideo .head{
+	height:35px;
+	background:url(headbg1.gif) right top no-repeat;
+}	
+.BoutiqueVideo .head .h,.BoutiqueVideo .head .m{
+	display:block;
+	float:left;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+}
+.BoutiqueVideo .head .h{
+	width:110px;
+	padding-left:20px;
+	background:url(headl1.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#EBF7FF;
+}
+.BoutiqueVideo .head .sort{
+	display:block;
+	float:left;
+}
+.BoutiqueVideo .head .choose{
+	padding-left:1px;
+	background:url(headspacing.gif) left bottom no-repeat;
+	font-weight:bold;
+}
+.BoutiqueVideo .head .sort span{
+	display:block;	
+	font-size:14px;
+	color:#2798C1;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+	background:url(headspacing.gif) right bottom no-repeat;
+}
+.BoutiqueVideo .head .sort:hover{
+	text-decoration:none;
+}
+.BoutiqueVideo .head .sort:hover span,.BoutiqueVideo .head .choose span{
+	background:url(headover1.gif) right top no-repeat;
+}
+.BoutiqueVideo .head .m{
+	float:right;
+}
+.BoutiqueVideo .head .m a{
+	color:#2798C1;
+}
+.BoutiqueVideo .cont{
+	border:#e7e7e7 solid 1px;
+	border-top:0;
+	padding-top:15px;
+	padding-bottom:8px;
+}
+.BoutiqueVideo .cont .listvideo{
+	width:143px;
+	height:150px;
+	float:left;
+}
+.BoutiqueVideo .cont .listvideo .img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:#DDD solid 1px;
+	margin:0 auto 5px auto;
+}
+.BoutiqueVideo .cont .listvideo .t,.BoutiqueVideo .cont .listvideo .m{
+	height:20px;
+	line-height:20px;
+	padding:0 10px 0 10px;
+	overflow:hidden;
+}
+.BoutiqueVideo .cont .listvideo .t a{
+	color:#2798C1;
+}
+.BoutiqueVideo .cont .listvideo .m span{
+	color:#c00;
+}
+/*
+*影视热播
+*/
+.sidetable .listtable{
+	border-bottom:#DDD dotted 1px;
+}
+.sidetable .listtable .img{
+	width:10%;
+	padding:8px 10px 7px 5px;
+}
+.sidetable .listtable .img a{
+	display:block;
+	width:100px;
+	height:75px;
+	border:#CCC solid 1px;
+}
+.sidetable .listtable .word{
+	line-height:22px;
+	padding-top:3px;
+}
+.sidetable .listtable .word span{
+	color:red;
+}
+.sidetable .listtable .word .t{
+	height:25px;
+	overflow:hidden;
+	padding-right:5px;
+}

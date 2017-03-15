@@ -1,0 +1,215 @@
+#toptable td,#toptable td a{
+	font-size:13px;
+}
+#toptable{
+	margin-top:10px;
+}
+#toptable .a1,#toptable .a3,#toptable .a5{
+	border:1px solid #E3E3E3;
+	padding:8px;
+	height:485px;
+}
+#toptable .a1{
+	width:240px;
+}
+#toptable .a1 .i{
+	margin-bottom:5px;
+}
+#toptable .a1 .i img{
+	width:240px;
+}
+
+#toptable .a5{
+	width:280px;
+}
+#toptable .a2,#toptable .a4{
+	width:8px;
+}
+#toptable .drg{
+	margin-bottom:5px;
+}
+#toptable .c{
+	padding:8px;
+	line-height:20px;
+}
+#toptable .drg .head{
+	height:19px;
+	padding-top:6px;
+	font-weight:bold;
+	padding-left:14px;
+	background:#F3F3F5 url(h1.gif) no-repeat left;
+}
+#toptable .drg .b1{
+	padding-left:33px;
+	background:#F3F3F5 url(b1.gif) no-repeat left;
+}
+#toptable .drg .b2{
+	padding-left:33px;
+	background:#F3F3F5 url(b2.gif) no-repeat left;
+}
+#toptable .drg .b3{
+	padding-left:33px;
+	background:#F3F3F5 url(b3.gif) no-repeat left;
+}
+#toptable .drg .c1{
+	padding-left:28px;
+	background:#F3F3F5 url(c1.gif) no-repeat left;
+}
+
+#toptable .drg .about{
+	color:#666;
+}
+#toptable .a3 .drg .tt{
+	clear:both;
+}
+#toptable .a3 .drg .tt .content{
+	display:none;
+}
+#toptable .a3 .drg .d1 .content{
+	display:block;
+	clear:both;
+	text-indent:1em;
+	color:#666;
+}
+
+#toptable .a3 .drg .tt .title{
+	float:left;
+	padding-left:14px;
+	background:url(pot.gif) no-repeat 4px;
+}
+#toptable .a3 .drg .tt .time{
+	float:right;
+	color:#979696;
+}
+
+#toptable .a3 .drg .d1 .title{
+	float:left;
+	padding-left:0px;
+	background:;
+	width:99%;
+	text-align:center;
+	padding:5px 0 6px 0;
+}
+#toptable .a3 .drg .d1 .title a{
+	color:#CC2E2F;
+	font-weight:bold;
+	font-size:18px;
+}
+#toptable .a3 .drg .d1 .time{
+	display:none;
+}
+
+#toptable .a3 .drg .tt{
+	margin-bottom:7px;
+}
+
+#toptable .a3 .drg .tt a{
+	text-decoration: underline;
+}
+
+#toptable .a3 .drg .tt a:hover{
+	text-decoration: none;
+}
+
+#spimg{
+	margin:8px 0 8px 0;
+}
+
+#listpic .head .L,#listpic .head .R{
+	height:29px;
+	float:left;
+	width:200px;
+	background:url(h_l.gif) no-repeat;
+}
+#listpic .head .L{
+	padding-left:35px;
+	padding-top:9px;
+	height:20px;
+	font-weight:bold;
+}
+#listpic .head .R{
+	float:right;
+	width:18px;
+	background:url(h_r.gif);
+}
+#listpic .head{
+	background:url(h_bg.gif);
+}
+#listpic .c{
+	border:1px solid #E3E3E3;
+	height:150px;
+}
+#listpic{
+	margin-bottom:10px;
+}
+
+#listpic .c .list{
+	float:left;
+	width:170px;
+	text-align:center;
+	margin-top:12px;
+	margin-left:10px;
+	margin-right:13px;
+}
+#listpic .c .list .i a{
+	display:block;
+	width:162px;
+	height:122px;
+	border:solid #ccc 1px;
+}
+#listpic .c .list .i img{
+	width:160px;
+	height:120px;
+	border:solid #fff 1px;
+}
+#listpic .c .list .title{
+	width:170px;
+	height:25px;
+	line-height:25px;
+	overflow: hidden;
+}
+
+#listcomment .head .L,#listcomment .head .R{
+	height:29px;
+	float:left;
+	width:200px;
+	background:url(comment.gif) no-repeat;
+}
+#listcomment .head .L{
+	padding-left:35px;
+	padding-top:9px;
+	height:20px;
+	font-weight:bold;
+}
+#listcomment .head .R{
+	float:right;
+	width:18px;
+	background:url(h_r.gif);
+}
+#listcomment .head{
+	background:url(h_bg.gif);
+}
+#listcomment .c{
+	border:1px solid #E3E3E3;
+	height:150px;
+	padding:9px;
+}
+
+
+
+#comment .content{
+	border:dotted 1px #ddd;
+	margin-bottom:10px;
+}
+#comment .content .word{
+	border-bottom:solid 1px #ddd;
+	padding-left:5px;
+	height:50px;
+}
+#comment .content .img{
+	border-right:dotted 1px #ddd;
+	padding:1em;
+}
+#comment .content .info{
+	padding:2px 0 0 5px;
+}

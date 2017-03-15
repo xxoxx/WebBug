@@ -1,0 +1,44 @@
+辅栏目涉及到两个数据表
+
+qb_fu_article	内容ID
+qb_fu_sort	分类
+
+
+qb_fu_article表中的字段如下:
+
+  `fid` int(7) NOT NULL default '0',	辅栏目ID
+  `aid` int(10) NOT NULL default '0',	文章ID
+
+qb_fu_sort分类的字段如下,每一个字段的功能跟文章分类一样的,可回头查阅一下
+
+  `fid` mediumint(7) unsigned NOT NULL auto_increment,
+  `fup` mediumint(7) unsigned NOT NULL default '0',
+  `fmid` mediumint(5) NOT NULL default '0',
+  `name` varchar(50) NOT NULL default '',
+  `class` smallint(4) NOT NULL default '0',
+  `sons` smallint(4) NOT NULL default '0',
+  `type` tinyint(1) NOT NULL default '0',
+  `admin` varchar(100) NOT NULL default '',
+  `list` int(10) NOT NULL default '0',
+  `listorder` tinyint(2) NOT NULL default '0',
+  `passwd` varchar(32) NOT NULL default '',
+  `logo` varchar(150) NOT NULL default '',
+  `descrip` text NOT NULL,
+  `style` varchar(50) NOT NULL default '',
+  `template` text NOT NULL,
+  `jumpurl` varchar(150) NOT NULL default '',
+  `maxperpage` tinyint(3) NOT NULL default '0',
+  `metakeywords` varchar(255) NOT NULL default '',
+  `metadescription` varchar(255) NOT NULL default '',
+  `allowcomment` tinyint(1) NOT NULL default '0',
+  `allowpost` varchar(150) NOT NULL default '',
+  `allowviewtitle` varchar(150) NOT NULL default '',
+  `allowviewcontent` varchar(150) NOT NULL default '',
+  `allowdownload` varchar(150) NOT NULL default '',
+  `forbidshow` tinyint(1) NOT NULL default '0',
+  `config` text NOT NULL,
+  `list_html` varchar(255) NOT NULL default '',
+  `bencandy_html` varchar(255) NOT NULL default '',
+  `domain` varchar(150) NOT NULL default '',
+  `domain_dir` varchar(100) NOT NULL default '',
+

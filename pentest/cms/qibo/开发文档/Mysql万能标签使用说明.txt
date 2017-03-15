@@ -1,0 +1,12 @@
+选择标签的时候,有一项“Mysql万能标签”
+这个是很灵活的标签调用方法，但需要懂点MSYQL数据库知识。这样就可以调用任何信息了。
+
+Mysql语句:就是填表MYSQL查询信息，可以查单个表，如
+SELECT * FROM qb_memberdata LIMIT 10
+
+也可以查询联表，如
+SELECT A.*,B.title AS company  FROM qb_sell_content A LEFT JOIN qb_hy_company B ON A.uid=B.uid ORDER BY A.id DESC LIMIT 10
+
+而模板里可以调用相应的字估变量如
+
+{$company} {$title} 等等

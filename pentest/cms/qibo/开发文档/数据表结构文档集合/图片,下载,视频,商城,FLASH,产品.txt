@@ -1,0 +1,137 @@
+图片,下载,视频,商城,FLASH,产品,等等这些模型,都是在CMS文章的基础上新增的,所以他具有文章的相关数据表结构,因此基本上具有文章的所有功能
+如果还没查看“数据表结构之CMS文章基础篇.txt”的,请先查阅
+
+在文章的基础上每个模型相应的增加了如下的数据表:
+
+
+qb_article_content_100	图片
+qb_article_content_101	下载
+qb_article_content_102	视频
+qb_article_content_103	商城
+qb_article_content_104	FLASH
+qb_article_content_105	产品
+
+
+qb_article_content_100	图片的字段信息如下
+
+  `id` mediumint(7) NOT NULL auto_increment,	自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',	关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',	关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',	栏目ID
+  `uid` mediumint(7) NOT NULL default '0',	发布者的UID
+  `photourl` mediumtext NOT NULL,		图片地址存放字段,多张图片用@@@隔开
+
+
+qb_article_content_101	下载的字段信息如下
+
+
+  `id` mediumint(7) NOT NULL auto_increment,			自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',			关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',			关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',			栏目ID
+  `uid` mediumint(7) NOT NULL default '0',			发布者的UID
+  `day_hits` mediumint(7) NOT NULL default '0',			当天下载量
+  `week_hits` mediumint(7) NOT NULL default '0',		当周下载量
+  `month_hits` mediumint(7) NOT NULL default '0',		当月下载量
+  `total_hits` mediumint(7) NOT NULL default '0',		总下载量
+  `hits_time` int(10) NOT NULL default '0',			最后下载日期
+  `hits_user` text NOT NULL,					暂时没用到
+  `my_author` varchar(30) NOT NULL default '',			软件作者
+  `my_copyfromurl` varchar(150) NOT NULL default '',		软件产商网址
+  `my_demo` varchar(150) NOT NULL default '',			演示地址
+  `operatingsystem` varchar(150) NOT NULL default '',		运行环境
+  `softlanguage` varchar(30) NOT NULL default '',		语言种类
+  `copyright` varchar(30) NOT NULL default '',			授权形式,免费还是收费之类的
+  `softsize` varchar(20) NOT NULL default '',			软件大小
+  `softurl` mediumtext NOT NULL,				下载地址
+
+
+
+qb_article_content_102	视频的字段信息如下
+
+
+  `id` mediumint(7) NOT NULL auto_increment,			自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',			关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',			关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',			栏目ID
+  `uid` mediumint(7) NOT NULL default '0',			发布者的UID
+  `day_hits` mediumint(7) NOT NULL default '0',			当天收看率
+  `week_hits` mediumint(7) NOT NULL default '0',		当周收看率
+  `month_hits` mediumint(7) NOT NULL default '0',		当月收看率
+  `total_hits` mediumint(7) NOT NULL default '0',		总收视率
+  `hits_time` int(10) NOT NULL default '0',			最后一次被浏览的日期
+  `hits_user` text NOT NULL,					暂时没用到
+  `mvurl` mediumtext NOT NULL,					视频地址
+  `my_role` varchar(100) NOT NULL default '',			主要演员
+  `my_lang` varchar(20) NOT NULL default '',			语言
+
+
+
+多个视频的话保存为如下格式,每个换一行
+http://down2.php168.com/other/testv6/1.flv@@@第1集@@@@@@flv
+http://down2.php168.com/other/testv6/2.flv@@@第2集@@@@@@flv
+http://down2.php168.com/other/testv6/3.flv@@@第3集@@@@@@flv
+http://down2.php168.com/other/testv6/4.flv@@@第4集@@@@@@flv
+
+
+
+
+
+qb_article_content_103	商品的字段信息如下
+
+  `id` mediumint(7) NOT NULL auto_increment,			自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',			关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',			关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',			栏目ID
+  `uid` mediumint(7) NOT NULL default '0',			发布者的UID
+  `shoptype` varchar(50) NOT NULL default '',			商品型号
+  `martprice` varchar(15) NOT NULL default '',			市场价格
+  `nowprice` varchar(20) NOT NULL default '',			本店价格
+  `shop_id` varchar(30) NOT NULL default '',			商品编号
+  `shopmoney` int(7) NOT NULL default '0',			购买此商品可得积分多少
+  `shopnum` varchar(5) NOT NULL default '',			货存量
+
+
+
+qb_article_content_104	FLASH的字段信息如下
+
+  `id` mediumint(7) NOT NULL auto_increment,			自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',			关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',			关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',			栏目ID
+  `uid` mediumint(7) NOT NULL default '0',			发布者的UID
+  `flashurl` varchar(150) NOT NULL default '',			FLASH的网址
+  `flashauthor` varchar(20) NOT NULL default '',		FLASH的作者
+
+
+
+
+qb_article_content_105	产品的字段信息如下
+
+  `id` mediumint(7) NOT NULL auto_increment,			自动增加的ID,意义不大
+  `aid` mediumint(7) NOT NULL default '0',			关连文章的ID
+  `rid` mediumint(7) NOT NULL default '0',			关连文章内容的ID,意义不太大
+  `fid` mediumint(7) NOT NULL default '0',			栏目ID
+  `uid` mediumint(7) NOT NULL default '0',			发布者的UID
+  `my_type` varchar(100) NOT NULL default '',			产品编号
+
+
+
+
+
+
+qb_article_module 文章模型ID
+
+  `id` smallint(4) NOT NULL auto_increment,		模型ID，不能随意修改
+  `name` varchar(50) NOT NULL default '',		模型名称
+  `alias` varchar(30) NOT NULL default '',		模型别名
+  `list` smallint(4) NOT NULL default '0',		排序值
+  `allowpost` varchar(255) NOT NULL default '',		暂时没使用
+  `style` varchar(30) NOT NULL default '',		暂时没使用
+  `template` varchar(255) NOT NULL default '',		暂时没使用
+  `config` mediumtext NOT NULL,				扩展字段
+  `keywords` varchar(30) NOT NULL default '',		关键字
+  `ifclose` tinyint(1) NOT NULL default '0',		是否关闭，不过意义不大
+  `iftable` mediumint(4) NOT NULL default '0',		是否分表
+
+

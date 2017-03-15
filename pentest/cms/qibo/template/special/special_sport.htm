@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/special/sports/css.css">
+<title>$titleDB[title]</title>
+</head>
+<body ondblclick="$bodyondblclick">
+<table border="0"  cellpadding="0" cellspacing="0" class="tiyu_tabel">
+  <tr> 
+    <td align="left"> <span  class="tiyu_logo"><a href="$webdb[www_url]/"><img src="$webdb[www_url]/images/special/sports/logo.gif" width="53" height="25" align="absmiddle" border="0" /></a></span> 
+      <span class="word">$label[special_sport_2]</span> </td>
+    <td class="word_right">$label[special_sport_1]</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="tiyu_tabel">
+  <tr> 
+    <td>$label[special_sport_3]</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="tiyu_tabel tiyu_top">
+  <tr> 
+    <td class="tiyu_index_left1"> 
+      <table class="left1_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="img">$label[special_sport_4]</td>
+        </tr>
+      </table>
+      <table class="left1_tabel tiyu_bk tiyu_top"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="img">$label[special_sport_5]</td>
+        </tr>
+      </table>
+    </td>
+    <td class="tiyu_index_center"> 
+      <table class="center_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="head_word">$label[special_sport_12]</td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> $label[special_sport_16] </td>
+        </tr>
+      </table>
+      <table class="center_tabel tiyu_bk tiyu_top"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="head_word">$label[special_sport_13]</td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> $label[special_sport_15] </td>
+        </tr>
+      </table>
+      <table class="center_tabel tiyu_bk tiyu_top"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="head_word">$label[special_sport_14]</td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> $label[special_sport_17] </td>
+        </tr>
+      </table>
+    </td>
+    <td class="tiyu_index_righ1"> 
+      <table class="right1_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="navbgs"><span class="right_word">$label[special_sport_6]</span><span class="more">　</span></td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2">$label[special_sport_7] </td>
+        </tr>
+      </table>
+      <table class="right1_tabel tiyu_bk tiyu_top"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="navbgs"><span class="right_word">$label[special_sport_8]</span><span class="more"><a href="#"></a></span></td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> 
+            <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" class="right_content1">
+              <tr> 
+                <td align="center">$label[special_sport_9]</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table class="right1_tabel tiyu_bk tiyu_top"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="navbgs"><span class="right_word">$label[special_sport_10]</span><span class="more"><a href="#"></a></span></td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2">$label[special_sport_11] </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="tiyu_tabel tiyu_top" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table class="tiyu_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="navbgs"><span class="right_word">$label[special_sport_19]</span><span class="more"><a href="#"></a></span></td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> 
+            <table width="97%" border="0" cellspacing="0" cellpadding="0" align="right">
+              <tr> 
+                <td> $label[special_sport_18] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="tiyu_tabel tiyu_top" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td  class="tiyu_index_left2">
+      <table  class="left2_tabel" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td>
+            <table class="left2_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td class="navbgs"><span class="right_word">$label[special_sport_20]</span><span class="more"><a href="#"></a></span></td>
+              </tr>
+              <tr> 
+                <td class="tiyu_top2"> $label[special_sport_22] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td  class="tiyu_index_right2">
+      <table class="left2_tabel tiyu_bk"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="navbgs"><span class="right_word">$label[special_sport_21]</span><span class="more"><a href="#"></a></span></td>
+        </tr>
+        <tr> 
+          <td class="tiyu_top2"> $label[special_sport_23] </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="tiyu_tabel tiyu_top" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td align="center" style="line-height:150%">$webdb[copyright]<br>
+      Copyright@{$webdb[www_url]} all rights reserved <a href="http://www.miibeian.gov.cn" target="_blank">{$webdb[miibeian_gov_cn]}</a> 
+      <br>
+      Powered by <a href="http://www.qibosoft.com" target="_blank">qibosoft {$qibosoft_Edition}</a> 
+      Code &copy; 2003-10 <a href="http://bbs.qibosoft.com/" target="_blank">qibosoft</a> 
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!--
+EOT;
+?>
+-->
+</body>
+</html>

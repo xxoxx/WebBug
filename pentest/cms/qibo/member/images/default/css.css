@@ -1,0 +1,247 @@
+/*
+*样式初始化开始
+*/
+*{ 
+	padding: 0; 
+	margin: 0; 
+} 
+table{ 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+} 
+fieldset,img { 
+	border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+	font-weight: normal; 
+	font-style: normal; 
+} 
+ol,ul { 
+	list-style: none; 
+} 
+caption,th { 
+	text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+	font-weight: normal;
+	font-size: 100%; 
+} 
+q:before,q:after { 
+	content:”; 
+} 
+abbr,acronym { 
+	border: 0; 
+}
+body{
+	font-size:12px;
+}
+a,a:link,a:visited{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+/*
+*样式初始化结束
+*/
+/*
+*顶部
+*/
+#TopDiv{
+	height:33px;
+	background:url(topbg.gif) left top repeat-x;
+}
+#TopDiv ul{
+	width:985px;
+	height:33px;
+	overflow:hidden;
+	margin:auto;
+	background:url(topul.gif) left top no-repeat;
+	padding-left:5px;
+}
+#TopDiv ul li{
+	float:left;
+	padding:3px 15px 0 15px;
+	line-height:30px;
+	background:url(topli.gif) right top no-repeat;
+}
+#TopDiv ul li a{
+	font-weight:bold;
+	color:#666;
+}
+/*
+*头部
+*/
+#header{
+	width:990px;
+	height:80px;
+	background:url(headbg.gif) center top no-repeat;
+	margin:5px auto 0 auto;
+}
+#Iframe #header .Logo{
+	width:240px;
+	float:left;
+	text-align:center;
+	background:url(logobg.gif) right 5px no-repeat;
+}
+#Iframe #header .welcome{
+	float:right;
+	width:740px;
+	height:42px;
+	overflow:hidden;
+	line-height:70px;
+	color:#D9E9FF;
+}
+#Iframe #header .welcome a{
+	color:#D9E9FF;
+	text-decoration:underline;
+}
+#Iframe #header .guide{	
+	width:740px;
+	float:left;
+	height:30px;
+	overflow:hidden;
+}
+#Iframe #header .guide .more{
+	float:right;
+	padding-top:10px;
+	margin-right:2px;
+}
+#Iframe #header .guide span{
+	display:block;
+	float:right;
+	margin-right:2px;
+	background:url(menu.gif) left top no-repeat;
+	padding-left:2px;
+}
+#Iframe #header .guide a{
+	display:block;
+	background:url(menu.gif) right top no-repeat;
+	font-size:13px;
+	color:#1C4E86;
+	font-weight:bold;
+	padding:2px 10px 0 8px;
+	line-height:25px;
+}
+#Iframe #header .guide span.menuon{
+	background:url(menuover.gif) left top no-repeat;
+}
+#Iframe #header .guide span.menuon a{
+	background:url(menuover.gif) right top no-repeat;
+	color:#fff;
+}
+/*
+*主体
+*/
+#MainContainer{
+	width:990px;
+	margin:auto;
+}
+#MainContainer{
+	width:990px;
+	margin:auto;
+}
+#MainContainer .LeftMenu{
+	width:190px;
+	vertical-align:top;
+	background:#DEEBFE;
+}
+#MainContainer .RightMain{
+	width:790px;
+	padding-left:10px;
+	vertical-align:top;
+}
+/*
+*左边菜单
+*/
+.LeftMenu dl{
+	border:0;
+	padding-bottom:0;
+	clear:both;
+	margin-bottom:5px;
+}
+.LeftMenu dl dt{ 
+	background:url(menuhead.gif) center top no-repeat;
+	margin-bottom:0;
+	padding:2px 0 0 30px;
+	line-height:25px;
+	font-weight:bold;
+	color:#FFF;
+	cursor:pointer;
+}
+.LeftMenu dl dd{ 
+	display:none;
+}
+
+.LeftMenu dl.Show{	
+	border:#3E7ECD solid 1px;
+	padding-bottom:3px;
+}
+.LeftMenu dl.Show dt{		
+	background:url(menuhead1.gif) -1px -1px no-repeat;	
+	margin-bottom:3px;
+}
+.LeftMenu dl.Show dd{
+	display:block;
+	height:20px;
+	line-height:20px;
+	padding-left:25px;
+	background:url(icon2.gif) 10px 5px no-repeat;
+}
+.LeftMenu dl dd a{
+	color:#333;
+}
+
+.sidetable{
+	border-collapse:separate;
+}
+.sidetable .head{
+	height:27px;
+	background:url(menuhead.gif) center top no-repeat;
+}
+.sidetable .head span{
+	float:left;
+	padding:2px 0 0 30px;
+	line-height:25px;
+	font-weight:bold;
+	color:#FFF;	
+}
+
+.sidetable .middle{
+	padding-top:5px;
+}
+.sidetable .middle div{
+	height:32px;
+	background:url(basemenu.gif) center top no-repeat;
+}
+.sidetable .middle div span{
+	float:left;
+	padding-left:40px;
+	line-height:30px;
+	background:url(icon.gif) 15px -125px no-repeat;
+}
+.sidetable .middle .div1 span{
+	background:url(icon.gif) 15px 5px no-repeat;
+}
+.sidetable .middle .div2 span{
+	background:url(icon.gif) 15px -25px no-repeat;
+}
+.sidetable .middle .div3 span{
+	background:url(icon.gif) 15px -60px no-repeat;
+}
+.sidetable .middle .div4 span{
+	background:url(icon.gif) 15px -90px no-repeat;
+}
+.sidetable .middle a{
+	color:#1C4E86
+}
+.sidetable .middle .div4 a,.sidetable .middle .div5 a{
+	color:red;
+}
+#Iframe #copyright{
+	line-height:200%;
+	height:60px;
+	text-align:center;
+}
+
+

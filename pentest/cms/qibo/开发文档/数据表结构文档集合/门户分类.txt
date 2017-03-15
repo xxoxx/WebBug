@@ -1,0 +1,382 @@
+qb_fenlei_db	分类信息ID索引表,方便栏目分表
+   id  int(10)   否    auto_increment        自动增值ID,很多表要与这个相关联      
+   fid  mediumint(7)   否  0                 所属栏目ID
+   city_id  mediumint(7)   否  0             所属城市ID
+   uid  mediumint(7)   否  0                 发布者UID
+
+
+qb_fenlei_content	分类信息主表
+   id  int(10)   否    auto_increment        	自动增值ID,很多表要与这个相关联,也与索引表关联    
+   title  varchar(100)   否                  	信息名称             
+   mid  smallint(4)   否  0              	模型ID
+   fid  mediumint(7)   否  0                	栏目ID
+   fname  varchar(50)   否                  	栏目名称
+   info  tinyint(2)   否  0                	暂时没使用
+   hits  mediumint(7)   否  0                	浏览量
+   comments  mediumint(7)   否  0               评论数
+   posttime  int(10)   否  0                	发布日期
+   list  varchar(10)   否                  	排序值
+   uid  mediumint(7)   否  0                	发布者UID
+   username  varchar(30)   否                  	发布者帐号
+   titlecolor  varchar(15)   否                 标题加彩色
+   fonttype  tinyint(1)   否  0                	暂时没使用
+   picurl  varchar(150)   否                  	介绍图地址
+   ispic  tinyint(1)   否  0                	是否有介绍图
+   yz  tinyint(1)   否  0                	审核与否,1为审核
+   yzer  varchar(30)   否                  	暂时没使用
+   yztime  int(10)   否  0                	暂时没使用
+   levels  tinyint(2)   否  0                	是否推荐,1为推荐
+   levelstime  int(10)   否  0                	推荐日期
+   keywords  varchar(100)   否                  关键字
+   jumpurl  varchar(150)   否                  	暂时没使用
+   iframeurl  varchar(150)   否                 暂时没使用
+   style  varchar(15)   否                  	暂时没使用
+   head_tpl  varchar(150)   否                  暂时没使用
+   main_tpl  varchar(150)   否                  暂时没使用
+   foot_tpl  varchar(100)   否                  暂时没使用
+   target  tinyint(1)   否  0                	暂时没使用
+   ishtml  tinyint(1)   否  0                	暂时没使用
+   ip  varchar(15)   否                  	发布者IP来源
+   lastfid  mediumint(7)   否  0                暂时没使用
+   money  mediumint(7)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  	暂时没使用
+   editer  varchar(30)   否                  	暂时没使用
+   edittime  int(10)   否  0                	暂时没使用
+   begintime  int(10)   否  0                	暂时没使用
+   endtime  int(10)   否  0                	有效截止日期
+   config  text   否                  		暂时没使用
+   lastview  int(10)   否  0                	暂时没使用
+   city_id  mediumint(7)   否  0                所在城市
+   zone_id  mediumint(7)   否  0                所在区域
+   street_id  mediumint(7)   否  0              所在街道
+   editpwd  varchar(32)   否                  	管理密码,浏客可以设置
+   showday  mediumint(4)   否  0                有效期几天
+   visit_log  text   否                  	暂时没使用
+   visit_num  mediumint(7)  UNSIGNED 否  0      暂时没使用
+   telephone  varchar(30)   否                  点评模型,联系电话
+   mobphone  varchar(12)   否                   点评模型,联系手机
+   email  varchar(50)   否                  	点评模型,联系邮箱
+   oicq  varchar(11)   否                  	点评模型,联系QQ
+   msn  varchar(50)   否                  	点评模型,联系MSN
+   linkman  varchar(20)   否                  	点评模型,联系人
+   postcode  varchar(6)   否                  	点评模型,邮政编码
+   address  varchar(250)   否                  	点评模型,联系地址
+   weburl  varchar(150)   否                  	点评模型,网址
+   fax  varchar(30)   否                  	点评模型,传真
+   maps  varchar(50)   否                  	点评模型,51地图位置
+   picnum  smallint(4)   否  0                	关联图片
+   replytime  int(10)   否  0               	点评模型,最后点评日期
+             
+
+
+qb_fenlei_content_1	分类信息副表,住宅房
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	附注信息
+   my_bus  varchar(50)   否                  	公交路线
+   my_station  varchar(100)   否                附近公交站
+   my_rooms  varchar(30)   否                  	室内布局
+   my_price  int(8)   否  0                	价格
+   my_peitao  varchar(150)   否               	配套设施   
+   my_acreage  varchar(12)   否      		室内面积            
+   my_fitment  varchar(15)   否      		装修情况            
+   my_floor  varchar(12)   否           	所在楼层       
+   sortid  tinyint(1)   否  0       		性质        
+
+
+
+qb_fenlei_content_13	分类信息副表,
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否             	详情     
+   sortid  tinyint(3)   否  0                	人均消费
+   sortid2  tinyint(3)   否  0                	环境
+   my_228  tinyint(1)   否  0                	停车位
+   my_837  varchar(100)   否                  	公交线路
+   my_613  varchar(100)   否                 	附近公交站
+
+
+qb_fenlei_content_14	分类信息副表,休闲
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	详情
+   sortid  tinyint(3)   否  0                	人均消费
+   sortid2  tinyint(3)   否  0                	环境
+   my_382  tinyint(1)   否  0                	停车位
+   my_835  varchar(100)   否                  	公交线路
+   my_491  varchar(100)   否                 	附近公交站
+
+
+
+qb_fenlei_content_2	分类信息副表,一般信息
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	详细信息
+   sortid  tinyint(1)   否  0               	性质
+
+
+
+qb_fenlei_content_3	分类信息副表,求职
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	公司介绍
+   my_jobs  varchar(30)   否                  	招聘职位
+   my_nums  varchar(12)   否                  	招聘人数
+   my_jobabout  mediumtext   否                	职位技能要求  
+   my_workplace  varchar(30)   否               工作地区
+   wage  tinyint(1)   否  0                	月薪待遇
+   sortid  char(1)   否                 	招聘类型
+
+
+qb_fenlei_content_4	分类信息副表,求职
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	自我介绍
+   sortid  tinyint(1)   否  0                	工作经验
+   my_jobs  varchar(30)   否                  	期望从事职业
+   my_schoolage  varchar(30)   否               学历 
+   my_sex  varchar(4)   否                  	性别
+   my_age  varchar(8)   否                  	年龄
+   my_workplace  varchar(50)   否               期望工作城市 
+   my_wage  varchar(30)   否                 	期望月薪
+
+qb_fenlei_content_5	分类信息副表,交友
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	自我介绍
+   my_age  varchar(8)   否                  	年龄
+   my_height  varchar(8)   否                  	身高
+   my_job  varchar(30)   否                  	从事职业
+   my_weight  varchar(15)   否                  体重
+   my_interest  varchar(100)   否               兴趣爱好
+   my_sex  varchar(4)   否                  	性别
+   sortid  tinyint(1)   否  0                	条件要求
+   schoo_age  tinyint(1)   否  0               	学历
+
+qb_fenlei_content_6	分类信息副表,交易
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	附注信息
+   my_price  int(7)   否  0                	现价
+   my_hownew  varchar(12)   否                  新旧程度
+   my_outprice  int(10)   否  0                	原价
+   sortid  char(1)   否                 	交易方式
+
+
+qb_fenlei_content_7	分类信息副表,商用房
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不太重要  
+   id  mediumint(7)   否  0                	与主表关联的ID
+   fid  mediumint(7)   否  0                	信息分类ID
+   uid  mediumint(7)   否  0                	发布者UID
+   content  mediumtext   否                  	附注信息
+   my_acreage  varchar(12)   否                 面积
+   my_price  int(10)   否  0                	价格
+   my_fitment  varchar(20)   否                 装修情况
+   my_floor  varchar(5)   否                  	所在楼层
+   my_station  varchar(50)   否                 附近公交站
+   my_bus  varchar(50)   否                  	公交线路
+   sortid  tinyint(1)   否  0               	性质
+
+
+qb_fenlei_dianping	网友点评
+   cid  mediumint(7)  UNSIGNED 否    auto_increment     自动增值ID，不太重要       
+   cuid  int(7)   否  0                			关联的信息发布者的UID
+   type  tinyint(2)   否  0                		暂时没使用
+   id  mediumint(7)  UNSIGNED 否  0                	关联的信息ID
+   fid  mediumint(7)  UNSIGNED 否  0                	关联的信息FID
+   uid  mediumint(7)  UNSIGNED 否  0                	点评者的UID
+   username  varchar(30)   否                  		点评者的帐号
+   posttime  int(10)   否  0                		发评时间
+   content  text   否                  			点评内容
+   ip  varchar(15)   否                  		点评者IP来源
+   icon  tinyint(3)   否  0                		表情图片
+   yz  tinyint(1)   否  0                		审核与否，1为审核
+   fen1  smallint(4)   否  0                		总评
+   fen2  smallint(4)   否  0                		环境
+   fen3  smallint(4)   否  0                		服务
+   fen4  smallint(4)   否  0                		价位
+   fen5  smallint(4)   否  0                		喜欢程度
+   flowers  smallint(4)   否  0                		支持度
+   egg  smallint(4)   否  0                		反对票
+   price  mediumint(5)   否  0                		人均消费
+   keywords  varchar(100)   否                  	暂时没使用
+   keywords2  varchar(100)   否                  	暂时没使用
+   fen6  varchar(150)   否                 		暂时没使用
+
+
+
+qb_fenlei_buyad		焦点信息,需要付费购买而推荐显示
+   aid  mediumint(7)   否    auto_increment    	自动增值ID,意义不大          
+   sortid  mediumint(7)   否  0                	在哪个栏目显示,-1的话,就在首页显示
+   cityid  mediumint(7)   否  0                	所在哪个城市
+   id  int(10)   否  0                		分类信息的ID
+   mid  mediumint(7)   否  0                	暂时没用到
+   uid  mediumint(7)   否  0                	分类信息发布者UID
+   begintime  int(10)   否  0                	开始显示日期
+   endtime  int(10)   否  0                	结束显示日期
+   money  mediumint(7)   否  0                	所付费用
+   hits  mediumint(7)   否  0               	点击次数,没用到
+
+
+
+qb_fenlei_class		联级字段功能用到的表
+   fid  int(7)   否    auto_increment    	自动增值ID         
+   fup  int(7)   否  0                		父ID
+   name  varchar(60)   否                  	名称,也即被调用在字段里显示的名称
+   list  int(10)   否  0               		排序值
+
+
+qb_fenlei_comments	评论
+
+   cid  mediumint(7)  UNSIGNED 否    auto_increment     自动增值ID,意义不太重要          
+   cuid  int(7)   否  0                			关联的求购信息ID
+   type  tinyint(2)   否  0                		暂时没使用
+   id  int(10)  UNSIGNED 否  0                		关联的求购信息ID
+   fid  mediumint(7)  UNSIGNED 否  0                	关联的求购信息FID
+   uid  mediumint(7)  UNSIGNED 否  0                	评论者UID
+   username  varchar(30)   否                  		评论者帐号
+   posttime  int(10)   否  0                		评论日期
+   content  text   否                  			评论内容
+   ip  varchar(15)   否                  		评论者IP
+   icon  tinyint(3)   否  0                		评论图标
+   yz  tinyint(1)   否  0                		审核与否
+   flowers  smallint(4)   否  0                		支持票数
+   egg  smallint(4)   否  0               		反对票数
+
+
+qb_fenlei_pic	商品关联的图片
+   pid  mediumint(7)   否    auto_increment      	自动增值ID,意义不太大        
+   id  mediumint(10)   否  0                		关联商品的ID
+   fid  mediumint(7)   否  0                		关联商品的栏目FID
+   mid  smallint(4)   否  0                		商品所属模型
+   uid  mediumint(7)   否  0                		发布者UID
+   type  tinyint(1)   否  0                		暂时没使用
+   imgurl  varchar(150)   否                  		图片的地址
+   name  varchar(100)   否                 		图片的名称
+
+qb_fenlei_report	举报信息
+
+   rid  mediumint(7)   否    auto_increment     	自动增值ID,意义不太重要         
+   id  mediumint(7)   否  0                		关联的商品ID
+   fid  mediumint(7)   否  0                		商品的栏目FID
+   uid  mediumint(7)   否  0                		举报人UID
+   username  varchar(30)   否                  		举报人帐号
+   posttime  int(10)   否  0                		举报日期
+   onlineip  varchar(15)   否                  		举报者的IP
+   type  tinyint(2)   否  0                		举报类型
+   content  text   否                  			举报内容
+   iftrue  tinyint(1)   否  0               		是否属实            
+
+
+
+qb_fenlei_collection	收藏夹
+
+   cid  mediumint(7)   否    auto_increment    		自动增值ID,意义不太重要
+   id  mediumint(7)   否  0     			关联的商品ID        
+   uid  mediumint(7)   否  0                		收藏者UID
+   posttime  int(10)   否  0               		收藏日期
+
+
+qb_fenlei_config	模块参数配置文件
+
+   c_key  varchar(50)   否   		变量名               
+   c_value  text   否                  	值
+   c_descrip  text   否                 暂时没使用
+          
+
+qb_fenlei_sort
+   fid  mediumint(7)  UNSIGNED 否    auto_increment    	分类的ID
+   fup  mediumint(7)  UNSIGNED 否  0                   	父ID
+   name  varchar(50)   否                  		分类名称
+   mid  smallint(4)   否  0                		分类属于哪个模型ID
+   class  smallint(4)   否  0                		暂时没使用
+   sons  smallint(4)   否  0                		暂时没使用
+   type  tinyint(1)   否  0                		是分类不审终级栏目,1是大分类,0是终级栏目
+   admin  varchar(100)   否                  		栏目管理员,暂时没使用
+   list  int(10)   否  0                		排序值
+   listorder  tinyint(2)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  		暂时没使用
+   logo  varchar(150)   否                  		暂时没使用
+   descrip  text   否                  			暂时没使用
+   style  varchar(50)   否                  		暂时没使用
+   template  text   否                  		暂时没使用
+   jumpurl  varchar(150)   否                  		暂时没使用
+   maxperpage  tinyint(3)   否  0                	暂时没使用
+   metatitle  varchar(250)   否                  	SEO标题关键字
+   metakeywords  varchar(255)   否                  	SEO关键字
+   metadescription  varchar(255)   否                  	SEO描述
+   allowcomment  tinyint(1)   否  0                	暂时没使用
+   allowpost  varchar(150)   否                  	暂时没使用
+   allowviewtitle  varchar(150)   否                  	暂时没使用
+   allowviewcontent  varchar(150)   否                  暂时没使用
+   allowdownload  varchar(150)   否                  	暂时没使用
+   forbidshow  tinyint(1)   否  0                	暂时没使用
+   config  mediumtext   否                  		暂时没使用
+   index_show  tinyint(1)   否  0                	暂时没使用
+   contents  mediumint(4)   否  0                	暂时没使用
+   tableid  varchar(30)   否                  		暂时没使用
+   dir_name  varchar(50)   否                  		暂时没使用
+   ifcolor  tinyint(1)   否  0               		暂时没使用           
+
+
+qb_fenlei_module	模型表       
+   id  smallint(4)   否    auto_increment         	自动增值的模型ID,很多地方要关联用到     
+   sort_id  mediumint(5)   否  0                	暂时没使用
+   name  varchar(50)   否                  		模型名称
+   list  smallint(4)   否  0                		排序值
+   style  varchar(50)   否                  		暂时没用到
+   config  text   否                  			扩展字段1
+   config2  text   否                  			扩展字段2,暂时没用到
+   comment_type  tinyint(1)   否  0                	暂时没用到
+   ifdp  tinyint(1)   否  0                		暂时没用到
+   template  text   否                 			指定的母模板       
+
+qb_fenlei_field		模型字段详细表
+   id  mediumint(7)   否    auto_increment      	自动增值的ID,意义不大      
+   mid  mediumint(5)   否  0                		对应上面这个表的ID
+   title  varchar(50)   否                  		字段中文名称
+   field_name  varchar(30)   否                  	字段名,MSYQL中使用的字段名
+   field_type  varchar(15)   否                  	字段类似,整型还是字符串
+   field_leng  smallint(3)   否  0                	字段长度
+   orderlist  int(10)   否  0                		排序值
+   form_type  varchar(15)   否                  	表单的类型
+   field_inputwidth  smallint(3)   是  NULL             表单长度
+   field_inputheight  smallint(3)   否  0               表单的高度
+   form_set  text   否                  		针对下拉,多选,单选的参数设置
+   form_value  text   否                  		表单默认值
+   form_units  varchar(30)   否                  	界面中显示的单位
+   form_title  text   否                  		界面中显示的标题
+   mustfill  tinyint(1)   否  0                		是否为必填
+   listshow  tinyint(1)   否  0                		是否在列表显示
+   listfilter  tinyint(1)   是  NULL                	是否在列表筛选
+   search  tinyint(1)   否  0                		是否为搜索字段
+   allowview  varchar(255)   否                  	允许查看字段的用户组
+   allowpost  varchar(255)   否                  	允许发布字段内容的用户组
+   js_check  text   否                  		JS特效检查输入内容是否合法
+   js_checkmsg  varchar(255)   否                  	JS特效提示信息
+   classid  mediumint(7)   否  0                	联级字段扩展使用
+   form_js  text   否                 			JS扩展使用

@@ -1,0 +1,10 @@
+每个频道，主页除外，需要建一个目录，放相应频道的CSS与相关用到的风格图片。如exam考试频道，blog博客频道，只是频道才需要建目录，不是频道就不需要建目录，目的是，方便删除频道，与移除安装频道。
+
+
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/style.css">
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/cms.css">
+
+
+/style.css只放头部与尾部的样式表。
+
+/cms.css只放除频道与CMS首页之外的页面样式表，因为这些页面不仅给CMS用，也给B2B及生活门户或其它系统共同使用的。

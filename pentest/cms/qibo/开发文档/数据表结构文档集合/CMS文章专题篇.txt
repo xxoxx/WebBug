@@ -1,0 +1,91 @@
+专题涉及到以下三个表
+
+qb_spsort		专题分类
+qb_special		专题
+qb_special_comment	专题评论
+
+
+
+
+qb_spsort专题分类的表如下,没加说明的字段,暂时没使用到,但功能类似文章栏目分类的表,可以回头查阅
+
+  `fid` mediumint(7) unsigned NOT NULL auto_increment,		分类ID
+  `fup` mediumint(7) unsigned NOT NULL default '0',		父ID
+  `name` varchar(200) NOT NULL default '',			分类名称
+  `class` smallint(4) NOT NULL default '0',
+  `sons` smallint(4) NOT NULL default '0',
+  `type` tinyint(1) NOT NULL default '0',
+  `admin` varchar(100) NOT NULL default '',
+  `list` int(10) NOT NULL default '0',
+  `listorder` tinyint(2) NOT NULL default '0',
+  `passwd` varchar(32) NOT NULL default '',
+  `logo` varchar(150) NOT NULL default '',
+  `descrip` text NOT NULL,
+  `style` varchar(50) NOT NULL default '',			风格样式
+  `template` text NOT NULL,					模板样式
+  `jumpurl` varchar(150) NOT NULL default '',
+  `maxperpage` tinyint(3) NOT NULL default '0',
+  `metakeywords` varchar(255) NOT NULL default '',		SEO关键字
+  `metadescription` varchar(255) NOT NULL default '',		SEO描述
+  `allowcomment` tinyint(1) NOT NULL default '0',
+  `allowpost` varchar(150) NOT NULL default '',
+  `allowviewtitle` varchar(150) NOT NULL default '',
+  `allowviewcontent` varchar(150) NOT NULL default '',
+  `allowdownload` varchar(150) NOT NULL default '',
+  `forbidshow` tinyint(1) NOT NULL default '0',
+  `config` text NOT NULL,
+  `list_html` varchar(255) NOT NULL default '',			列表页静态页URL表现形式
+  `bencandy_html` varchar(255) NOT NULL default '',		内容页静态页URL表现形式
+
+
+
+qb_special专题表的字段信息如下
+
+  `id` mediumint(7) NOT NULL auto_increment,		专题ID
+  `fid` mediumint(7) NOT NULL default '0',		专题分类ID
+  `title` varchar(150) NOT NULL default '',		专题名称
+  `titlecolor` varchar(15) NOT NULL default '',		没使用到
+  `keywords` varchar(100) NOT NULL default '',		关键字
+  `style` varchar(25) NOT NULL default '',		使用的风格
+  `template` varchar(255) NOT NULL default '',		使用的模板
+  `picurl` varchar(150) NOT NULL default '',		缩略图
+  `content` mediumtext NOT NULL,			内容描述
+  `aids` text NOT NULL,					涉及到的文章ID,多个用逗号隔开
+  `tids` text NOT NULL,					涉及到的论坛贴子ID,多个用逗号隔开
+  `jumpurl` varchar(150) NOT NULL default '',		没使用到
+  `target` tinyint(1) NOT NULL default '0',		没使用到
+  `uid` mediumint(7) NOT NULL default '0',		发布者UID
+  `username` varchar(50) NOT NULL default '',		发布者帐号
+  `posttime` int(10) NOT NULL default '0',		发布日期
+  `list` int(10) NOT NULL default '0',			排序值
+  `hits` mediumint(7) NOT NULL default '0',		浏览量
+  `lastview` int(10) NOT NULL default '0',		上次被访问日期
+  `levels` tinyint(1) NOT NULL default '0',		是否被推荐精华
+  `levelstime` int(10) NOT NULL default '0',		推荐日期
+  `htmlfile` varchar(50) NOT NULL default '',		没使用到
+  `banner` varchar(150) NOT NULL default '',		横幅图片
+  `allowpost` varchar(255) NOT NULL default '',		允许添加内容到此专题的用户组,不设置则都有权限
+  `ifbase` tinyint(1) NOT NULL default '0',		是否做为文章属性,在发布文章时,让用户选择添加
+  `htmlname` varchar(80) NOT NULL default '',		静态文件URL形式
+  `yz` tinyint(1) NOT NULL default '0',			审核与否
+
+
+
+
+
+
+
+
+qb_special_comment 专题评论表的字段信息如下
+
+  `id` mediumint(7) unsigned NOT NULL auto_increment,	自动增值ID意义不大
+  `cid` mediumint(7) unsigned NOT NULL default '0',	专题ID
+  `vid` mediumint(7) NOT NULL default '0',		没用到
+  `uid` mediumint(7) unsigned NOT NULL default '0',	发布者ID
+  `username` varchar(30) NOT NULL default '',		发布者帐号
+  `posttime` int(10) NOT NULL default '0',		发布日期
+  `content` text NOT NULL,				评论内容
+  `ip` varchar(15) NOT NULL default '',			评论者IP
+  `icon` tinyint(3) NOT NULL default '0',		表情图片
+  `yz` tinyint(1) NOT NULL default '0',			审核与否
+

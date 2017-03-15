@@ -1,0 +1,23 @@
+新创建一个系统模块，必须先往表qb_module里插入一条记录,以下几个参数是必须的,下面以考试系统为例子进行讲解
+
+id	模块ID，会自动增加的
+type	默认为2
+name	模块名称
+pre	数据表区分符,尽量加下画线结尾，如 exam_
+dirname  模块存放的目录名
+
+
+然后相应的创建一个模块配置文件的表,其中以下的exam_就是上面提到的数据表区分符
+
+CREATE TABLE `qb_exam_config` (
+  `c_key` varchar(50) NOT NULL default '',
+  `c_value` text NOT NULL,
+  `c_descrip` text NOT NULL,
+  PRIMARY KEY  (`c_key`)
+) TYPE=MyISAM;
+
+
+然后再创建一个目录，如/exam/data/方便生成缓存配置文件
+
+
+创建完成之后，进网站后台系统模块管理那里，修改一下新创建的模块，就会自动生成相应的缓存

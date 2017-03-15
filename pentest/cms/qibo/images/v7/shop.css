@@ -1,0 +1,418 @@
+.MainContainer{
+	clear:both;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+
+.MainContainer .SideL{
+	width:220px;
+	padding-right:10px;
+}
+.MainContainer .SideC{
+	width:530px;
+}
+.MainContainer .SideR{
+	padding-left:10px;
+}
+/*
+*商品分类
+*/
+.shopsort{
+	border:#188ABC solid 2px;
+}
+.shopsort .head{
+	height:33px;
+	background:url(shophead.gif) left bottom repeat-x;
+	border:#0B5271 solid 2px;
+}
+.shopsort .head span{
+	float:left;
+	padding:3px 25px 0 50px;
+	line-height:30px;
+	background:url(shop_icon.gif) right 10px no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#FFF;
+}
+.shopsort .cont{
+	border:#188ABC solid 2px;
+	border-top:#188ABC solid 4px;
+	padding:5px;
+}
+.shopsort .cont dl{
+	clear:both;
+}
+.shopsort .cont dl dt{
+	clear:both;
+	height:25px;
+	line-height:25px;
+	background:url(shop_bsortbg.gif) left bottom no-repeat;
+	padding-left:10px;
+}
+.shopsort .cont dl dt a{
+	color:#2798C1;
+	font-size:14px;
+	font-weight:bold;
+}
+.shopsort .cont dl dd{
+	clear:both;
+	padding-top:5px;
+}
+.shopsort .cont dl dd div{
+	width:50%;
+	height:25px;
+	overflow:hidden;
+	line-height:25px;
+	float:left;
+	background:url(shop_icon1.gif) 10px 10px no-repeat;
+}
+.shopsort .cont dl dd div a{
+	float:left;
+	margin-left:25px;
+}
+/*
+*幻灯片
+*/
+.slidecontainer{
+	width:530px;
+	height:210px;
+	overflow:hidden;
+}
+/*
+*最新公告
+*/
+.sidetable1{
+	border:#cbcbcb solid 1px;
+}
+.sidetable1 .head{
+	border:#FFF solid 1px;
+	border-top:0;
+	border-bottom:#F1F1F1 solid 1px;
+	height:38px;
+	line-height:38px;
+	background:url(shophead1.gif) left top  repeat-x;
+}
+.sidetable1 .head span{
+	float:left;
+	line-height:38px;
+	padding-left:30px;
+	background:url(shopicon.gif) 10px 12px no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable1 .cont{
+	padding:3px 0 8px 0;
+}
+.sidetable1 .cont .list{
+	border-bottom:#F1F1F1 solid 1px;
+	height:25px;
+	line-height:25px;
+	padding:0 10px 0 25px;
+	background:url(point1.gif) 13px 11px no-repeat;
+	overflow:hidden;
+}
+.sidetable1 .cont .list a{
+	color:#666;
+}
+.sidetable1 .cont .l1{
+	background:url(point3.gif) 13px 11px no-repeat;
+}
+/*
+*会员商铺
+*/
+.sidetable2 .head{
+	height:35px;
+	background:url(tophead.gif) left top  no-repeat;
+}
+.sidetable2 .head span{
+	padding:5px 10px 0 15px;
+	line-height:30px;
+}
+.sidetable2 .head .FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable2 .head .FR{
+	background:url(tophead.gif) right top  no-repeat;
+}
+.sidetable2 .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.sidetable2 .cont .list{
+	height:23px;
+	line-height:23px;
+	padding:0 5px 0 20px;
+	background:url(point1.gif) 8px 11px no-repeat;
+	overflow:hidden;
+}
+/*
+*热卖商品
+*/
+.HotShop .head{
+	height:35px;
+	background:url(shophead2.gif) right top no-repeat;
+}
+.HotShop .head .FL{
+	padding:5px 0 0 20px;
+	line-height:30px;
+	width:110px;
+	background:url(shophead2.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#ECFFEB;
+}
+.HotShop .cont{
+	border:#e7e7e7 solid 1px;
+	border-top:0;
+	padding-top:10px;
+	padding-left:5px;
+}
+.HotShop .cont .listshop{
+	width:130px;
+	height:160px;
+	overflow:hidden;
+	float:left;
+	text-align:center;
+}
+.HotShop .cont .listshop .img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:#EBF7FF solid 1px;
+	padding:1px;
+	margin:auto;
+}
+.HotShop .cont .listshop .t{
+	padding:5px 5px 0 5px;
+	height:18px;
+	line-height:18px;
+	overflow:hidden;
+}
+.HotShop .cont .listshop .p{
+	padding:0 5px 0 5px;
+	height:15px;
+	line-height:15px;
+	overflow:hidden;
+	color:#999;
+}
+.HotShop .cont .listshop .p span{
+	color:#c00;
+}
+/*
+*精彩活动
+*/
+.sidetable1 .head1{
+	border-bottom:0;
+}
+.sidetable1 .cont .list span{
+	color:#999;
+	padding-left:10px;
+}
+.sidetable1 .cont .listt{
+	border-bottom:#F1F1F1 solid 1px;
+}
+.sidetable1 .cont .listt .img{
+	width:10%;
+	padding:5px 10px 12px 5px;
+}
+.sidetable1 .cont .listt .img a{
+	display:block;
+	width:80px;
+	height:60px;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+.sidetable1 .cont .listt .word{
+	line-height:20px;
+	color:#999;
+	padding-top:5px;
+}
+.sidetable1 .cont .listt .word span{
+	color:#c00;
+}
+.sidetable1 .cont .listt .word .t{
+	height:22px;
+	padding-right:10px;
+	overflow:hidden;
+}
+/*
+*商城产品
+*/
+.BoutiqueShop .head{
+	height:35px;
+	background:url(headbg1.gif) right top no-repeat;
+}	
+.BoutiqueShop .head .h,.BoutiqueShop .head .m{
+	display:block;
+	float:left;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+}
+.BoutiqueShop .head .h{
+	width:110px;
+	padding-left:20px;
+	background:url(headl1.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#EBF7FF;
+}
+.BoutiqueShop .head .sort{
+	display:block;
+	float:left;
+}
+.BoutiqueShop .head .choose{
+	padding-left:1px;
+	background:url(headspacing.gif) left bottom no-repeat;
+	font-weight:bold;
+}
+.BoutiqueShop .head .sort span{
+	display:block;	
+	font-size:14px;
+	color:#2798C1;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+	background:url(headspacing.gif) right bottom no-repeat;
+}
+.BoutiqueShop .head .sort:hover{
+	text-decoration:none;
+}
+.BoutiqueShop .head .sort:hover span,.BoutiqueShop .head .choose span{
+	background:url(headover1.gif) right top no-repeat;
+}
+.BoutiqueShop .head .m{
+	float:right;
+}
+.BoutiqueShop .head .m a{
+	color:#2798C1;
+}
+.BoutiqueShop .cont{
+	border:#e7e7e7 solid 1px;
+	border-top:0;
+	padding-top:15px;
+	padding-bottom:8px;
+}
+.BoutiqueShop .cont .listshop{
+	width:151px;
+	height:150px;
+	float:left;
+	text-align:center;
+}
+.BoutiqueShop .cont .listshop .img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:#EBF7FF solid 1px;
+	margin:auto;
+}
+.BoutiqueShop .cont .listshop .t{
+	height:30px;
+	line-height:30px;
+	padding:0 10px 0 10px;
+	overflow:hidden;
+}
+.BoutiqueShop .cont .listshop .p{
+	color:#c00;
+}
+/*
+*左边小广告
+*/
+.shopadlside{
+	margin-top:5px;
+	border:#DDD solid 1px;
+}
+.shopadlside .word{
+	line-height:18px;
+	padding:5px;
+}
+.shopadlside .word .list{
+	height:18px;
+	overflow:hidden;
+	padding-left:15px;
+	background:url(point4.gif) 5px 7px no-repeat;
+}
+.shopadlside .word .list span{
+	padding-left:10px;
+	color:red;
+}
+.shopadlside .img{
+	text-align:center;
+	padding-bottom:5px;
+}
+.shopadlside .img img{
+	border:#CCC solid 1px;
+}
+/*
+*广告位
+*/
+.ShopDownAd{
+	height:90px;
+	background:url(shopadbg.gif) left top no-repeat;
+}
+.ShopDownAd .head{
+	width:15px;
+	padding:0 10px 0 15px;
+	font-size:14px;
+	font-weight:bold;
+	vertical-align:middle;
+}
+.ShopDownAd .cont{
+	background:url(shopadbg.gif) right -100px no-repeat;
+	vertical-align:top;
+	padding-top:5px;
+}
+.ShopDownAd .cont img{
+	margin-right:6px;
+}
+/*
+*底部信息
+*/
+#ShopFoot{
+	clear:both;
+	width:985px;
+	background:url(shopfbg.gif) left top no-repeat;
+	padding-left:5px;
+	margin:10px auto 0 auto;
+}
+#ShopFoot .Footin{
+	background:url(shopfbg.gif) right top no-repeat;
+}
+#ShopFoot .Footin td{
+	padding-right:5px;
+	padding-top:10px;
+}
+#ShopFoot .Footin dl{
+	width:163px;
+	float:left;
+	line-height:20px;
+}
+#ShopFoot .Footin dl dt{
+	width:150px;
+	border:#DDD solid 1px;
+	border-bottom:0;
+	margin:auto;
+	background:#FFF;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+#ShopFoot .Footin dl dt a{
+	margin-left:10px;
+	font-size:14px;
+	font-weight:bold;
+}
+#ShopFoot .Footin dl dd{
+	width:150px;
+	border:#DDD solid 1px;
+	border-top:0;
+	margin:auto;
+	background:#FFF;
+	height:110px;
+	overflow:hidden;
+}
+#ShopFoot .Footin dl dd div{
+	padding:0 5px 0 10px;
+	height:20px;
+	overflow:hidden;
+}

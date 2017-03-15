@@ -1,0 +1,264 @@
+模型表qb_showroom_module
+id=1 是展会模型
+id=2 报名参加展会表单
+id=3 展览馆模型
+
+发布一条展会信息用到的表有
+qb_showroom_content,qb_showroom_content_1
+他们的关联字段是id
+
+发布一条展馆信息用到的表有
+qb_showroom_room,qb_showroom_content_2
+他们的关联字段是id
+
+登记报名展会用到的表有
+qb_showroom_join,qb_showroom_content_3
+
+
+
+qb_showroom_city  展览馆所在城市表
+
+   fid  mediumint(7)  UNSIGNED 否    auto_increment     城市FID,自动增值        
+   fup  mediumint(7)  UNSIGNED 否  0                	暂时没使用
+   name  varchar(200)   否                  		城市名
+   class  smallint(4)   否  0         			暂时没使用       
+   sons  smallint(4)   否  0                		暂时没使用
+   type  tinyint(1)   否  0                		暂时没使用
+   admin  varchar(100)   否                  		暂时没使用
+   list  int(10)   否  0                		暂时没使用
+   listorder  tinyint(2)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  		暂时没使用
+   logo  varchar(150)   否                  		暂时没使用
+   descrip  text   否                  			暂时没使用
+   style  varchar(50)   否                  		暂时没使用
+   template  text   否                  		暂时没使用
+   jumpurl  varchar(150)   否                  		暂时没使用
+   maxperpage  tinyint(3)   否  0                	暂时没使用
+   metakeywords  varchar(255)   否                  	暂时没使用
+   metadescription  varchar(255)   否                  	暂时没使用
+   allowcomment  tinyint(1)   否  0                	暂时没使用
+   allowpost  varchar(150)   否                  	暂时没使用
+   allowviewtitle  varchar(150)   否                  	暂时没使用
+   allowviewcontent  varchar(150)   否                  暂时没使用
+   allowdownload  varchar(150)   否                  	暂时没使用
+   forbidshow  tinyint(1)   否  0                	暂时没使用
+   config  text   否                 			暂时没使用
+
+
+qb_showroom_config	展会展览馆模型配置参数表
+   c_key  varchar(50)   否                  		变量名
+   c_value  text   否                  			值
+   c_descrip  text   否                 		暂时没使用
+
+
+qb_showroom_content	展会信息主表
+   id  int(10)   否    auto_increment     		展会自动增值ID         
+   title  varchar(100)   否                  		展会名称
+   mid  smallint(4)   否  0                		强制为1,即代表展会模型
+   fid  mediumint(7)   否  0                		所属分类的FID
+   fname  varchar(50)   否                  		分类名称
+   hits  mediumint(7)   否  0                		浏览量
+   comments  mediumint(7)   否  0                	暂时没使用
+   posttime  int(10)   否  0                		发布日期
+   list  varchar(10)   否                  		排序值
+   uid  mediumint(7)   否  0                		发布者的UID
+   username  varchar(30)   否                  		发布者的帐号
+   titlecolor  varchar(15)   否                  	暂时没使用
+   picurl  varchar(150)   否                  		暂时没使用
+   ispic  tinyint(1)   否  0                		暂时没使用
+   yz  tinyint(1)   否  0                		验证与否,为1时代表验证,0代表没验证
+   levels  tinyint(2)   否  0                		是否推荐,1为推荐,0为未推荐
+   levelstime  int(10)   否  0                		推荐日期
+   keywords  varchar(100)   否                  	关键字
+   ip  varchar(15)   否                  		发布者的IP
+   lastfid  mediumint(7)   否  0                	暂时没使用
+   money  mediumint(7)   否  0                		暂时没使用
+   begintime  int(10)   否  0                		暂时没使用
+   endtime  int(10)   否  0                		暂时没使用
+   lastview  int(10)   否  0                		暂时没使用
+   city_id  mediumint(7)   否  0                	所在城市
+   picnum  smallint(4)   否  0                		有多少张介绍图
+   totaluser  mediumint(7)   否  0                	报名参会者有多少人
+   roomid  mediumint(7)   否  0               		是哪个展览馆的展会
+
+qb_showroom_content_1  	展会信息副表
+   rid  mediumint(7)   否    auto_increment     	自动增值ID,意义不大         
+   id  mediumint(7)   否  0                		与主表关联的ID
+   fid  mediumint(7)   否  0                		所在栏目的FID
+   uid  mediumint(7)   否  0                		发布者UID
+   content  mediumtext   否                  		展会详细介绍
+   day_begin  varchar(20)   否                  	展会开始日期
+   day_end  varchar(20)   否                  		展会结束日期
+   main_preside  varchar(255)   否                  	主办方
+   assist_preside  mediumtext   否                  	协办方
+   shop_area  mediumtext   否                  		展品范围
+   joinmoney  varchar(20)   否                  	参展费用
+   contact  varchar(200)   否                  		联系方式
+   about  mediumtext   否                  		注意事项
+   my_title1  varchar(100)   否                  	自定义项目一名称
+   my_content1  mediumtext   否                 	自定义项目一内容 
+   my_title2  varchar(100)   否                  	自定义项目二名称
+   my_content2  mediumtext   否                 	自定义项目二内容
+
+
+qb_showroom_room    展览馆主表
+   id  int(10)   否    auto_increment      		自动增值ID        
+   title  varchar(100)   否                  		展览馆名称
+   mid  smallint(4)   否  0                		强制为3,即代表报名表单模型
+   fid  mediumint(7)   否  0                		所属分类FID
+   fname  varchar(50)   否                  		分类名称
+   hits  mediumint(7)   否  0          			关注人数      
+   comments  mediumint(7)   否  0                	暂时没使用
+   posttime  int(10)   否  0                		登记日期
+   list  varchar(10)   否                  		排序值
+   uid  mediumint(7)   否  0                		登记者UID
+   username  varchar(30)   否                  		登记者帐号
+   titlecolor  varchar(15)   否                  	暂时没使用
+   picurl  varchar(150)   否                  		介绍图
+   ispic  tinyint(1)   否  0                		是否有介绍图,1为有,0为无
+   yz  tinyint(1)   否  0                		审核与否
+   levels  tinyint(2)   否  0                		推荐与否,1为推荐
+   levelstime  int(10)   否  0                		推荐日期
+   keywords  varchar(100)   否                  	关键字
+   ip  varchar(15)   否                  		登记者IP
+   lastfid  mediumint(7)   否  0                	暂时没使用
+   money  mediumint(7)   否  0                		暂时没使用
+   begintime  int(10)   否  0                		暂时没使用
+   endtime  int(10)   否  0                		暂时没使用
+   lastview  int(10)   否  0                		暂时没使用
+   city_id  mediumint(7)   否  0                	所在城市ID
+   picnum  smallint(4)   否  0               		介绍图张数
+
+
+qb_showroom_content_3   展览馆副表
+   rid  mediumint(7)   否    auto_increment       	增值ID,意义不大      
+   id  int(10)   否  0                			与主表关键的ID
+   fid  mediumint(7)   否  0                		所属分类FID
+   uid  mediumint(7)   否  0                		登记者UID
+   content  mediumtext   否                  		详细介绍
+   room_address  varchar(100)   否                  	地址
+   room_web  varchar(100)   否                  	网址
+   contact  varchar(150)   否                 		联系方式
+
+
+
+
+qb_showroom_join	展会报名主表
+   id  mediumint(7)   否    auto_increment      	自动增值ID        
+   mid  smallint(4)   否  0                		强制为2,即代表报名表单模型
+   cid  mediumint(7)   否  0                		展会ID
+   cuid  mediumint(7)   否  0                		展会发布者的UID
+   fid  mediumint(7)   否  0                		展会所在栏目
+   posttime  int(10)   否  0                		报名日期
+   uid  mediumint(7)   否  0                		报名者的UID
+   username  varchar(30)   否                  		报名者帐号
+   yz  tinyint(1)   否  0                		审核与否
+   ip  varchar(15)   否                 		报名者的IP
+
+
+qb_showroom_content_2	登记报名副表
+   rid  mediumint(7)   否    auto_increment     	自动增值ID,意义不大          
+   id  mediumint(7)   否  0                		与主表关联的ID
+   fid  mediumint(7)   否  0                		暂时没使用
+   uid  mediumint(7)   否  0                		登记者UID
+   content  mediumtext   否                  		附注信息
+   realname  varchar(30)   否                  		真实姓名
+   telphone  varchar(20)   否                  		电话号码
+   companyname  varchar(255)   否                 	公司名称
+
+
+
+qb_showroom_module	模型表
+
+   id  smallint(4)   否    auto_increment         	自动增值的模型ID,很多地方要关联用到     
+   sort_id  mediumint(5)   否  0                	暂时没使用
+   name  varchar(50)   否                  		模型名称
+   list  smallint(4)   否  0                		排序值
+   style  varchar(50)   否                  		暂时没用到
+   config  text   否                  			扩展字段1
+   config2  text   否                  			扩展字段2,暂时没用到
+   comment_type  tinyint(1)   否  0                	暂时没用到
+   ifdp  tinyint(1)   否  0                		暂时没用到
+   template  text   否                 			指定的母模板
+
+
+qb_showroom_field	模型字段信息
+
+   id  mediumint(7)   否    auto_increment      	自动增值的ID,意义不大      
+   mid  mediumint(5)   否  0                		对应上面这个表的ID
+   title  varchar(50)   否                  		字段中文名称
+   field_name  varchar(30)   否                  	字段名,MSYQL中使用的字段名
+   field_type  varchar(15)   否                  	字段类似,整型还是字符串
+   field_leng  smallint(3)   否  0                	字段长度
+   orderlist  int(10)   否  0                		排序值
+   form_type  varchar(15)   否                  	表单的类型
+   field_inputwidth  smallint(3)   是  NULL             表单长度
+   field_inputheight  smallint(3)   否  0               表单的高度
+   form_set  text   否                  		针对下拉,多选,单选的参数设置
+   form_value  text   否                  		表单默认值
+   form_units  varchar(30)   否                  	界面中显示的单位
+   form_title  text   否                  		界面中显示的标题
+   mustfill  tinyint(1)   否  0                		是否为必填
+   listshow  tinyint(1)   否  0                		是否在列表显示
+   listfilter  tinyint(1)   是  NULL                	是否在列表筛选
+   search  tinyint(1)   否  0                		是否为搜索字段
+   allowview  varchar(255)   否                  	允许查看字段的用户组
+   allowpost  varchar(255)   否                  	允许发布字段内容的用户组
+   js_check  text   否                  		JS特效检查输入内容是否合法
+   js_checkmsg  varchar(255)   否                  	JS特效提示信息
+   classid  mediumint(7)   否  0                	联级字段扩展使用
+   form_js  text   否                 			JS扩展使用
+
+
+qb_showroom_pic    关联的信息图片
+
+   pid  mediumint(7)   否    auto_increment      	自动增值ID,意义不太大        
+   id  mediumint(10)   否  0                		关联信息的ID
+   fid  mediumint(7)   否  0                		关联信息的栏目FID
+   mid  smallint(4)   否  0                		信息所属模型
+   uid  mediumint(7)   否  0                		发布者UID
+   type  tinyint(1)   否  0                		0为展会的,1为展览馆的内容
+   imgurl  varchar(150)   否                  		图片的地址
+   name  varchar(100)   否                 		图片的名称
+
+
+
+qb_showroom_sort    分类表
+
+   fid  mediumint(7)  UNSIGNED 否    auto_increment    	分类的ID
+   fup  mediumint(7)  UNSIGNED 否  0                   	父ID,暂时没使用
+   name  varchar(50)   否                  		分类名称
+   mid  smallint(4)   否  0                		暂时没使用
+   class  smallint(4)   否  0                		暂时没使用
+   sons  smallint(4)   否  0                		暂时没使用
+   type  tinyint(1)   否  0                		暂时没使用
+   admin  varchar(100)   否                  		暂时没使用
+   list  int(10)   否  0                		排序值
+   listorder  tinyint(2)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  		暂时没使用
+   logo  varchar(150)   否                  		暂时没使用
+   descrip  text   否                  			暂时没使用
+   style  varchar(50)   否                  		暂时没使用
+   template  text   否                  		暂时没使用
+   jumpurl  varchar(150)   否                  		暂时没使用
+   maxperpage  tinyint(3)   否  0                	暂时没使用
+   metatitle  varchar(250)   否                  	暂时没使用
+   metakeywords  varchar(255)   否                  	暂时没使用
+   metadescription  varchar(255)   否                  	暂时没使用
+   allowcomment  tinyint(1)   否  0                	暂时没使用
+   allowpost  varchar(150)   否                  	暂时没使用
+   allowviewtitle  varchar(150)   否                  	暂时没使用
+   allowviewcontent  varchar(150)   否                  暂时没使用
+   allowdownload  varchar(150)   否                  	暂时没使用
+   forbidshow  tinyint(1)   否  0                	暂时没使用
+   config  mediumtext   否                  		暂时没使用
+   index_show  tinyint(1)   否  0                	暂时没使用
+   contents  mediumint(4)   否  0                	暂时没使用
+   tableid  varchar(30)   否                  		暂时没使用
+   dir_name  varchar(50)   否                  		暂时没使用
+   ifcolor  tinyint(1)   否  0               		暂时没使用
+
+
+
+
+

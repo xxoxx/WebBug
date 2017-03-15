@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<?php
+if($webdb[ShowMenu]){
+	$sonmenu=@include_once(ROOT_PATH.'data/menu_cache.php');
+}else{
+	$returnjs="return ;";
+    $sonmenu="";
+}
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title]</title>
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/style.css">
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/cms.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]">
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+//屏蔽可忽略的js脚本错误
+function killErr(){
+	return true;
+}
+window.onerror=killErr;
+</SCRIPT>
+<!--
+EOT;
+if($webdb[cookieDomain]){print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+//解决不同域名的框架跨域问题
+document.domain = "$webdb[cookieDomain]";
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/swfobject.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/jquery-1.2.6.min.js"></SCRIPT>
+<body ondblclick="$bodyondblclick">
+<table width="990" border="0" cellspacing="0" cellpadding="0" id="header_login">
+  <tr>
+    <td class="login">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<span id="head_loginer">$Load_Msg</span>');
+document.write('<div style="display:none;"><iframe src="$webdb[www_url]/do/hack.php?hack=login&styletype=v7&iframeID=head_loginer" width=0 height=0></iframe></div>');
+//-->
+</SCRIPT>    	
+    </td>
+    <td class="info">
+<script language="JavaScript"> 
+<!---
+today=new Date();
+var hours = today.getHours();
+var minutes = today.getMinutes();
+var seconds = today.getSeconds();
+var timeValue = ((hours >12) ? hours -12 :hours); 
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+timeValue += (hours >= 12) ? " 下午 " : " 上午 ";
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i]  }
+var d=new initArray("<span>星期日</span>","<em>星期一</em>","<em>星期二</em>","<em>星期三</em>","<em>星期四</em>","<em>星期五</em>","<em>星期六</em>"); 
+document.write(today.getFullYear(),"年",today.getMonth()+1,"月",today.getDate(),"日 ",d[today.getDay()+1]," ",timeValue); 
+//-->
+</script>
+		<A onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('$webdb[www_url]');" href="#">设为首页</A>
+        <A href="javascript:javascript:window.external.AddFavorite('$webdb[www_url]','$webdb[webname]');">加入收藏</A>
+    </td>
+  </tr>
+</table>
+<table width="990" border="0" cellspacing="0" cellpadding="0" id="header_logo">
+  <tr>
+    <td>
+    	<a href="$webdb[www_url]"><img src="$webdb[www_url]/images/v7/logo.gif"/></a>
+    </td>
+  </tr>
+</table>
+<div id="Mainmenu">
+<!--
+EOT;
+$detail=explode("\r\n",$webdb[guide_word]);
+$i=0;
+foreach($detail AS $key=>$value){
+$i++;
+if($i>10)break;
+if(!$value)continue;
+list($Hname,$Hurl,$Hblank,$Hcolor,$Hlid)=explode("|",$value);
+if(ereg("^\/",$Hurl)){$Hurl="$webdb[www_url]$Hurl";}elseif(!ereg("://",$Hurl)){$Hurl="$webdb[www_url]$webdb[path]/$Hurl";}
+$Hblank=$Hblank?"target='_blank'":'';
+$Hname = get_word($Hname,8);
+$Hcolor=$Hcolor?"style='color:$Hcolor'":'';
+$class=($key==0)?"class=over":'';
+print <<<EOT
+-->
+	<dl onmouseover="SubOn(this)" onmouseout="SubOut(this)" $class>
+        <dt><a href="$Hurl" $Hblank $Hcolor>{$Hname}</a></dt>
+<!--
+EOT;
+if($sonmenu[$Hlid]){
+print <<<EOT
+-->
+        <dd>
+<!--
+EOT;
+foreach($sonmenu[$Hlid] AS $key1=>$rs){
+$rs[target]=$rs[target]?"target='_blank'":'';
+$rs[color] = $rs[color] ? "style='color:$rs[color]'" : "" ;
+$rs[name] = get_word($rs[name],10);
+if(ereg("^\/",$rs[linkurl])){$rs[linkurl]="$webdb[www_url]$rs[linkurl]";}elseif(!ereg("://",$rs[linkurl])){$rs[linkurl]="$webdb[www_url]$webdb[path]/$rs[linkurl]";}
+print <<<EOT
+-->
+        	<div><a href="$rs[linkurl]" $rs[target] $rs[color]>$rs[name]</a></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+        </dd>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+    </dl>
+<!--
+EOT;
+}print <<<EOT
+-->
+    <div class="post"><span><a href="$webdb[www_url]/do/post.php" target="_blank">我要投稿</a></span></div>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var obj=document.getElementById("Mainmenu").getElementsByTagName("dl");
+function SubOn(theDl){		
+	for(var i=0;i< obj.length;i++ ){
+		obj[i].className='';
+	}
+	theDl.className='choose';
+	$returnjs;
+	document.getElementById("searchselect").style.display='none';
+}
+function SubOut(theDl){
+	for(var i=0;i< obj.length;i++ ){
+		obj[i].className='';
+	}
+	theDl.className='over';
+	document.getElementById("searchselect").style.display='';
+}
+//-->
+</SCRIPT>
+</div>
+<table width="990" border="0" cellspacing="0" cellpadding="0" id="header_search">
+  <tr>
+    <td><form name="form1" method="post" action="$webdb[www_url]/do/search.php" onsubmit="return cksearch();">
+     
+        <div class="search">
+        	<span class="input">
+            <select name="mid" id="searchselect">
+        	  <option value="">全站搜索</option>
+			  <option value="0">文章</option>
+<!--
+EOT;
+foreach($article_moduleDB AS $key=>$rs){
+$rs[alias] || $rs[alias]=$rs[name];
+print <<<EOT
+-->
+ <option value="$key">$rs[alias]</option>
+<!--
+EOT;
+}print <<<EOT
+-->
+        	</select>
+            </span>
+            <span class="input"><input id="keyword_s" type="text" name="keyword"></span>
+            <span class="sub"><input type="submit" name="Submit" value="搜一下">
+          </span> <span class="word"><a href="$webdb[www_url]/do/search.php" target="_blank">高级搜索</a></span>	
+        </div>
+      </form><script type="text/javascript">
+<!--
+function cksearch(){
+	if (document.getElementById("keyword_s").value=='')
+	{
+		alert('关键字不能为空!');
+		return false;
+	}
+}
+//-->
+</script>
+      <div class="moresearch"> 热门搜索: $label[head_search] 
+      </div>
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+if($GuideFid[$fid]){
+$url = $Mdomain?$Mdomain:"$webdb[www_url]/";
+print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="nav_guide">
+  <tr> 
+    <td><div class="t1">当前位置：</div><div class="t2"><a href="$url">首页</a> $GuideFid[$fid] </div></td>
+  </tr>
+</table>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--//目的是为了做风格方便
+document.write('<div class="wrap">');
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

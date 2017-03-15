@@ -1,0 +1,81 @@
+齐博软件的程序架构是“核心+模块+插件”
+
+
+模块、插件，可以在后台对他们随时删除，随时安装，他们所使用的模板都放在相应目录的template下，比如
+/blog/template/	这是模块的模板存放目录
+/hack/cnzz/ 这是插件的模板存放目录
+
+而核心系统的模板存放路径是/template/
+
+
+模块的存放目录是放在根目录，比如
+blog 		博客
+a_d 		广告系统
+count 		流量统计
+exam 		考试系统
+from 		万能表单系统
+guestbook 	留言本
+hy 		黄页商家店铺
+vote 		投票系统
+zhidao 		知道系统
+wn		万能文章系统
+
+coupon		优惠促销
+f		分类系统
+gift		礼品模块
+hr		人才模块
+shop		商城模块
+shoptg		官方团购
+tg		网友团购活动
+
+brand		品牌模型
+buy		求购模型
+sell		产品供应模型
+showroom	展会展览馆
+
+
+
+插件的存放目录是放在hack目录，比如
+adminmap	后台地图
+alipay		在线支付订单管理
+area		地区管理
+attachment	附件管理
+avoidgather	防采集设置
+cnzz		站长站流量统计
+code		PHPWIND联盟代码管理
+copyfrom	文章来源地址管理
+crontab		定时任务
+gather		采集器
+getkeyword	关键字管理
+googlemap	百度谷歌地图生成
+jfadmin		积分介绍管理
+js		JS内容调用
+limitword	过滤不雅文字
+login		登录插件
+logs		后台操作日志
+mail		邮件群发
+message		短消息群发
+moneycard	点卡充值
+moneylog	积分消费记录管理
+oicq		QQ在线聊天生成器
+propagandize	宣传推广赚职分
+report		举报文章
+search		搜索代码
+sell_telephone	电话号码广告宣传
+shoporder	商城订单
+sms		手机短信群发
+style		风格管理
+template	模板管理
+upgrade		升级模块
+webmsg		站点信息调用
+webstat		内容信息年月日统计
+smallpic	提取文章缩略图
+
+
+
+
+
+
+
+
+

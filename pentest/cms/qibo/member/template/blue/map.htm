@@ -1,0 +1,114 @@
+<!--
+<?php
+include(dirname(__FILE__)."/map.php");
+print <<<EOT
+-->
+<table width="100%" cellspacing="0" cellpadding="0" class="BaseInfo">
+  <tr> 
+    <td><div style="float:left;width:500px;">
+    	<div>您当前的用户组级别是:<span class="group">$groupdb[grouptitle]</span> &nbsp;&nbsp;{$pmword}</div>
+        <div>您目前的{$webdb[MoneyName]}: <img src="images/money.gif"> 
+            <em>$lfjdb[money]</em> {$webdb[MoneyDW]} (<a href="../do/jf.php" target="_blank">如何获取积分?</a>)</div>
+<!--
+EOT;
+if($lfjdb[grouptype]==1){print <<<EOT
+-->
+        <div><a href="company.php?job=view&uid=$lfjuid">您是企业会员,你可以点击查看企业资料</a> </div>
+<!--
+EOT;
+}elseif($lfjdb[grouptype]==-1){print <<<EOT
+-->
+        <div><a href="company.php?job=edit">您还不是企业会员,你的资料还在审核当中</a> </div>        
+<!--
+EOT;
+}else{print <<<EOT
+-->
+       <div> <a href="company.php?job=edit">您还不是企业会员,你可以点击申请成为企业会员</a> </div>
+<!--
+EOT;
+}print <<<EOT
+--></div>
+<div style="float:left;">公告:
+$webdb[memberNotice]
+</div>
+
+    </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" class="dragTable">
+  <tr> 
+    <td class="head">截止到现在:</td>
+  </tr>
+  <tr>
+    <td class="middle">
+    	<table width="100%" cellspacing="0" cellpadding="0" class="InfoMore">
+          <tr>
+            
+          <td rowspan="2" class="TD1"><span>文章</span></td>
+          <td class="TD2">您总共发了 <b><font color="#FF0000">{$articleNum}</font></b> 
+            篇文章</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+          <tr>
+            
+          <td class="TD2">你总共发了 <b><font color="#FF0000">{$commentNum}</font></b> 
+            条评论</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+          <tr>
+            
+          <td rowspan="4" class="TD1"><span>其它</span></td>
+            
+          <td class="TD2">你收藏了 <b><font color="#0000FF">{$favNum}</font></b> 篇文章</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+          <tr>
+            
+          <td class="TD2">你举报了 <b><font color="#0000FF">{$reportNum}</font></b> 
+            条信息</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+          <tr>
+            
+          <td class="TD2">你创建了 <b><font color="#0000FF">{$specialNum} </font></b>个专题</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+          <tr>
+            
+          <td class="TD2">您的积分记录 <b><font color="#0000FF">{$moneylogNum} </font></b>条</td>
+          <td class="TD3">&nbsp;</td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" class="dragTable">
+  <tr> 
+    <td class="head">常用操作:</td>
+  </tr>
+  <tr>
+    <td class="middle">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ActionTips">
+          <tr>
+            <td>
+            	<div class="home"><a href="homepage.php?uid=$lfjuid" target="_blank">个人主页</a></div>
+                <div class="set"><a href="userinfo.php?job=edit">修改个人信息</a></div>
+                <div class="sell"><a href="post.php?job=postnew&only=1&mid=0">我要投稿</a></div>
+                <div class="buy"><a href="myarticle.php?job=myarticle&only=1&mid=0">管理稿件</a></div>
+                <div class="coll"><a href="collection.php?job=myarticle">我的收藏</a></div>
+                <div class="pic"><a href="moneylog.php?job=list">积分记录</a></div>
+                <div class="bz"><a href="yz.php?job=email">验证身份</a></div>
+                <div class="sz"><a href="buygroup.php?job=list">升级VIP会员</a></div>
+                
+            <div class="tg"><a href="hack.php?hack=propagandize&job=list">推广赚积分</a></div>
+                <div class="money"><a href="$Mdomain/member/money.php?job=list">帐户充值</a></div>
+            </td>
+          </tr>
+        </table>        
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

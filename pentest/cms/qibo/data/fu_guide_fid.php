@@ -1,0 +1,3 @@
+<?php 
+$GuideFid[1]="<a href='$webdb[www_url]' class='guide_menu'>&gt;Ê×Ò³</a> -&gt; <a  href='list.php?fid=1' class='guide_menu'>444</a>";
+?>

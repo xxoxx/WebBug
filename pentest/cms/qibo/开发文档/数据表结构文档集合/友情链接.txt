@@ -1,0 +1,24 @@
+qb_friendlink
+
+  `id` mediumint(5) NOT NULL auto_increment,
+  `fid` int(7) NOT NULL default '0',
+  `name` varchar(30) NOT NULL default '',
+  `url` varchar(150) NOT NULL default '',
+  `logo` varchar(150) NOT NULL default '',
+  `descrip` varchar(255) NOT NULL default '',
+  `list` int(10) NOT NULL default '0',
+  `ifhide` tinyint(1) NOT NULL default '0',
+  `iswordlink` tinyint(1) default NULL,
+  `hits` tinyint(7) NOT NULL default '0',
+  `posttime` int(10) NOT NULL default '0',
+  `uid` int(7) NOT NULL default '0',
+  `username` varchar(30) NOT NULL default '',
+  `yz` tinyint(1) NOT NULL default '1',
+  `endtime` int(10) NOT NULL default '0',
+
+
+qb_friendlink_sort
+
+  `fid` mediumint(7) NOT NULL auto_increment,
+  `name` varchar(30) NOT NULL default '',
+  `list` int(10) NOT NULL default '0',

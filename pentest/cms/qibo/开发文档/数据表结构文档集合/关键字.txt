@@ -1,0 +1,14 @@
+qb_keyword 
+
+  `id` mediumint(5) NOT NULL auto_increment,
+  `keywords` varchar(30) NOT NULL default '',
+  `list` int(10) NOT NULL default '0',
+  `uid` mediumint(7) NOT NULL default '0',
+  `ifhide` tinyint(1) NOT NULL default '0',
+  `url` varchar(150) NOT NULL default '',
+  `num` smallint(4) unsigned NOT NULL default '0',
+
+qb_keywordid
+
+  `id` mediumint(7) NOT NULL default '0',
+  `aid` mediumint(7) NOT NULL default '0',

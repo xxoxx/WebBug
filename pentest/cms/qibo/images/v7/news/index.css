@@ -1,0 +1,224 @@
+.MainContainer{
+	clear:both;
+	margin:0 auto 10px auto;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+.MainContainer .SideL{
+	width:40%;
+}
+.MainContainer .SideC{
+	padding:0 10px 0 10px;
+	width:310px;
+}
+/*
+*标题+内容
+*/
+.mainnews{
+	border:#DDD solid 1px;
+	padding-bottom:3px;
+}
+.mainnews .list1,.mainnews .list2{
+	border-bottom:#DDD solid 1px;
+}
+.mainnews .title{
+	margin:2px 3px 0 3px;
+	padding:0 5px 0 10px;
+	line-height:36px;
+}
+.mainnews .list1 .title{
+	border-top:#F8F8F8 solid 5px;
+}
+.mainnews .title a{
+	font-size:16px;
+	font-weight:bold;
+	color:#2898C0;
+}
+.mainnews .content{
+	padding:0 5px 5px 10px;
+	line-height:20px;
+	color:#666;
+	height:40px;
+}
+/*
+*幻灯片
+*/
+.slidecont{
+	width:310px;
+	height:260px;
+	overflow:hidden;
+}
+/*
+*博客点击排行
+*/
+.TopList{
+	border:#DDD solid 1px;
+}
+.TopList .head{
+	padding:3px 0 0 10px;
+	line-height:27px;
+	background:url(headbg.gif) left bottom repeat-x;
+}
+.TopList .cont{
+	padding:10px;
+	line-height:26px;
+}
+.TopList .cont .list{
+	height:26px;
+	background:url(point.gif) left bottom repeat-x;
+	overflow:hidden;
+}
+.TopList .cont .list em,.TopList .cont .list a,.TopList .cont .list span{
+	display:block;
+	float:left;
+}
+.TopList .cont .list em{
+	padding:0 10px 0 5px;
+	background:url(numbg.gif) 2px 6px no-repeat;
+	font-size:11px;
+}
+.TopList .cont .list span{
+	float:right;
+}
+.TopList .cont .list span a{
+	color:#888;
+}
+/*
+*今日看点
+*/
+.MainContainer .MainR{
+	padding:0 0 0 10px;
+}
+.sidecontainera .head{
+	height:35px; 
+	background:url(tophead.gif) right bottom no-repeat;
+}
+.sidecontainera .head .FL{
+	padding:5px 100px 0 20px;
+	line-height:30px;
+	background:url(tophead.gif) left bottom no-repeat;
+}
+.sidecontainera .head .FR{
+	padding:5px 10px 0 0;
+	line-height:30px;
+}
+.sidecontainera .cont{
+	padding:10px;
+	border:#DDD solid 1px;
+	border-top:0;
+	line-height:23px;
+}
+.sidecontainera .cont .list{
+	height:23px;
+	overflow:hidden;
+	padding-left:12px;
+	background:url(icon1.gif) 3px 9px no-repeat;
+}
+.sidecontainera .cont .list a{
+	font-size:14px;
+	float:left;
+}
+.sidecontainera .cont .l1 a{
+	font-weight:bold;
+}
+.sidecontainera .cont .list span{
+	float:right;
+}
+.sidecontainera .cont .list span a{
+	font-size:12px;
+	color:#888;
+}
+.sidecontainera .cont .l1 span a{
+	font-weight:normal;
+}
+/*
+*社会万象
+*/
+.sidecontainerb{
+	border:#DDD solid 1px;
+}
+.sidecontainerb .head{
+	height:35px;
+	background:url(headbg1.gif) left bottom repeat-x;
+}
+.sidecontainerb .head span{
+	padding:5px 10px 0 10px;
+	line-height:30px;
+}
+.sidecontainerb .cont .listpic{
+	width:145px;
+	height:133px;
+	float:left;
+	text-align:center;
+}
+.sidecontainerb .cont .listpic a{
+	display:block;
+	margin:auto;
+}
+.sidecontainerb .cont .listpic a.pic{
+	width:120px;
+	height:90px;
+	border:#DDD solid 1px;
+	margin:8px auto 8px auto;
+	padding:1px;
+}
+.sidecontainerb .cont .listpic a.title{
+	width:130px;
+	height:12px;
+	overflow:hidden;
+	color:#2898C0;
+}
+/*
+*热点推荐
+*/
+.MainContainer .SideCa{
+	padding:0 10px 0 10px;
+}
+.MainContainer .SideRa{
+	width:280px;
+}
+.sidecontainerb .listtable{
+	width:90%;
+}
+.sidecontainerb .listtable .pic{
+	width:20%;
+	padding:8px 10px 8px 0;
+}
+.sidecontainerb .listtable .pic a{
+	display:block;
+	width:70px;
+	height:70px;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+.sidecontainerb .listtable .word{
+	padding-top:5px;
+	line-height:25px;
+	color:#777;
+}
+.sidecontainerb .listtable .word a{
+	display:block;
+	font-size:14px;
+	color:#2898C0;
+}
+/*
+*经典重读
+*/
+.sidecontainerb .list_t_c{
+	padding:0 10px 0 10px;
+	height:88px;
+	overflow:hidden;
+	line-height:20px;
+	color:#777;
+}
+.sidecontainerb .cont1{
+	padding-top:5px;
+	padding-bottom:3px;
+}
+.sidecontainerb .list_t_c a{
+	display:block;
+	background:url(point1.gif) 3px 8px no-repeat;
+	padding-left:10px;
+	font-weight:bold;
+}

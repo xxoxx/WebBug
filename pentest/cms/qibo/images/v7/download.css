@@ -1,0 +1,329 @@
+.MainContainer{
+	clear:both;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+
+.MainContainer .SideL{
+	width:280px;
+}
+.MainContainer .SideL1{
+	width:350px;
+}
+.MainContainer .SideC{
+	padding:0 10px 0 10px;
+}
+.MainContainer .SideR{
+	width:270px;
+}
+/*
+*热门推荐软件
+*/
+.hotdownload .head{
+	height:36px;
+	background:url(index_hbg.gif) right 4px no-repeat;
+}
+.hotdownload .head .FL{
+	display:block;
+	padding-left:40px;
+	background:url(index_hl4.gif) left bottom no-repeat;
+}
+.hotdownload .head .FL em{
+	display:block;
+	padding:6px 40px 0 0;
+	line-height:30px;
+	background:url(index_hl4.gif) right bottom no-repeat;
+	font-size:14px;
+	font-weight:bold;	
+}
+.hotdownload .head .FR{
+	padding:6px 10px 0 0;
+	line-height:30px;	
+}
+.hotdownload .cont{
+	border:#DDD solid 1px;
+	border-top:0;	
+	padding:5px;
+}
+.hotdownload .cont .list{
+	height:28px;
+	line-height:28px;
+	overflow:hidden;
+	padding-left:28px;
+}
+.hotdownload .cont .list a{
+	float:left;
+	font-size:14px;
+	color:#2898C0;
+	text-decoration:underline;
+}
+.hotdownload .cont .list span{
+	float:right;
+	color:#888;
+	padding-right:5px;
+}
+.hotdownload .cont .l1{
+	background:url(num1-10.gif) left top no-repeat;
+}
+.hotdownload .cont .l2{
+	background:url(num1-10.gif) left -30px no-repeat;
+}
+.hotdownload .cont .l3{
+	background:url(num1-10.gif) left -60px no-repeat;
+}
+.hotdownload .cont .l4{
+	background:url(num1-10.gif) left -90px no-repeat;
+}
+.hotdownload .cont .l5{
+	background:url(num1-10.gif) left -120px no-repeat;
+}
+.hotdownload .cont .l6{
+	background:url(num1-10.gif) left -150px no-repeat;
+}
+.hotdownload .cont .l7{
+	background:url(num1-10.gif) left -180px no-repeat;
+}
+.hotdownload .cont .l8{
+	background:url(num1-10.gif) left -210px no-repeat;
+}
+.hotdownload .cont .l9{
+	background:url(num1-10.gif) left -240px no-repeat;
+}
+.hotdownload .cont .l10{
+	background:url(num1-10.gif) left -270px no-repeat;
+}
+/*
+*最新下载
+*/
+.newdownload{
+	border:#CCC solid 1px;
+	margin-top:4px;
+}
+.newdownload .head{
+	height:38px;
+	background:url(shophead1.gif) left top repeat-x;
+	border-left:#FFF solid 1px;
+	border-right:#FFF solid 1px;
+	line-height:35px;
+	padding:0 10px 0 15px;
+}
+.newdownload .head .FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.newdownload .head .FR{
+	padding-left:20px;
+	background:url(icon2.gif) 10px 12px no-repeat;
+}
+.newdownload .cont{
+	padding:0 5px 5px 5px;
+}
+.newdownload .cont .list{
+	height:23px;
+	line-height:23px;
+	overflow:hidden;
+	padding-left:15px;
+	background:url(point1.gif) 8px 10px no-repeat;
+}
+.newdownload .cont .list a{
+	float:left;
+	font-size:14px;
+	color:#666;
+}
+.newdownload .cont .list a.sort{
+	color:#2898C0;
+}
+.newdownload .cont .list span{
+	float:right;
+	color:#999;
+	padding-right:5px;
+}
+.newdownload .cont .l1{
+	height:32px;
+	line-height:32px;
+	background:none;
+	padding:0;
+	text-align:center;
+}
+.newdownload .cont .l1 .sort,.newdownload .cont .l1 span{
+	display:none;
+}
+.newdownload .cont .l1 .title{
+	float:none;
+	font-size:14px;
+	font-weight:bold;
+	color:#c00;
+}
+.newdownload .cont .l6{
+	height:30px;
+	border-bottom:#DDD dotted 1px;
+	margin-bottom:8px;
+}
+/*
+*站内资源统计
+*/
+.downloadinfo{
+	margin-top:4px;
+	height:90px;
+	background:url(downloadinfo.gif) center top no-repeat;
+}
+.downloadinfo .head{
+	height:38px;
+	line-height:35px;
+	padding-left:15px;
+	font-size:14px;
+	font-weight:bold;
+}
+.downloadinfo .cont div{
+	padding-left:15px;
+	line-height:20px;
+	color:25px;
+	word-spacing:10px;
+	color:#666;
+}
+.downloadinfo .cont div span{
+	font-weight:bold;
+	color:#c00;
+	font-size:14px;
+	padding-right:5px;
+}
+.downloadinfo .cont div em{
+	font-weight:bold;
+	font-size:14px;
+	padding-right:5px;
+}
+/*
+*软件下载排行
+*/
+.Topdownload .head{
+	height:33px;
+	background:url(index_hbg1.gif) right bottom no-repeat;
+}
+.Topdownload .head span.FL{
+	padding:3px 80px 0 35px;
+	line-height:30px;
+	background:url(index_hbg1.gif) left bottom no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.Topdownload .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.Topdownload .cont .list{
+	height:30px;
+	line-height:30px;
+	overflow:hidden;
+	padding:0 5px 0 30px;
+}
+.Topdownload .cont .list a{
+	float:left;
+	font-size:14px;
+	color:#2898C0;
+}
+.Topdownload .cont .list span{
+	float:right;
+	color:#999;
+}
+.Topdownload .cont .l1{
+	background:url(num1-6.gif) left top no-repeat;
+}
+.Topdownload .cont .l2{
+	background:url(num1-6.gif) left -30px no-repeat;
+}
+.Topdownload .cont .l3{
+	background:url(num1-6.gif) left -60px no-repeat;
+}
+.Topdownload .cont .l4{
+	background:url(num1-6.gif) left -90px no-repeat;
+}
+.Topdownload .cont .l5{
+	background:url(num1-6.gif) left -120px no-repeat;
+}
+.Topdownload .cont .l6{
+	background:url(num1-6.gif) left -150px no-repeat;
+}
+/*
+*栏目+标题
+*/
+.sidetable .head{
+	height:33px;
+	background:url(index_hbg1.gif) left bottom no-repeat;
+}
+.sidetable .head1{
+	background:url(downloadhead.gif) left bottom no-repeat;
+}
+.sidetable .head span{
+	padding:3px 10px 0 35px;
+	line-height:30px;
+}
+.sidetable .head span.FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .head span.FR{
+	background:url(index_hbg1.gif) right bottom no-repeat;
+}
+.sidetable .head1 span.FR{
+	background:url(downloadhead.gif) right bottom no-repeat;
+}
+.sidetable .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.sidetable .cont .list{
+	height:25px;
+	line-height:25px;
+	overflow:hidden;
+	padding:0 5px 0 20px;
+	background:url(index_icon1.gif) 5px 9px no-repeat;
+}
+.sidetable .cont .list a{
+	float:left;
+	color:#666;
+}
+.sidetable .cont .list span{
+	float:right;
+	color:#999;
+}
+/*
+*源码推荐下载
+*/
+.sidetable1 .head{
+	height:35px;
+	background:url(tophead.gif) left bottom no-repeat;
+}
+.sidetable1 .head span{
+	padding:5px 10px 0 15px;
+	line-height:30px;
+}
+.sidetable1 .head span.FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable1 .head span.FR{
+	background:url(tophead.gif) right bottom no-repeat;
+}
+.sidetable1 .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.sidetable1 .cont .list{
+	height:25px;
+	line-height:25px;
+	overflow:hidden;
+	padding:0 5px 0 18px;
+	background:url(icon4.gif) 7px 11px no-repeat;
+}
+.sidetable1 .cont .list a{
+	float:left;
+	color:#666;
+}
+.sidetable1 .cont .list span{
+	float:right;
+	color:#999;
+}

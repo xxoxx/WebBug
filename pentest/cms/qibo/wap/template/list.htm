@@ -1,0 +1,60 @@
+<!--
+<?php
+$GuideFid[$fid] = str_replace($webdb[www_url],$webdb[www_url]."/wap/",$GuideFid[$fid]);
+$GuideFid[$fid] = str_replace("&gt;首页","首页",$GuideFid[$fid]);
+print <<<EOT
+-->
+<div class="nav_guide">当前位置：$GuideFid[$fid]</div>
+<div class="showsort">{$listsor}</div>
+<!--
+EOT;
+if($listdb_moresort){
+foreach($listdb_moresort AS $key2=>$rss){
+print <<<EOT
+-->
+<div class="head"><a href="list.php?fid=$rss[fid]">$rss[name]</A></div>
+<div class="cont">
+<!--
+EOT;
+foreach($rss[article] AS $key1=>$rs){
+$rs[fontweight] =($rs[fonttype]==1)?'font-weight:bold;':'';
+$rs[fontcolor]  =$rs[titlecolor]?"color:$rs[titlecolor];":'';
+$rs[full_title] = get_word($rs[full_title],30);
+print <<<EOT
+-->
+
+      <div><a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" style="{$rs[fontweight]}{$rs[fontcolor]}">$rs[full_title]</a>($rs[posttime])</div>
+<!--
+EOT;
+}print <<<EOT
+-->
+</div>
+<!--
+EOT;
+}}else{
+print <<<EOT
+-->
+<div class="head">$fidDB[name]</div>
+<div class="cont">
+<!--
+EOT;
+foreach($listdb AS $key1=>$rs){
+$target=$rs[target]?'_blank':'_self';
+$rs[fontweight] =($rs[fonttype]==1)?'font-weight:bold;':'';
+$rs[fontcolor]  =$rs[titlecolor]?"color:$rs[titlecolor];":'';
+$rs[title] = get_word($rs[title],30);
+print <<<EOT
+-->
+	<div><a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" target="$target" title='$rs[full_title]' style="{$rs[fontweight]}{$rs[fontcolor]}">$rs[title]</a>($rs[posttime])</div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<div class="page">$showpage</div>
+</div>
+<!--
+EOT;
+}
+?>
+-->

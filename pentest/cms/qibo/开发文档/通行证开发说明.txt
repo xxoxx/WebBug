@@ -1,0 +1,60 @@
+
+本程序可做为通行证的服务端,其它程序相应的做为客户端.
+
+通行证服务端登录网址是:
+
+http://本系统所在的域名/do/login.php?passport_url=客户端登录接口的URL绝对地址
+如
+http://www.php168.com/do/login.php?passport_url=http://abc.php168.com/api.php
+
+通行证服务端退出网址是:
+
+http://本系统所在的域名/do/login.php?action=quit&passport_url=客户端退出接口的URL绝对地址
+
+
+通行证服务端注册网址是:
+
+http://本系统所在的域名/do/reg.php?passport_url=客户端注册接口的URL绝对地址
+
+
+客户端接口的URL绝对地址如果有?符号的话,需要先urlencode编码
+
+
+登录成功,或者是注册成功,都会返回md5code变量,解密后得到如下字段的信息
+
+uid=&username=&password=&email=
+
+客户端可以根据这些字段信息做相应的自动登录与自动注册操作
+
+
+
+使用解密码函数的方法如下
+
+$detail=mymd5($md5code,"DE",'这里是密钥,去整站后台查找');
+
+解密函数如下
+
+/**
+*加密与解密函数
+**/
+function mymd5($string,$action="EN",$rand=''){ //字符串加密和解密 
+    $secret_string = $rand.'5*j,.^&;?.%#@!'; //绝密字符串,可以任意设定 
+
+    if($string=="") return ""; 
+    if($action=="EN") $md5code=substr(md5($string),8,10); 
+    else{ 
+        $md5code=substr($string,-10); 
+        $string=substr($string,0,strlen($string)-10); 
+    } 
+    //$key = md5($md5code.$_SERVER["HTTP_USER_AGENT"].$secret_string);
+	$key = md5($md5code.$secret_string); 
+    $string = ($action=="EN"?$string:base64_decode($string)); 
+    $len = strlen($key); 
+    $code = ""; 
+    for($i=0; $i<strlen($string); $i++){ 
+        $k = $i%$len; 
+        $code .= $string[$i]^$key[$k]; 
+    } 
+    $code = ($action == "DE" ? (substr(md5($code),8,10)==$md5code?$code:NULL) : base64_encode($code)."$md5code"); 
+    return $code; 
+}

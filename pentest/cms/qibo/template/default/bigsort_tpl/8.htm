@@ -1,0 +1,121 @@
+<?php
+$rows=15; //每页几条
+if($page<1){
+	$page=1;
+}
+$min=($page-1)*$rows;
+unset($listdb,$key);
+$query = $db->query("SELECT SQL_CALC_FOUND_ROWS A.* FROM {$pre}article A LEFT JOIN {$pre}sort B ON A.fid=B.fid WHERE A.yz=1 AND B.fup='$fid' ORDER BY list DESC LIMIT $min,$rows");
+$RS=$db->get_one("SELECT FOUND_ROWS()");
+$NUM=$RS['FOUND_ROWS()'];
+$showpage=getpage('','',"list.php?fid=$fid",$rows,$NUM);
+while($rs = $db->fetch_array($query)){
+	$key++;
+	if(1){
+		$r=$db->get_one("SELECT * FROM {$pre}reply WHERE aid='$rs[aid]' AND topic=1");
+		$rs[content]=preg_replace('/<([^<]*)>/is',"",$r[content]);
+		$rs[content]=preg_replace('/ |　|&nbsp;/is',"",$rs[content]);
+	}
+	$rs[posttime]=date("Y-m-d H:i",$rs[posttime]);
+	$rs[picurl]=tempdir("$rs[picurl]");
+	$rs[picurl]=filtrate($rs[picurl]);
+	$listdb[]=$rs;
+}
+?>
+<!--
+<?php
+print <<<EOT
+--> 
+<table border="0" cellspacing="0" cellpadding="0" class="dragTable" width="100%">
+  <tr> 
+    <td class="head"> 
+      <h3 class="L"></h3>
+      <span class="TAG">$fidDB[name]</span> 
+      <h3 class="R"></h3>
+      <span class="more" style="float:right;"></span> 
+    </td>
+  </tr>
+  <tr> 
+    <td class="middle"> 
+      <!--
+EOT;
+
+foreach($listdb AS $key1=>$rs){
+$rs[fontweight] =($rs[fonttype]==1)?'font-weight:bold;':'';
+$rs[fontcolor]  =$rs[titlecolor]?"color:$rs[titlecolor];":'';
+$rs[content]=get_word($rs[content],120);
+if($rs[ispic]==1){
+print <<<EOT
+-->
+      <table width="97%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px dotted #ccc;">
+        <tr>
+          <td width="85%">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td style="padding-left:8px;padding-top:6px; "><a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" style="{$rs[fontcolor]}font-size:13px;font-weight:bold;" target="_blank">$rs[title]</a>
+</td>
+		  </tr>
+		  <tr>
+			<td style="padding-left:8px;color:#666;padding-top:5px; font-size:14px;">
+  				$rs[content]
+				<span style="font-size:13px;">
+					<p style=" padding-top:10px;">
+						分类：<a href="list.php?fid=$rs[fid]" style="color:#336699;">{$rs[fname]}</a>   
+						<font style="font-size:14px; color:#999">{$rs[posttime]}</font>
+					</p>
+				</span> 
+    		</td>
+		  </tr>
+		</table>
+
+		  </td>
+  
+       <td width="15%" style="vertical-align: middle;padding:10px 0 10px 0;">
+		  <a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" style="margin-left:6px;display:block;width:84px;height:84px;border:1px solid #ccc;" target="_blank"><img style="border:1px solid #fff;" width="105" height="84" onerror="this.src='$webdb[www_url]/images/default/nopic.jpg'" src="$rs[picurl]" border="0"></a>
+		
+		 </td>
+        </tr>
+      </table>
+      <!--
+EOT;
+}
+else{print <<<EOT
+-->
+<table width="97%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px dotted #ccc;">
+        <tr>
+          <td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td style="padding-left:8px;padding-top:6px; "><a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" style="{$rs[fontcolor]}font-size:13px;font-weight:bold;" target="_blank">$rs[title]</a></td>
+		  </tr>
+		  <tr>
+			<td style="padding-left:8px;color:#666; font-size:14px;padding-top:5px; ">
+  				$rs[content]
+				<span style="font-size:13px;">
+					<p style=" padding-top:10px;">
+						分类：<a href="list.php?fid=$rs[fid]" style="color:#336699;">{$rs[fname]}</a>   
+						<font style="font-size:14px; color:#999">{$rs[posttime]}</font>					</p>
+				</span>    		</td>
+		  </tr>
+		</table>		  </td>
+       </tr>
+      </table>
+<!--
+EOT;
+}
+}print <<<EOT
+-->
+      <div style="clear:both;text-align:center;margin:10px;">$showpage</div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="foot"> 
+      <h3 class="L"></h3>
+      <h3 class="R"></h3>
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

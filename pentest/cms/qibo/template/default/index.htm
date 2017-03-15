@@ -1,0 +1,433 @@
+<!--
+<?php
+print <<<EOT
+-->
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/index.css">
+<script type="text/javascript" src="$webdb[www_url]/images/v7/sliding.js"></script>
+<div id="TopAdcontainer">
+	<div class="FL">$label[index_ad1]</div>
+    <div class="FR topad2">$label[index_ad2]</div>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td class="SideL">
+    	<div class="SlideContainer">$label[index_rollpic]</div>
+    </td>
+    <td class="SideC">
+    	<div class="TodayFocus">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Focusin">
+          <tr>
+            <td class="head"><span>今日聚焦</span></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	
+              $label[index_t1]
+                
+            </td>
+          </tr>
+        </table>
+        </div>
+    </td>
+    <td class="SideR">
+    	<div class="Concernest">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Concernin">
+          <tr>
+            <td class="head"><span>最受关注</span></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	
+              $label[index_hot1]
+                 
+            </td>
+          </tr>
+        </table>
+        </div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="PhotoContainer mt10">
+  <tr>
+    <td class="pichead">
+    	<div class="fl">图片主题</div>
+        <div class="fr">	$label[index_5t2]
+        
+        </div>
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab1">
+    <td>
+    	$label[index_t2]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab2">
+    <td>
+    	$label[index_t22]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab3">
+    <td>
+    	$label[index_t23]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab4">
+    <td>
+    	$label[index_t24]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab5">
+    <td>
+    	$label[index_t25]
+          
+    </td>
+  </tr>
+<SCRIPT LANGUAGE="JavaScript">ShowTab(1,1,6);</SCRIPT>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td class="MainL">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ArticleDt">
+          <tr>
+            <td class="head"><div><span>文章动态</span></div></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	<div class="contL">                	
+                    $label[index_j1]
+                     
+                </div>
+                <div class="contR">
+                	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="contRin">
+                      <tr>
+                        <td class="h"><span class="FL">文章评论</span><span class="FR"><a href="#">更多&gt;&gt;</a></span></td>
+                      </tr>
+                      <tr>
+                        <td class="c">
+                        	
+                    $label[index_j2]
+                            
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+            </td>
+          </tr>
+        </table>
+    </td>
+    <td class="SideR">
+    	<div class="Concernest">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Concernin">
+          <tr>
+            <td class="head"><span>软件下载</span></td>
+          </tr>
+          <tr>
+            <td class="cont contc">
+            	
+              $label[index_down]
+                
+            </td>
+          </tr>
+        </table>
+        </div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td class="MainL">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Shopcontainer">
+          <tr>
+            <td class="head">
+            	<div class="fl">商城购物</div>
+                <div class="fr"> $label[index_bfj3]   
+                	
+                </div>
+            </td>
+          </tr>
+          <tr id="Tab11">
+            <td class="cont">
+            $label[index_j3]                 
+            </td>
+          </tr>
+          <tr id="Tab12">
+            <td class="cont">
+            $label[index_j32]             
+            </td>
+          </tr>
+          <tr id="Tab13">
+            <td class="cont">
+            $label[index_j33]         
+            </td>
+          </tr>
+          <tr id="Tab14">
+            <td class="cont"> 
+            $label[index_j34]       
+            </td>
+          </tr>
+<SCRIPT LANGUAGE="JavaScript">ShowTab(11,11,15);</SCRIPT>
+        </table>
+    </td>
+    <td class="SideR">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidecontainer">
+          <tr>
+            <td class="head"><span class="FL">赞助商</span><span class="FR"><a href="#">更多&gt;&gt;</a></span></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	<div class="listad">$label[index_ad3]</div>
+                <div class="listad">$label[index_ad4]</div>
+                <div class="listad">$label[index_ad5]</div>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td>$label[index_ad7]</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td class="MainL">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ArticleDt">
+          <tr>
+            <td class="head"><div><span>新闻动态</span></div></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	<div class="showmorenews FL">
+                	<div class="h">$label[index_cc1]</div>
+                    <div class="c">                        
+                        $label[index_c1]
+                    </div>
+                </div>
+                <div class="showmorenews FR">
+                	<div class="h"> $label[index_cc2]</div>
+                    <div class="c">
+                         $label[index_c2]
+                    </div>
+                </div>
+            </td>
+          </tr>
+        </table>
+    </td>
+    <td class="SideR">
+    	<div class="Concernest">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="Concernin">
+          <tr>
+            <td class="head"><span>优秀会员</span></td>
+          </tr>
+          <tr>
+            <td class="contuser">
+            	$label[index_member]
+                 
+            </td>
+          </tr>
+        </table>
+        </div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainContainer mt10">
+  <tr>
+    <td class="SideL">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidetable">
+          <tr>
+            <td class="head"><span>搜索引擎之PK战</span></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	<div style="height:155px;">	$label[index_pk]</div>
+            </td>
+          </tr>
+        </table>
+        <div class="indexad8 mt10">$label[index_ad8]</div>
+    </td>
+    <td class="SideC">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidetable">
+          <tr>
+            <td class="head"><span>2010中国站长几大热门</span></td>
+          </tr>
+          <tr>
+            <td class="cont">
+            	$label[index_vote2]
+            </td>
+          </tr>
+        </table>
+    </td>
+    <td class="SideR">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidetable">
+          <tr>
+            <td class="head"><span>最受关注</span></td>
+          </tr>
+          <tr>
+            <td class="cont contv">			
+            	$label[index_digg]               
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="PhotoContainer mt10">
+  <tr>
+    <td class="pichead">
+    	<div class="fl">推荐专题</div>
+        <div class="fr">
+        	$label[index_trrr1]	
+        </div>
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab6">
+    <td>
+    	$label[index_tr1]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab7">
+    <td>
+    	$label[index_tr12]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab8">
+    <td>
+    	$label[index_tr13]
+         
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab9">
+    <td>
+    	$label[index_tr14]
+          
+    </td>
+  </tr>
+  <tr class="photocont" id="Tab10">
+    <td>
+    	$label[index_tr15]
+          
+    </td>
+  </tr>
+<SCRIPT LANGUAGE="JavaScript">ShowTab(6,6,11);</SCRIPT>
+</table>
+<!--
+EOT;
+$moreline=$chdb[config][line]>0?$chdb[config][line]:2;
+$array=array_chunk($fiddb_article,$moreline);
+$moretdwidth=floor(100/$moreline)."%";
+foreach($array AS $key2=>$array2){
+print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MoreListArticle mt10">
+  <tr>
+<!--
+EOT;
+$iii=0;
+foreach($array2 AS $key=>$rss){
+$iii++;
+if($moreline>1&&$iii%$moreline==1){
+$tbstyle=" style='padding-right:7px;' ";
+}elseif($moreline>1&&$iii%$moreline==0){
+$tbstyle=" style='padding-left:7px;' ";
+}else{
+$tbstyle=" ";
+}
+print <<<EOT
+-->
+    <td class="Side$iii">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidetabl2">
+          <tr>
+            <td class="head"><span>$rss[name]</span><a href="list.php?fid=$rss[fid]" target="_blank">更多&gt;&gt;</a></td>
+          </tr>
+          <tr>
+            <td class="cont">
+<!--
+EOT;
+$i=0;
+foreach($rss[article] AS $key1=>$rs){
+$rs[title]=get_word($rs[full_title],36,0);$i++;
+$rs[posttime] = date("m/d",$rs[full_posttime]);
+print <<<EOT
+-->	<div class="list"> <a href="bencandy.php?fid=$rs[fid]&id=$rs[aid]" class="a$i" target="_blank" title="$rs[full_title]">$rs[title]</a><span>[{$rs[posttime]}]</span></div>
+<!--
+EOT;
+}print <<<EOT
+-->         
+            </td>
+          </tr>
+        </table>
+    </td>
+<!--
+EOT;
+}print <<<EOT
+-->
+  </tr>
+</table>
+<!--
+EOT;
+}print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="FrendLinkTable">
+  <tr>
+    <td class="head">
+    	<div class="FL"><span>友情链接 && 合作伙伴</span></div>
+        <div class="FR"><a href="$webdb[www_url]/do/friendlink.php?job=apply" target="_blank">申请链接</a> | <a href="$webdb[www_url]/do/friendlink.php" target="_blank">查看更多</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="cont">
+    	<div class="pic">
+<!--
+EOT;
+foreach($friendlinkDB[1] AS $key=>$rs){
+print <<<EOT
+-->
+              <A HREF="$rs[url]" target=_blank><img alt="名称:$rs[name]\r\n描述:$rs[descrip]" src="$rs[logo]" width="88" height="31" border=0></A> 
+<!--
+EOT;
+}
+print <<<EOT
+-->
+        </div>
+        <div class="word">
+        	<span>合作伙伴:</span>  
+<!--
+EOT;
+foreach($friendlink_DB[3][0] AS $key=>$rs){
+print <<<EOT
+-->
+                  <A HREF="$rs[url]" target="_blank" title="描述:$rs[descrip]">$rs[name]</A>&nbsp; 
+                  <!--
+EOT;
+}
+print <<<EOT
+-->
+        </div>
+        <div class="word">
+        	<span>友情链接:</span>  
+<!--
+EOT;
+foreach($friendlink_DB[2][0] AS $key=>$rs){
+print <<<EOT
+-->
+                  <A HREF="$rs[url]" target="_blank" title="描述:$rs[descrip]">$rs[name]</A>&nbsp; 
+<!--
+EOT;
+}
+print <<<EOT
+-->
+        </div>
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

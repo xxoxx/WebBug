@@ -1,0 +1,1 @@
+INSERT INTO `qb_hack` (`keywords`, `name`, `isclose`, `author`, `config`, `htmlcode`, `hackfile`, `hacksqltable`, `adminurl`, `about`, `class1`, `class2`, `list`, `linkname`, `isbiz`) VALUES ('googlemap_makemap', '百度新闻协议/google协议', 0, '', '', '', '', '', 'index.php?lfj=googlemap&job=makemap', '', 'other', '内容模型插件功能', 3, '', 0);

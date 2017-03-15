@@ -1,0 +1,204 @@
+.MainContainer{
+	clear:both;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+
+.MainContainer .MainL{
+	width:760px;
+}
+.MainContainer .SideR{
+	padding-left:10px;
+}
+.FocusPhoto .left{
+	width:300px;
+	padding:10px 5px 10px 10px;
+	background:url(boxbg1.gif) left top no-repeat;
+}
+.slidecontainer{
+	width:298px;
+	height:238px;
+	overflow:hidden;
+	border:#FFF solid 1px;
+}
+.FocusPhoto .right{
+	background:url(boxbg1.gif) right top no-repeat;
+}
+.FocusPhoto .right .listpic{
+	width:148px;
+	height:125px;
+	overflow:hidden;
+	float:left;
+}
+.FocusPhoto .right .listpic .img{
+	text-align:center;
+	padding-top:10px;
+}
+.FocusPhoto .right .listpic .img img{
+	border:#FFF solid 1px;
+}
+.FocusPhoto .right .listpic .t{
+	text-align:center;
+	line-height:25px;
+	width:125px;
+	height:25px;
+	border:#FFF solid 1px;
+	background:#FFF;
+	margin:auto;
+	overflow:hidden;
+}
+/*
+*精品图库
+*/
+.BoutiquePhoto .head{
+	height:35px;
+	background:url(headbg1.gif) right top no-repeat;
+}	
+.BoutiquePhoto .head .h,.BoutiquePhoto .head .m{
+	display:block;
+	float:left;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+}
+.BoutiquePhoto .head .h{
+	width:110px;
+	padding-left:20px;
+	background:url(headl1.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#EBF7FF;
+}
+.BoutiquePhoto .head .sort{
+	display:block;
+	float:left;
+}
+.BoutiquePhoto .head .choose{
+	padding-left:1px;
+	background:url(headspacing.gif) left bottom no-repeat;
+	font-weight:bold;
+}
+.BoutiquePhoto .head .sort span{
+	display:block;	
+	font-size:14px;
+	color:#2798C1;
+	padding:5px 10px 0 10px;
+	line-height:30px;
+	background:url(headspacing.gif) right bottom no-repeat;
+}
+.BoutiquePhoto .head .sort:hover{
+	text-decoration:none;
+}
+.BoutiquePhoto .head .sort:hover span,.BoutiquePhoto .head .choose span{
+	background:url(headover1.gif) right top no-repeat;
+}
+.BoutiquePhoto .head .m{
+	float:right;
+}
+.BoutiquePhoto .head .m a{
+	color:#2798C1;
+}
+.BoutiquePhoto .cont{
+	border:#e7e7e7 solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.BoutiquePhoto .cont .listpic{
+	width:149px;
+	height:130px;
+	border-bottom:#DDD dotted 1px;
+	float:left;
+	text-align:center;
+}
+.BoutiquePhoto .cont .listpic .img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:#DDD solid 1px;
+	margin:10px auto 5px auto;
+}
+.BoutiquePhoto .cont .listpic .t{
+	height:15px;
+	line-height:15px;
+	padding:0 10px 0 10px;
+	overflow:hidden;
+}
+/*
+*热图推荐
+*/
+.sidetable .head{
+	height:35px;
+	background:url(tophead.gif) left top no-repeat;
+}
+.sidetable .head span{
+	padding:5px 10px 0 15px;
+	line-height:30px;
+}
+.sidetable .head span.FL{
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .head span.FR{
+	background:url(tophead.gif) right top no-repeat;
+}
+.sidetable .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.sidetable .cont div{
+	height:28px;
+	line-height:28px;
+	border-bottom:#DDD dotted 1px;
+	padding-left:18px;
+	background:url(point1.gif) 8px 12px no-repeat;
+}
+.sidetable .cont div a{
+	color:#2798C1;
+}
+.sidetable .cont .lista1{
+	padding-left:25px;
+	background:url(num1-10.gif) left top no-repeat;
+}
+.sidetable .cont .lista2{
+	padding-left:25px;
+	background:url(num1-10.gif) left -30px no-repeat;
+}
+.sidetable .cont .lista3{
+	padding-left:25px;
+	background:url(num1-10.gif) left -60px no-repeat;
+}
+.sidetable .cont .lista4{
+	padding-left:25px;
+	background:url(num1-10.gif) left -90px no-repeat;
+}
+.sidetable .cont .lista5{
+	padding-left:25px;
+	background:url(num1-10.gif) left -120px no-repeat;
+}
+.sidetable .cont .lista6{
+	padding-left:25px;
+	background:url(num1-10.gif) left -150px no-repeat;
+}
+.sidetable .cont .lista7{
+	padding-left:25px;
+	background:url(num1-10.gif) left -180px no-repeat;
+}
+.sidetable .cont .lista8{
+	padding-left:25px;
+	background:url(num1-10.gif) left -210px no-repeat;
+}
+.sidetable .cont .lista9{
+	padding-left:25px;
+	background:url(num1-10.gif) left -240px no-repeat;
+}
+.sidetable .cont .lista10{
+	padding-left:25px;
+	background:url(num1-10.gif) left -270px no-repeat;
+}
+/*
+*图片资讯
+*/
+.sidetable .cont .listb1{
+	background:url(point2.gif) 8px 12px no-repeat;
+}

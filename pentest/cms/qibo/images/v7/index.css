@@ -1,0 +1,785 @@
+/*
+*首页头部广告
+*/
+#TopAdcontainer{
+	width:990px;
+	height:70px;
+	overflow:hidden;
+	margin:auto;
+}
+#TopAdcontainer .FL{
+	width:740px;
+	height:70px;
+	overflow:hidden;
+	float:left;
+}
+#TopAdcontainer .FR{
+	width:240px;
+	height:70px;
+	overflow:hidden;
+	float:right;
+}
+/***************************************************************
+*第一栏样式
+****************************************************************/
+.MainContainer{
+	clear:both;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+.MainContainer .SideL{
+	width:270px;
+}
+.MainContainer .SideC{
+	padding:0 10px 0 10px;
+}
+.MainContainer .SideR{
+	width:240px;
+}
+/*
+*幻灯片
+*/
+.SlideContainer{
+	width:266px;
+	height:236px;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+/*
+*今日聚焦
+*/
+.TodayFocus{
+	overflow:hidden;
+	padding-left:8px;
+	background:url(indexbg1.gif) left top no-repeat;
+	border-bottom:#DDD solid 1px;
+}
+.TodayFocus .Focusin{
+	background:url(indexbg1.gif) right top no-repeat;
+}
+.TodayFocus .Focusin .head span{
+	display:block;
+	float:left;
+	width:78px;
+	text-align:center;
+	background:url(index_hl3.gif) center bottom no-repeat;
+	padding-top:5px;
+	line-height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:#00698F;
+}
+.TodayFocus .Focusin .cont{
+	padding:0 10px 0 2px;
+	height:210px;
+}
+.TodayFocus .Focusin .cont span.c{
+	display:none;
+}
+.TodayFocus .Focusin .cont div{
+	height:23px;
+	line-height:23px;
+}
+.TodayFocus .Focusin .cont div .t{
+	float:left;
+}
+.TodayFocus .Focusin .cont div .t a{
+	font-size:14px;
+	color:#666;
+}
+.TodayFocus .Focusin .cont div .d{
+	float:right;
+	color:#999;
+}
+.TodayFocus .Focusin .cont .lista1{
+	height:75px;
+	border-bottom:#DDD solid 1px;
+	margin-bottom:10px;
+}
+.TodayFocus .Focusin .cont .lista1 .t{
+	width:100%;
+	text-align:center;
+	font-weight:bold;
+}
+.TodayFocus .Focusin .cont .lista1 span.d{
+	display:none;
+}
+.TodayFocus .Focusin .cont .lista1 span.c{
+	display:block;
+	line-height:20px;
+	color:#666;
+}
+.TodayFocus .Focusin .cont .lista1 span.c a{
+	color:#cc0000;
+}
+/*
+*最受关注
+*/
+.Concernest{
+	overflow:hidden;
+	padding-left:8px;
+	background:url(indexbg1.gif) left top no-repeat;
+	border-bottom:#DDD solid 1px;
+}
+.Concernest .Concernin{
+	background:url(indexbg1.gif) right top no-repeat;
+}
+.Concernest .Concernin .head span{
+	display:block;
+	float:left;
+	padding:5px 0 0 10px;
+	line-height:25px;
+	font-size:14px;
+	font-weight:bold;
+}
+.Concernest .Concernin .cont{
+	padding:0 10px 10px 2px;
+	line-height:25px;
+}
+.Concernest .Concernin .cont div{
+	height:25px;
+	padding-left:20px;
+	overflow:hidden;
+}
+.Concernest .Concernin .cont a{
+	color:#666;
+}
+.Concernest .Concernin .cont .listb1{
+	background:url(index_num1-8.gif) left 5px no-repeat;
+}
+.Concernest .Concernin .cont .listb2{
+	background:url(index_num1-8.gif) left -18px no-repeat;
+}
+.Concernest .Concernin .cont .listb3{
+	background:url(index_num1-8.gif) left -42px no-repeat;
+}
+.Concernest .Concernin .cont .listb4{
+	background:url(index_num1-8.gif) left -67px no-repeat;
+}
+.Concernest .Concernin .cont .listb5{
+	background:url(index_num1-8.gif) left -92px no-repeat;
+}
+.Concernest .Concernin .cont .listb6{
+	background:url(index_num1-8.gif) left -116px no-repeat;
+}
+.Concernest .Concernin .cont .listb7{
+	background:url(index_num1-8.gif) left -140px no-repeat;
+}
+.Concernest .Concernin .cont .listb8{
+	background:url(index_num1-8.gif) left -164px no-repeat;
+}
+/**********************************************************
+*图片主题
+************************************************************/
+.PhotoContainer{
+	background:url(index_hbg.gif) right top no-repeat;
+}
+.PhotoContainer .pichead{
+	height:33px;
+}
+.PhotoContainer .pichead div{
+	float:left;
+	padding:3px 20px 0 0;
+	line-height:30px;
+}
+.PhotoContainer .pichead .fl{	
+	width:110px;
+	background:url(index_hl2.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+}
+.PhotoContainer .pichead .fr{
+	float:right;
+}
+.PhotoContainer .pichead .fr span{
+	display:block;
+	width:56px;
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+.PhotoContainer .pichead .fr span.choose{
+	background:url(index_hr1.gif) center -1px no-repeat;
+	font-weight:bold;
+}
+.PhotoContainer .photocont td{
+	border:#DDD solid 1px;
+	border-top:0;
+}
+.PhotoContainer .photocont .listpic{
+	width:164px;
+	height:140px;
+	overflow:hidden;
+	float:left;
+}
+.PhotoContainer .photocont .listpic div{
+	padding:0 10px 0 10px;
+	line-height:25px;
+	text-align:center;
+}
+.PhotoContainer .photocont .listpic div.img a{
+	display:block;
+	width:120px;
+	height:90px;
+	margin:10px auto 5px auto;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+.PhotoContainer .photocont .listpic div.t{
+	height:25px;
+	overflow:hidden;
+}
+/**********************************************************
+*文章动态
+************************************************************/
+.MainContainer .MainL{
+	padding-right:10px;
+}
+.ArticleDt .head{
+	height:36px;
+	background:url(index_hbg.gif) right 4px no-repeat;
+}
+.ArticleDt .head div{
+	height:36px;
+	float:left;
+	padding-left:35px;
+	background:url(index_hl4.gif) left bottom no-repeat;
+}
+.ArticleDt .head div span{
+	display:block;
+	padding:6px 35px 0 0;
+	line-height:30px;
+	background:url(index_hl4.gif) right bottom no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.ArticleDt .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.ArticleDt .cont .contL{
+	width:300px;
+	height:233px;
+	float:left;
+	line-height:25px;
+}
+.ArticleDt .cont .contL div{
+	height:25px;
+	overflow:hidden;
+	padding-left:15px;
+	background:url(index_icon1.gif) 2px 9px no-repeat;
+}
+.ArticleDt .cont .contL div a{
+	color:#666;
+}
+.ArticleDt .cont .contL .c{
+	display:none;
+}
+.ArticleDt .cont .contL div.list1{
+	background:url(index_bottom.gif) left bottom no-repeat;
+	height:75px;
+	margin-bottom:10px;
+	padding-left:5px;
+}
+.ArticleDt .cont .contL div.list1 .c{
+	display:block;
+	line-height:20px;
+	color:#555;
+}
+.ArticleDt .cont .contL div.list1 a{
+	font-weight:bold;
+	color:#2898C0;
+}
+/*
+*文章评论
+*/
+.ArticleDt .cont .contR{
+	width:400px;
+	float:right;
+	padding-left:3px;
+	background:url(index_boxbg.gif) left top no-repeat;
+}
+.ArticleDt .cont .contR .contRin{
+	background:url(index_boxbg.gif) right top no-repeat;
+}
+.ArticleDt .cont .contR .contRin .h{
+	height:30px;
+	line-height:30px;
+	padding:0 10px 0 0;
+}
+.ArticleDt .cont .contR .contRin .h .FL{
+	padding-left:25px;
+	color:#2898C0;
+	font-size:14px;
+	font-weight:bold;
+	background:url(index_icon2.gif) 6px 10px no-repeat;
+}
+.ArticleDt .cont .contR .contRin .c .list{
+	height:65px;
+	border-bottom:#DDD solid 1px;
+}
+.ArticleDt .cont .contR .contRin .c .list span{
+	display:block;
+	float:left;
+	color:#999;
+}
+.ArticleDt .cont .contR .contRin .c .list span.t{
+	width:280px;
+	padding:10px 0 0 15px;
+	height:12px;
+	overflow:hidden;
+}
+.ArticleDt .cont .contR .contRin .c .list span.t em{
+	color:#c00;
+}
+.ArticleDt .cont .contR .contRin .c .list span.t a{
+	color:#2898C0;
+}
+.ArticleDt .cont .contR .contRin .c .list span.a{
+	width:85px;
+	float:right;
+	text-align:right;
+	padding:10px 5px 0 0;
+}
+.ArticleDt .cont .contR .contRin .c .list span.c{
+	width:380px;
+	clear:both;
+	padding:8px 5px 0 10px;
+	color:#666;
+}
+/*
+*软件下载
+*/
+.Concernest .Concernin .contc div{
+	height:25px;
+	line-height:25px;
+}
+.Concernest .Concernin .contc div a{
+	float:left;
+	color:#777;
+}
+.Concernest .Concernin .contc div span{
+	float:right;
+	color:#c00;
+}
+.Concernest .Concernin .cont .listc1{
+	background:url(index_icon3.gif) left 6px no-repeat;
+	padding-left:30px;
+}
+.Concernest .Concernin .cont .listc1 a{
+	font-weight:bold;
+}
+.Concernest .Concernin .cont .listc2{
+	background:url(index_num1-9.gif) left 5px no-repeat;
+}
+.Concernest .Concernin .cont .listc3{
+	background:url(index_num1-9.gif) left -19px no-repeat;
+}
+.Concernest .Concernin .cont .listc4{
+	background:url(index_num1-9.gif) left -40px no-repeat;
+}
+.Concernest .Concernin .cont .listc5{
+	background:url(index_num1-9.gif) left -60px no-repeat;
+}
+.Concernest .Concernin .cont .listc6{
+	background:url(index_num1-9.gif) left -83px no-repeat;
+}
+.Concernest .Concernin .cont .listc7{
+	background:url(index_num1-9.gif) left -105px no-repeat;
+}
+.Concernest .Concernin .cont .listc8{
+	background:url(index_num1-9.gif) left -126px no-repeat;
+}
+.Concernest .Concernin .cont .listc9{
+	background:url(index_num1-9.gif) left -150px no-repeat;
+}
+.Concernest .Concernin .cont .listc10{
+	background:url(index_num1-9.gif) left -172px no-repeat;
+}
+/**********************************************************
+*商场购物
+************************************************************/
+.Shopcontainer .head{
+	height:33px;
+	background:url(index_hbg.gif) right bottom no-repeat;
+}
+.Shopcontainer .head div{
+	float:left;
+	padding:3px 20px 0 0;
+	line-height:30px;
+}
+.Shopcontainer .head .fl{
+	width:110px;
+	text-align:center;
+	background:url(index_hl2.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.Shopcontainer .head .fr{
+	float:right;
+}
+.Shopcontainer .head .fr span{
+	display:block;
+	width:56px;
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+.Shopcontainer .head .fr span.choose{
+	background:url(index_hr1.gif) center -1px no-repeat;
+	font-weight:bold;
+}
+.Shopcontainer .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+}
+.Shopcontainer .cont .listpic{
+	width:147px;
+	height:180px;
+	overflow:hidden;
+	float:left;
+}
+.Shopcontainer .cont .listpic div{
+	text-align:center;
+	line-height:18px;
+}
+.Shopcontainer .cont .listpic div.img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:#DDD solid 1px;
+	padding:1px;
+	margin:15px auto 5px auto;
+}
+.Shopcontainer .cont .listpic div.t,.Shopcontainer .cont .listpic div.p{
+	height:18px;
+	padding:0 10px 0 10px;
+	overflow:hidden;
+}
+.Shopcontainer .cont .listpic strike{
+	color:#999;
+}
+.Shopcontainer .cont .listpic em{
+	color:#c00;
+}
+
+.sidecontainer .head{
+	height:33px;
+	line-height:33px;
+	background:url(index_hbg1.gif) right top no-repeat;
+}
+.sidecontainer .head .FL{
+	background:url(index_hbg1.gif) left top no-repeat;
+	padding-left:30px;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidecontainer .head .FR{
+	padding-right:10px;
+}
+.sidecontainer .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+}
+.sidecontainer .cont .listad{
+	text-align:center;
+	padding:5px 0 5px 0;
+}
+/**********************************************************
+*新闻动态
+************************************************************/
+.ArticleDt .showmorenews{
+	width:345px;
+}
+.ArticleDt .showmorenews .h{
+	height:25px;
+	background:url(index_bottom.gif) left bottom no-repeat;
+	line-height:25px;
+}
+.ArticleDt .showmorenews .h span{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#00698F;
+	padding-left:5px;
+}
+.ArticleDt .showmorenews .h a{
+	float:right;
+	padding-right:5px;
+}
+.ArticleDt .showmorenews .c table{
+	margin:15px 0 10px 0;
+}
+.ArticleDt .showmorenews .c .img{
+	width:10%;
+	padding:0 10px 0 5px;
+}
+.ArticleDt .showmorenews .c .img a{
+	display:block;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+.ArticleDt .showmorenews .c .t{
+	line-height:25px;
+	height:25px;
+	overflow:hidden;
+}
+.ArticleDt .showmorenews .c .m{
+	line-height:18px;
+	color:#888;
+}
+.ArticleDt .showmorenews .c .m a{
+	color:#c00;
+}
+.ArticleDt .showmorenews .list{
+	height:25px;
+	line-height:25px;
+	overflow:hidden;
+	padding-left:15px;
+	background:url(index_icon4.gif) 5px 10px no-repeat;
+}
+.ArticleDt .showmorenews .list a{
+	float:left;
+	font-size:14px;
+	color:#666;
+}
+.ArticleDt .showmorenews .list span{
+	float:right;
+	color:#999;
+}
+/*
+*优秀会员
+*/
+.Concernin .contuser{
+	padding:5px 0 5px 0;
+}
+.Concernin .contuser .listuser{
+	width:76px;
+	height:85px;
+	overflow:hidden;
+	float:left;
+}
+.Concernin .contuser .listuser div{
+	text-align:center;
+}
+.Concernin .contuser .listuser div.img a{
+	display:block;
+	width:50px;
+	height:50px;
+	border:#DDD dotted 1px;
+	margin:5px auto 5px auto;
+	padding:1px;
+}
+/**********************************************************
+*PK投票
+************************************************************/
+.sidetable .head{
+	height:33px;
+	background:url(index_hbg.gif) right bottom no-repeat;
+}
+.sidetable .head span{
+	float:left;
+	padding:3px 0 0 15px;
+	line-height:30px;
+	background:url(index_hbg.gif) left bottom no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.sidetable .listVote{
+	width:145px;
+	height:100px;
+	overflow:hidden;
+	float:left;
+}
+.sidetable .listVote .img{
+	text-align:center;
+}
+.sidetable .listVote .img img{
+	border:#DDD solid 1px;
+	margin-bottom:8px;
+}
+.sidetable .listVote .word{
+	padding:0 10px 0 10px;
+	height:18px;
+	overflow:hidden;
+	color:#666;
+}
+.sidetable .listVote .word span{
+	color:#c00;
+}
+.sidetable .VoteAction{
+	clear:both;
+	height:25px;
+	line-height:25px;
+	padding-left:10px;
+}
+.sidetable .VoteAction span{
+	display:block;
+	float:left;
+	padding-right:10px;
+}
+.sidetable .VoteAction input{
+	width:60px;
+	text-align:center;
+	line-height:15px;
+}
+/*
+*最受关注
+*/
+.sidetable .listConcern{
+	border-bottom:#DDD dotted 1px;
+}
+.sidetable .listConcern .L{
+	width:20%;
+	padding:8px 0 8px 0;
+}
+.sidetable .listConcern .L .n{
+	line-height:20px;
+	background:#EEE;
+	text-align:center;
+	font-weight:bold;
+}
+.sidetable .listConcern .L .d{
+	line-height:20px;
+	background:#ccc;
+	text-align:center;
+}
+.sidetable .listConcern .L .d a{
+	color:#FFF;
+}
+.sidetable .listConcern .R{
+	padding-left:10px;
+	vertical-align:middle;
+	line-height:20px;
+}
+.sidetable .contv{
+	padding-top:5px;
+}
+.sidetable .listConcern .R .a1,.sidetable .listConcern .R .a3{
+	color:#2898C0;
+}
+/**********************************************************
+*推荐专题
+************************************************************/
+.PhotoContainer .photocont .listzt{
+	width:164px;
+	height:210px;
+	overflow:hidden;
+	float:left;
+}
+.PhotoContainer .photocont .listzt div{
+	padding:0 10px 0 10px;
+	line-height:25px;
+	text-align:center;
+}
+.PhotoContainer .photocont .listzt div.img a{
+	display:block;
+	width:120px;
+	height:160px;
+	margin:10px auto 5px auto;
+	border:#DDD solid 1px;
+	padding:1px;
+}
+.PhotoContainer .photocont .listzt div.t{
+	height:25px;
+	overflow:hidden;
+}
+/**********************************************************
+*更多文章
+************************************************************/
+.MoreListArticle .Side1,.MoreListArticle .Side3{
+	width:320px;
+}
+.MoreListArticle .Side2{
+	padding:0 10px 0 10px;
+}
+.sidetabl2 .head{
+	height:33px;
+	line-height:33px;
+	background:url(index_hbg1.gif) left bottom no-repeat;
+}	
+.sidetabl2 .head span{
+	float:left;
+	padding-left:35px;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetabl2 .head a{
+	float:right;
+	padding-right:10px;
+	background:url(index_hbg1.gif) right bottom no-repeat;
+}	
+.sidetabl2 .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.sidetabl2 .cont .list{
+	height:22px;
+	line-height:22px;
+	overflow:hidden;
+	padding-left:18px;
+	background:url(index_icon5.gif) left 6px no-repeat;
+}
+.sidetabl2 .cont .list a{
+	float:left;
+}
+.sidetabl2 .cont .list a.a1{
+	font-weight:bold;
+}
+.sidetabl2 .cont .list span{
+	float:right;
+	color:#999;
+}
+/**********************************************************
+*友情链接&&合作伙伴
+************************************************************/
+.FrendLinkTable{
+	margin-top:5px;
+}	
+.FrendLinkTable .head{
+	height:36px;
+	background:url(index_hbg.gif) right 4px no-repeat;
+}
+.FrendLinkTable .head div.FL{
+	padding-left:40px;
+	height:36px;
+	background:url(index_hl4.gif) left bottom no-repeat;
+}
+.FrendLinkTable .head div.FL span{
+	display:block;
+	padding:6px 40px 0 0;
+	line-height:30px;
+	background:url(index_hl4.gif) right bottom no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.FrendLinkTable .head div.FR{
+	padding:6px 10px 0 0;
+	line-height:30px;
+}
+.FrendLinkTable .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.FrendLinkTable .cont .pic{
+	padding-bottom:5px;
+	margin-bottom:5px;
+	border-bottom:#DDD solid 1px;
+}
+.FrendLinkTable .cont .word{
+	line-height:25px;
+}
+.FrendLinkTable .cont .word span{
+	color:red;
+}
+

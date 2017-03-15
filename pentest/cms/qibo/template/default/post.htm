@@ -1,0 +1,72 @@
+<!--
+<?php
+print <<<EOT
+-->
+<style>
+.MainTable .head{
+	height:33px;
+	background:url($webdb[www_url]/images/v7/index_hbg.gif) right top no-repeat;
+}
+.MainTable .head span{
+	float:left;
+	padding:3px 0 0 20px;
+	line-height:30px;
+	background:url($webdb[www_url]/images/v7/index_hbg.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.MainTable .cont{
+	border:#CCC solid 1px;
+	border-top:0;
+	padding:5px;
+}
+.listsort{
+	border-collapse:collapse;
+}
+.listsort td{
+	line-height:25px;
+	border-bottom:#CCC dotted 1px;
+}
+.listsort .tr0 td{
+	background:#eee;
+	font-weight:bold;
+	border:#FFF solid 1px;
+}
+.listsort .tr1 td{
+	color:red;
+}
+.listsort .fid{
+	width:10%;
+	text-align:center;
+}
+.listsort .name{
+	padding-left:10px;
+}
+.listsort .type,.listsort .num,.listsort .post{
+	width:15%;
+	text-align:center;
+}
+</style>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="MainTable">
+  <tr>
+    <td class="head"><span>请选择一个栏目投稿</span></td>
+  </tr>
+  <tr>
+    <td class="cont">
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listsort">
+          <tr class="tr0">
+            <td class="fid">FID</td>
+            <td class="name">栏目名称</td>
+            <td class="type">类型</td>
+            <td class="num">投稿数量</td>
+            <td class="post">我要投稿</td>
+          </tr>
+          $listsorthtml
+        </table>    
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

@@ -1,0 +1,153 @@
+/*
+*列表页样式
+*/
+.MainContainer .MainL{
+	padding-right:10px;
+}
+.MainContainer .SideR{
+	width:240px;
+}
+.sorttable .head{
+	height:40px;
+	background:url(sortbg.gif) right top no-repeat;
+}
+.sorttable .head .FL{
+	padding:10px 0 0 35px;
+	line-height:30px;
+	background:url(sortbg.gif) left top no-repeat;
+	font-weight:bold;
+}
+.sorttable .cont{
+	border:#00A7CA solid 1px;
+	border-top:0;
+	padding:0 10px 5px 35px;
+	line-height:20px;
+}
+.listtable{
+	border:#6CB9CF solid 1px;
+}
+.listtable .head{
+	height:30px;
+	background:url(head3.gif) left top repeat-x;
+	border-right:#FFF solid 1px;
+}
+.listtable .head .FL{
+	padding:4px 30px 0 20px;
+	line-height:26px;
+	background:url(headl3.gif) right top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+	color:#FFF;
+	border-left:#9AD2E0 solid 1px;
+}
+.listtable .head .FR{
+	padding:4px 10px 0 0;
+	line-height:26px;
+	word-spacing:15px;
+}
+.listtable .head .FR .ch{
+	color:red;
+}
+#top_list td{
+	border-bottom:#DDD solid 1px;
+	line-height:25px;
+	padding-top:5px;
+}
+.listtable .cont{
+	padding-bottom:5px;
+}
+.listtable .cont .td1{
+	width:150px;
+}
+.listtable .cont .td2{
+	width:380px;
+}
+.listtable .cont .td3{
+	width:120px;
+	text-align:center;
+	vertical-align:middle;
+}
+.listtable .cont .td4{
+	text-align:center;
+	vertical-align:middle;
+}
+.listtable .cont .list{
+	border-bottom:#DDD dotted 1px;
+	width:98%;
+	margin:0 auto;
+}
+.listtable .cont .list .td1{
+	width:140px;
+}
+.listtable .cont .list .td1 a{
+	display:block;
+	width:120px;
+	height:90px;
+	overflow:hidden;
+	border:#DDD solid 1px;
+	padding:1px;
+	margin:5px 0 5px 0;
+}
+.listtable .cont .list .td2 .title{
+	padding-top:5px;
+	font-weight:bold;
+	height:20px;
+	line-height:20px;
+	overflow:hidden;
+}
+.listtable .cont .list .td2 .title a{
+	font-size:14px;
+	color:#0086BE;
+}
+.listtable .cont .list .td2 .other{
+	padding:5px 0 5px 0;
+}
+.listtable .cont .list .td2 .other2{
+	color:#666;
+	line-height:20px;
+}
+.listtable .cont .list .td2 .other2 span{
+	font-weight:bold;
+}
+.listtable .cont .list .td3{
+	color:#FF0000;
+	font-size:14px;
+	font-weight:bold;
+}
+.listtable .cont .page{
+	text-align:center;
+	padding-top:5px;
+	line-height:25px;
+}
+.listtable .cont .page a{
+	border:#DDD solid 1px;
+	padding:3px 5px 2px 5px;
+	color:#999;
+	text-decoration:none;
+}
+.sidetable{
+	border:#6CB9CF solid 1px;
+}
+.sidetable .head{
+	height:30px;
+	background:url(head3.gif) left top repeat-x;
+	border-left:#FFF solid 1px;
+	border-right:#FFF solid 1px;
+}
+.sidetable .head .FL{
+	padding:4px 0 0 30px;
+	line-height:26px;
+	background:url(array4.gif) 10px 10px no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .cont{
+	padding:5px;
+}
+.sidetable .cont .list{
+	height:23px;
+	line-height:23px;
+	overflow:hidden;
+	padding-left:20px;
+	background:url(array2.gif) 5px 7px no-repeat;
+}

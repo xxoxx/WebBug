@@ -1,0 +1,235 @@
+<!--
+<?php
+print <<<EOT
+--> 
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/v7/showsp/showsp.css"><div id="topimg">
+<!--
+EOT;
+if($rsdb[banner]){
+$rsdb[banner]=tempdir($rsdb[banner]);
+print <<<EOT
+-->
+  <img src="$rsdb[banner]" onload="this.width='990';"> 
+  <!--
+EOT;
+}else{
+$str=urlencode($rsdb[title]);
+print <<<EOT
+-->
+<img src="$webdb[www_url]/do/fontimg.php?x=&y=&str=$str&c=black&size=30&image=images/v7/showsp/topimg.jpg" width="990" height="145">
+<!--
+EOT;
+}
+print <<<EOT
+-->
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="toptable">
+  <tr>
+    <td class="a1"><div class="i"><img src="$rsdb[picurl]"   onerror="this.src='$webdb[www_url]/images/default/noimg.jpg'" >
+        </div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head c1">专题介绍</td>
+          </tr>
+          <tr>
+            <td class="c about">$rsdb[content]</td>
+          </tr>
+        </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head">专题介绍</td>
+          </tr>
+          <tr>
+            
+          <td class="c about">责任编辑:{$rsdb[username]} <br>
+            发布时间:{$rsdb[posttime]} <br>
+            浏览:<span id="hits">{$rsdb[hits]}</span>次</td>
+          </tr>
+        </table><div>$label[showsp3]</div>
+      </td>
+    <td class="a2"></td>
+    <td class="a3"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head">专题报道</td>
+          </tr>
+          <tr>
+            <td class="c" id="showsp"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>$label[showsp2]</td>
+  </tr>
+</table>
+<!--
+EOT;
+$i=0;
+foreach($listdb AS $key=>$rs){
+$i++;
+$rs[content]=get_word($rs[content],100);
+$rs[posttime]=date('m-d',$rs[posttime]);
+print <<<EOT
+-->
+                
+				   
+				   <div class="tt d$i">
+              <div class="title"><a href="#" target="_blank">$rs[subject]</a></div>
+              <div class="time">$rs[posttime]</div>
+              <div class="content">{$rs[content]} [<a href="$rs[url]" target="_blank"><font color="#FF0000">详情</font></a>]</div>
+            </div>
+<!--
+EOT;
+}print <<<EOT
+-->
+
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>$label[showsp1]</td>
+  </tr>
+</table>
+			</td>
+          </tr>
+        </table></td>
+	<td class="a4"></td>
+    <td class="a5">
+	<div>$label[showsp5]</div>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head b1">最新专题</td>
+          </tr>
+          <tr>
+            <td class="c">
+            <script src="$webdb[www_url]/do/jsspecial.php?fid=$fid&type=new&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]"></script>
+          </td>
+          </tr>
+        </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head b2">热门专题</td>
+          </tr>
+          <tr>
+            <td class="c">
+            <script src="$webdb[www_url]/do/jsspecial.php?fid=$fid&type=hot&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]"></script>
+          </td>
+          </tr>
+        </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="drg">
+          <tr>
+            <td class="head b3">推荐专题</td>
+          </tr>
+          <tr>
+            <td class="c">
+            <script src="$webdb[www_url]/do/jsspecial.php?fid=$fid&type=com&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]"></script>
+          </td>
+          </tr>
+        </table><div>$label[showsp4]</div>
+		</td>
+  </tr>
+</table>
+<div id="spimg"><img src="$webdb[www_url]/images/v7/showsp/sp.jpg" width="990" height="90"></div>
+
+<!--
+EOT;
+if($picdb){
+print<<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="listpic">
+  <tr>
+    <td class="head"><div class="L">专题图片</div><div class="R"></div></td>
+  </tr>
+  <tr>
+    <td height="120" class="c">
+<!--
+EOT;
+foreach($picdb AS $key=>$rs){
+$rs[title]=get_word($rs[full_title]=$rs[title],24);
+if($key>5)break;
+print<<<EOT
+-->
+<div class="list">
+        <div class="i"><a href="$rs[url]" title="$rs[full_title]" target="_blank"><img src="$rs[picurl]" border="0" width="120" height="90"></a></div>
+        <div class="title"> <a href="$rs[url]" target="_blank"  title="$rs[full_title]">$rs[title]</a></div>
+</div>
+        
+<!--
+EOT;
+}print<<<EOT
+--> 
+ 
+	</td>
+  </tr>
+</table>
+<!--
+EOT;
+}print<<<EOT
+--> 
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="listcomment">
+  <tr>
+    <td class="head"><div class="L">讨论区</div><div class="R"></div></td>
+  </tr>
+  <tr>
+    <td height="120" class="c"><div id="comment"></div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="16%"><span class="L">称　　呼:</span><span class="R"></span></td>
+                <td width="84%"><span class="R"> 
+                  <input type="text" name="textfield2" id="comment_username" value="$lfjid">
+                  </span></td>
+              </tr>
+<!--
+EOT;
+if(!$web_admin){print <<<EOT
+-->
+              <tr> 
+                <td width="16%"><span class="L">验 证 码:</span></td>
+                <td width="84%"> 
+                  <input id="yzImgNum" type="text" name="yzimg" size="8">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<img border="0" name="imageField" onclick="this.src=this.src+Math.random();" src="$webdb[www_url]/do/yzimg.php?'+Math.random()+'">');
+//-->
+</SCRIPT>
+                </td>
+              </tr>
+<!--
+EOT;
+}print <<<EOT
+-->
+              <tr> 
+                <td width="16%"><span class="L">内　　容:</span></td>
+                <td width="84%"><span class="R"> 
+                  <textarea name="textfield" cols="50" rows="5" id="comment_content" onKeyDown="quickpost(event)"></textarea>
+                  </span></td>
+              </tr>
+              <tr> 
+                <td width="16%"> 
+                  <script language="JavaScript">
+<!--
+
+getcomment("$webdb[www_url]/do/special_comment_ajax.php?cid=$id");
+cnt = 0;
+function quickpost(event)
+{
+	if((event.ctrlKey && event.keyCode == 13)||(event.altKey && event.keyCode == 83))
+	{
+		cnt++;
+		if (cnt==1){
+			postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id')
+		}else{
+			alert('内容正在提交...');
+		}
+	}	
+}
+//-->
+</script>
+                </td>
+                <td width="84%"><span class="R"> 
+                  <input type="button" id="comment_submit" name="Submit" value="提交" onClick="postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id','1')" class="button">
+                  </span></td>
+              </tr>
+            </table></td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

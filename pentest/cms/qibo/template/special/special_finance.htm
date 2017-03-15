@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/special/finance/style.css">
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/swfobject.js"></SCRIPT>
+</head>
+<body ondblclick="$bodyondblclick">
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td> 
+      <div class="finance_logo"><a href="$webdb[www_url]/"><img src="$webdb[www_url]/images/special/finance/finance_logo.gif" border="0" /></a></div>
+      <div class="head_muen"> 
+        <!--
+EOT;
+$i=0;
+$detail=explode("\r\n",$webdb[guide_word]);
+foreach($detail AS $key=>$value){
+$i++;
+$icon=$i>1?'-':'';
+list($name,$url,$blank,$color,$lid)=explode("|",$value);
+if(ereg("^\/",$url)){
+	$url="$webdb[www_url]$url";
+}elseif(!ereg("://",$url)){
+	$url="$webdb[www_url]/$url";
+}
+$blank=$blank?"_blank":'';
+$color=$color?"$color":'';
+print <<<EOT
+-->
+        $icon <a href="$url" target="$blank" style="color:$color;">$name</a> 
+        <!--
+EOT;
+}
+print <<<EOT
+-->
+        $icon <a href="$url" target="$blank" style="color:$color;">$name</a> </div>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+  <tr> 
+    <td> 
+      <div class="banner">$label[special_finance_1]</div>
+      <div class="zhuanti_muen">当前位置：<a href="$webdb[www_url]/">{$webdb[webname]}</a> 
+        $GuideFid[$fid]</div>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+  <tr> 
+    <td> 
+      <table width="300" border="0" cellspacing="0" cellpadding="0"  class="finance_hd">
+        <tr> 
+          <td>$label[special_finance_2]</td>
+        </tr>
+      </table>
+      <table width="300" border="0" cellspacing="0" cellpadding="0" class="boxl">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"  class="box1_top">
+              <tr> 
+                <td> 
+                  <div class="box1_bt">$label[special_finance_22]</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td> $label[special_finance_7] </td>
+        </tr>
+      </table>
+    </td>
+    <td style="border-left:#D8D8D8 1px solid;"> 
+      <table width="370" border="0" cellspacing="0" cellpadding="0" style="margin-left:15px;">
+        <tr> 
+          <td >$label[special_finance_3] </td>
+        </tr>
+      </table>
+      <table width="370" border="0" cellspacing="0" cellpadding="0"  class="box_m">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box_m_head">
+              <tr> 
+                <td> 
+                  <div class="box_m_bt">$label[special_finance_21]</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:#cccccc 1px dotted;">
+              <tr> 
+                <td class="box_m_by ttitle"> $label[special_finance_4] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table width="370" border="0" cellspacing="0" cellpadding="0"  class="box_m">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box_m_head">
+              <tr> 
+                <td> 
+                  <div class="box_m_bt">$label[special_finance_20]</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="box_m_by ttitle"> $label[special_finance_5] </td>
+        </tr>
+      </table>
+    </td>
+    <td> 
+      <table width="230" border="0" cellspacing="0" cellpadding="0" style="" class="box_r">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="0" cellpadding="0"  class="finance_hd1">
+              <tr> 
+                <td> 
+                  <div class="box1_bt">$label[special_finance_24] </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td style="background:#F8F8F8;"> 
+            <table width="215" border="0" align="center" cellpadding="0" cellspacing="0"  class="tongji">
+              <tr> 
+                <td>$label[special_finance_25] </td>
+              </tr>
+            </table>
+            <table width="230" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0"class="finance_hd1">
+                    <tr> 
+                      <td> 
+                        <div class="box1_bt">$label[special_finance_23]</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <table width="203" border="0" cellspacing="0" cellpadding="0"  class="boxr_by">
+                    <tr> 
+                      <td style="padding:5px;" class="ctts"> $label[special_finance_6] 
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0"  class="finance_box2">
+  <tr> 
+    <td class="finance_box2_h"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <div  class="box2_bt">$label[special_finance_19]</div>
+          </td>
+          <td class="box2_fan"><a href="#">返回顶部</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="2" > 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <div class="ren">$label[special_finance_8]</div>
+            <div class="ren1"> $label[special_finance_9] </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" class="finance_box2">
+  <tr> 
+    <td  class="finance_box2_h"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <div class="box2_bt"> $label[special_finance_12]</div>
+          </td>
+          <td class="box2_fan"><a href="#">返回顶部</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td > 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:7px;margin-top:15px;">
+        <tr> 
+          <td class="abd"> $label[special_finance_10] </td>
+          <td style="padding-left:15px;border-right:0px;"class="abd"> $label[special_finance_11] 
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" class="finance_box2">
+  <tr> 
+    <td  class="finance_box2_h"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td> 
+            <div class="box2_bt">网友点评</div>
+          </td>
+          <td class="box2_fan"><a href="#">返回顶部</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td > 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="weibo">
+        <tr> 
+          <td id="commenttable"> 
+            <div id="comment"></div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="16%"><span class="L">称　　呼:</span><span class="R"></span></td>
+                <td width="84%"><span class="R"> 
+                  <input type="text" name="textfield2" id="comment_username" value="$lfjid">
+                  </span></td>
+              </tr>
+              <tr> 
+                <td width="16%"><span class="L">验 证 码:</span></td>
+                <td width="84%"> 
+                  <input id="yzImgNum" type="text" name="yzimg" size="8">
+                  <img border="0" id="yz_Img" name="imageField" src="$webdb[www_url]/do/yzimg.php"> 
+                </td>
+              </tr>
+              <tr> 
+                <td width="16%"><span class="L">内　　容:</span></td>
+                <td width="84%"><span class="R"> 
+                  <textarea name="textfield" cols="50" rows="5" id="comment_content" onKeyDown="quickpost(event)"></textarea>
+                  </span></td>
+              </tr>
+              <tr> 
+                <td width="16%"> 
+                  <script language="JavaScript">
+<!--
+
+getcomment("$webdb[www_url]/do/special_comment_ajax.php?cid=$id");
+cnt = 0;
+function quickpost(event)
+{
+	if((event.ctrlKey && event.keyCode == 13)||(event.altKey && event.keyCode == 83))
+	{
+		cnt++;
+		if (cnt==1){
+			postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id')
+		}else{
+			alert('内容正在提交...');
+		}
+	}	
+}
+//-->
+</script>
+                </td>
+                <td width="84%"><span class="R"> 
+                  <input type="button" id="comment_submit" name="Submit" value="提交" onClick="postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id','1')" class="button">
+                  </span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" cellpadding="0" cellspacing="0"   class="weibo_bottom" align="center">
+  <tr> 
+    <td width="593"> 
+      <div class="tr1">编辑：{$rsdb[username]} 时间：{$rsdb[posttime]} </div>
+    </td>
+    <td width="365" style="text-align:right;padding:10px;"> 
+      <div class="z"><a href="#">转到微博</a> |</div>
+      <div class="z1"><a href="#">复制地址</a> |</div>
+      <div class="z2"><a href="#">返回首页</a> |</div>
+      <div class="z3"><a href="#">回到顶部</a></div>
+    </td>
+  </tr>
+</table>
+<table width="960" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr> 
+    <td width="961" class="emil">主编信箱：$label[special_finance_28]</td>
+  </tr>
+  <tr> 
+    <td class="finance_foot"> $webdb[copyright]<br>
+      Copyright@{$webdb[www_url]} all rights reserved <a href="http://www.miibeian.gov.cn" target="_blank">{$webdb[miibeian_gov_cn]}</a> 
+      <br>
+      Powered by <a href="http://www.qibosoft.com" target="_blank">qibosoft {$qibosoft_Edition}</a> 
+      Code &copy; 2003-10 <a href="http://bbs.qibosoft.com/" target="_blank">qibosoft</a> 
+      <br>
+      <br>
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->
+</body>
+</html>

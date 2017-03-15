@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/special/sp1/css.css" />
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+</head>
+<body ondblclick="$bodyondblclick">
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="xw_bk top">
+  <tr> 
+    <td><a href="$webdb[www_url]/"><img src="$webdb[www_url]/images/special/sp1/logo.gif" border="0" /></a></td>
+    <td class="xw_daohang"> 
+      <!--
+EOT;
+$i=0;
+$detail=explode("\r\n",$webdb[guide_word]);
+foreach($detail AS $key=>$value){
+$i++;
+$icon=$i>1?'|':'';
+list($name,$url,$blank,$color,$lid)=explode("|",$value);
+if(ereg("^\/",$url)){
+	$url="$webdb[www_url]$url";
+}elseif(!ereg("://",$url)){
+	$url="$webdb[www_url]/$url";
+}
+$blank=$blank?"_blank":'';
+$color=$color?"$color":'';
+print <<<EOT
+-->
+      $icon <a href="$url" target="$blank" style="color:$color;">$name</a> 
+      <!--
+EOT;
+}
+print <<<EOT
+-->
+    </td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="top">
+  <tr> 
+    <td>$label[special_sp1_1]</td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="top">
+  <tr> 
+    <td width="320" valign="top"> 
+      <table width="320" border="0" align="left" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td> 
+            <table width="320" border="0" cellspacing="0" cellpadding="0" class="xw_lor">
+              <tr> 
+                <td> 
+                  <div class="xw_huand">$label[special_sp1_2]</div>
+                </td>
+              </tr>
+            </table>
+            <table width="320" border="0" cellspacing="0" cellpadding="0" class="top XINWEN_AE">
+              <tr> 
+                <td class="TD_XW3"> <span class="SPAN_XW5">视频报道</span> <span class="GENG">更多...</span></td>
+              </tr>
+              <tr> 
+                <td>
+                  <div class="SHIPIN"> $label[special_sp1_3]</div>
+                </td>
+              </tr>
+            </table>
+            <table width="320" border="0" cellspacing="0" cellpadding="0" class="top xw_lor">
+              <tr> 
+                <td class="BJ_XW6"> $label[special_sp1_18] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="380" valign="top"> 
+      <table width="360" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td>
+            <table width="360" border="0" align="center" cellpadding="0" cellspacing="0" class="xw_lor">
+              <tr> 
+                <td class="BJ_XW6"> 
+                  <div class="TEX_center"> $label[special_sp1_16] </div>
+                </td>
+              </tr>
+            </table>
+            <table width="360" border="0" align="center" cellpadding="0" cellspacing="0" class="xw_lor top">
+              <tr> 
+                <td class="BJ_XW6"> $label[special_sp1_15] </td>
+              </tr>
+            </table>
+            <table width="360" border="0" align="center" cellpadding="0" cellspacing="0" class="top">
+              <tr> 
+                <td> 
+                  <div class="TD_XW3 XINWEN_AE"> <span class="SPAN_XW5">$label[special_sp1_25]</span> 
+                    <span class="GENG">更多...</span></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="TDOM">$label[special_sp1_14] </td>
+              </tr>
+            </table>
+            <table width="360" border="0" align="center" cellpadding="0" cellspacing="0" class="top">
+              <tr> 
+                <td> 
+                  <div class="TD_XW3 XINWEN_AE"> <span class="SPAN_XW5">$label[special_sp1_26]</span> 
+                    <span class="GENG">更多...</span></div>
+                </td>
+              </tr>
+              <tr> 
+                <td class="TDOM">$label[special_sp1_13] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="250" valign="top"> 
+      <table width="250" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td> 
+            <table width="250" border="0" cellspacing="0" cellpadding="0" class="XINWEN_AE">
+              <tr> 
+                <td class="TD_XW3"> <span class="SPAN_XW5"> $label[special_sp1_19] 
+                  </span></td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div class="BAODAO"> $label[special_sp1_17] </div>
+                </td>
+              </tr>
+            </table>
+            <table width="250" border="0" cellspacing="0" cellpadding="0" class="XINWEN_AE top">
+              <tr> 
+                <td class="TD_XW3"> <span class="SPAN_XW5"> $label[special_sp1_20] 
+                  </span></td>
+              </tr>
+              <tr> 
+                <td class="PABOING">$label[special_sp1_4] $label[special_sp1_5] 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="top XINWEN_AE">
+  <tr> 
+    <td class="xw7"> <span class="xw10"> $label[special_sp1_21]</span> <span class="xw11"></span></td>
+  </tr>
+  <tr> 
+    <td>
+      <table width="96%" border="0" cellspacing="0" cellpadding="0" align="right">
+        <tr> 
+          <td style="padding-top:15px;"> $label[special_sp1_9] </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="top">
+  <tr> 
+    <td valign="top"> 
+      <table width="320" border="0" align="left" cellpadding="0" cellspacing="0" class="XINWEN_AE">
+        <tr> 
+          <td class="xw7"> <span class="xw10">$label[special_sp1_22]</span> <span class="xw11"></span></td>
+        </tr>
+        <tr> 
+          <td style="padding-top:10px;" class="XWbj"> $label[special_sp1_10] </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top">
+      <table width="360" border="0" align="center" cellpadding="0" cellspacing="0"  class="XINWEN_AE">
+        <tr> 
+          <td class="xw7"> <span class="xw10">$label[special_sp1_23]</span> <span class="xw11"></span></td>
+        </tr>
+        <tr> 
+          <td class="TDOM XWbj">$label[special_sp1_11] </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top">
+      <table width="250" border="0" align="right" cellpadding="0" cellspacing="0"  class="XINWEN_AE">
+        <tr> 
+          <td class="xw7"> <span class="xw10">$label[special_sp1_24]</span> <span class="xw11"></span></td>
+        </tr>
+        <tr> 
+          <td class="XWbj PABO"> 
+            <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0" class="LGAO2">
+              <tr> 
+                <td> $label[special_sp1_12] </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0" class="top XINWEN_AE">
+  <tr> 
+    <td class="xw7"> <span class="xw10">网友点评</span> <span class="xw11"></span></td>
+  </tr>
+  <tr> 
+    <td>
+      <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td style="padding-top:15px;"> 
+            <div id="comment"></div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="16%"><span class="L">称　　呼:</span><span class="R"></span></td>
+                <td width="84%"><span class="R"> 
+                  <input type="text" name="textfield2" id="comment_username" value="$lfjid">
+                  </span></td>
+              </tr>
+              <tr> 
+                <td width="16%"><span class="L">验 证 码:</span></td>
+                <td width="84%"> 
+                  <input id="yzImgNum" type="text" name="yzimg" size="8">
+                  <img border="0" id="yz_Img" name="imageField" src="$webdb[www_url]/do/yzimg.php"> 
+                </td>
+              </tr>
+              <tr> 
+                <td width="16%"><span class="L">内　　容:</span></td>
+                <td width="84%"><span class="R"> 
+                  <textarea name="textfield" cols="50" rows="5" id="comment_content" onKeyDown="quickpost(event)"></textarea>
+                  </span></td>
+              </tr>
+              <tr> 
+                <td width="16%"> 
+                  <script language="JavaScript">
+<!--
+
+getcomment("$webdb[www_url]/do/special_comment_ajax.php?cid=$id");
+cnt = 0;
+function quickpost(event)
+{
+	if((event.ctrlKey && event.keyCode == 13)||(event.altKey && event.keyCode == 83))
+	{
+		cnt++;
+		if (cnt==1){
+			postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id')
+		}else{
+			alert('内容正在提交...');
+		}
+	}	
+}
+//-->
+</script>
+                </td>
+                <td width="84%"><span class="R"> 
+                  <input type="button" id="comment_submit" name="Submit" value="提交" onClick="postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id','1')" class="button">
+                  </span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="950" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td align="center"> <br>
+      $webdb[copyright]<br>
+      Copyright@{$webdb[www_url]} all rights reserved <a href="http://www.miibeian.gov.cn" target="_blank">{$webdb[miibeian_gov_cn]}</a> 
+      <br>
+      Powered by <a href="http://www.qibosoft.com" target="_blank">qibosoft {$qibosoft_Edition}</a> 
+      Code &copy; 2003-10 <a href="http://bbs.qibosoft.com/" target="_blank">qibosoft</a> 
+      <br>
+      <br>
+      <br>
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->
+</body>
+</html>

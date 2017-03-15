@@ -1,0 +1,163 @@
+以下是发文章必须要用到的表
+
+
+发一篇文章,涉及到的数据表有如下3个表:
+
+qb_article_db	ID库,主要是为了分表使用,没分表的话,不插入记录,问题也不是太大.但最好是先给他插入一个ID,避免今后出错
+qb_article	文章标题及相关属性
+qb_reply	文章内容
+
+其它相关表如下
+qb_sort		栏目信息表
+qb_comment	评论表
+
+他们的关连字段是aid
+
+
+qb_article的字段如下:
+
+  `aid` mediumint(7) unsigned NOT NULL auto_increment,	文章ID自动增加的
+  `title` varchar(150) NOT NULL default '',		文章标题
+  `smalltitle` varchar(100) NOT NULL default '',	文章短标题,一般为空,很少使用
+  `fid` mediumint(7) unsigned NOT NULL default '0',	文章的栏目FID
+  `mid` mediumint(5) NOT NULL default '0',		所属模型,文章的话,其值为0
+  `fname` varchar(50) NOT NULL default '',		文章栏目的名称
+  `hits` mediumint(7) NOT NULL default '0',		点击率
+  `pages` smallint(4) NOT NULL default '0',		共有多少页
+  `comments` mediumint(7) NOT NULL default '0',		共有多少条评论
+  `posttime` int(10) NOT NULL default '0',		发布日期
+  `list` int(10) NOT NULL default '0',			排序值,默认是发布日期的值,可调可控
+  `uid` mediumint(7) NOT NULL default '0',		发布者的UID
+  `username` varchar(30) NOT NULL default '',		发布者的帐号
+  `author` varchar(30) NOT NULL default '',		文章的作者,不一定是发布者
+  `copyfrom` varchar(100) NOT NULL default '',		文章来源于哪个站
+  `copyfromurl` varchar(150) NOT NULL default '',	文章来源于哪个网址
+  `titlecolor` varchar(15) NOT NULL default '',		标题颜色
+  `fonttype` tinyint(1) NOT NULL default '0',		标题是否加粗,很少使用
+  `picurl` varchar(150) NOT NULL default '0',		缩略图,也即列表页显示的缩略图,前台页面调用的缩略图
+  `ispic` tinyint(1) NOT NULL default '0',		是否有缩略图,主要是方便查询数据库
+  `yz` tinyint(1) NOT NULL default '0',			文章审核与否,1为审核,2为回收站,0为未审核
+  `yzer` varchar(30) NOT NULL default '',		审核者帐号,很少用
+  `yztime` int(10) NOT NULL default '0',		审核日期,很少用
+  `levels` tinyint(2) NOT NULL default '0',		文章是否为精华,1为精华,0为普通文章
+  `levelstime` int(10) NOT NULL default '0',		文章被推荐精华的日期
+  `keywords` varchar(100) NOT NULL default '',		文章的关键字,多个用空格隔开.涉及到相关文章.
+  `jumpurl` varchar(150) NOT NULL default '',		文章的跳转外部网址,设置的话,跳到指定网址
+  `iframeurl` varchar(150) NOT NULL default '',		文章的框架网址,设置的话,框架一个网址,与上面的不能同时设置
+  `style` varchar(15) NOT NULL default '',		文章指定风格界面
+  `template` varchar(255) NOT NULL default '',		文章指定模板界面
+  `target` tinyint(1) NOT NULL default '0',		文章在列表是否新窗口中打开
+  `ip` varchar(15) NOT NULL default '',			发布者的IP
+  `lastfid` mediumint(7) NOT NULL default '0',		文章放入回收站后,保存之前的栏目FID,方便还原
+  `money` mediumint(7) NOT NULL default '0',		文章查看要收费多少
+  `buyuser` text NOT NULL,				文章设置收费后,购买过的用户
+  `passwd` varchar(32) NOT NULL default '',		文章查看密码
+  `allowdown` varchar(150) NOT NULL default '',		允许下载文章附件的用户组
+  `allowview` varchar(150) NOT NULL default '',		允许查看本文的用户组
+  `editer` varchar(30) NOT NULL default '',		最后修改过本文章的用户帐号,很少用
+  `edittime` int(10) NOT NULL default '0',		最后修改本文的日期,很少用
+  `begintime` int(10) NOT NULL default '0',		文章允许开始浏览的日期,不设置就不限制
+  `endtime` int(10) NOT NULL default '0',		文章允许浏览的结束日期,不设置就不限制
+  `description` text NOT NULL,				文章的一些简要介绍,很少用
+  `lastview` int(10) NOT NULL default '0',		文章最后被浏览的日期
+  `digg_num` mediumint(7) NOT NULL default '0',		文章被顶的次数
+  `digg_time` int(10) NOT NULL default '0',		文章最后一次被顶的日期
+  `forbidcomment` tinyint(1) NOT NULL default '0',	是否禁止设置评论,不设置则以默认的栏目设置为标准
+  `ifvote` tinyint(1) NOT NULL default '0',		是否有投票
+  `heart` varchar(255) NOT NULL default '',		心情插件
+  `htmlname` varchar(100) NOT NULL default '',		生成静态的URL文件名
+
+
+qb_reply的字段如下
+
+  `rid` mediumint(7) NOT NULL auto_increment,		内容ID,随机生成,重要性不大
+  `subhead` varchar(150) NOT NULL default '',		内容标题,一页的时候,意义不大,多页的时候,可以设置每页的标题
+  `postdate` int(10) NOT NULL default '0',		发布日期,多页的时候有用,一页的时候,意义不大
+  `aid` mediumint(7) NOT NULL default '0',		与标题关键的ID
+  `fid` mediumint(7) NOT NULL default '0',		栏目的FID
+  `uid` mediumint(7) NOT NULL default '0',		发布者的UID
+  `topic` tinyint(1) NOT NULL default '0',		第一页的话为1,第二页以后为0
+  `content` mediumtext NOT NULL,			文章内容
+  `orderid` mediumint(7) NOT NULL default '0',		文章如多页的话,可以排序,这是排序值
+
+
+
+新发表一篇文章,
+
+先给这个表qb_article_db插入一条记录,得到他的ID,然后再给qb_article插入数据,必须不能缺少的字段内容如下
+aid,title,fid,fname,posttime,list,uid,username,picurl,ispic,yz,keywords,ip
+
+如果缩略图不存在的话,picurl,ispic同时为空,否则有图片的话,ispic=1
+
+再给表qb_reply插入如下字段的内容
+postdate,aid,fid,uid,topic,content
+
+第一页的话,topic=1
+
+
+
+
+
+
+
+
+
+qb_sort	 栏目信息表的字段信息讲解如下
+
+
+  `fid` mediumint(7) unsigned NOT NULL auto_increment,		栏目ID,自动增值的会与文章里的FID相关连
+  `fup` mediumint(7) unsigned NOT NULL default '0',		父栏目的ID
+  `fmid` mediumint(5) NOT NULL default '0',			属于哪个模型,文章的话,为0
+  `name` varchar(50) NOT NULL default '',			栏目名称
+  `class` smallint(4) NOT NULL default '0',			不重要的字段,但不能删除
+  `sons` smallint(4) NOT NULL default '0',			不重要的字段,但不能删除
+  `type` tinyint(1) NOT NULL default '0',			栏目的类型,1为大分类,0为终极子栏目,2为单篇文章
+  `admin` varchar(100) NOT NULL default '',			栏目的版主
+  `list` int(10) NOT NULL default '0',				栏目的排序值
+  `listorder` tinyint(2) NOT NULL default '0',			栏目下的文章排序方式,有的风格不受限制
+  `passwd` varchar(32) NOT NULL default '',			栏目访问密码
+  `logo` varchar(150) NOT NULL default '',			栏目的LOGO图,基本不用
+  `descrip` text NOT NULL,					栏目的描述,基本不用
+  `style` varchar(50) NOT NULL default '',			栏目指定的风格,文章会跟从它
+  `template` text NOT NULL,					栏目指定的模板,文章会跟从它
+  `jumpurl` varchar(150) NOT NULL default '',			跳转到外部网址
+  `maxperpage` tinyint(3) NOT NULL default '0',			栏目下的文章每页多少篇,有的风格不受限制
+  `metakeywords` varchar(255) NOT NULL default '',		SEO关键字
+  `metadescription` varchar(255) NOT NULL default '',		SEO描述
+  `allowcomment` tinyint(1) NOT NULL default '0',		允许在本栏目下的文章进行评论的用户组,不设置则允许所有
+  `allowpost` varchar(150) NOT NULL default '',			允许投稿的用户组,不设置则允许所有
+  `allowviewtitle` varchar(150) NOT NULL default '',		允许浏览文章标题的用户组,不设置则允许所有
+  `allowviewcontent` varchar(150) NOT NULL default '',		允许浏览文章内容的用户组,不设置则允许所有
+  `allowdownload` varchar(150) NOT NULL default '',		允许下载文章附件的用户组,不设置则允许所有
+  `forbidshow` tinyint(1) NOT NULL default '0',			是否禁止在父栏目下显示本栏目的文章,当父栏目下太多子栏目的时候,就有必要设置一下
+  `config` text NOT NULL,					扩展字段
+  `list_html` varchar(255) NOT NULL default '',			静态页时,列表页的URL样式
+  `bencandy_html` varchar(255) NOT NULL default '',		静态页时,内容页的URL样式
+  `domain` varchar(150) NOT NULL default '',			静态页时,栏目绑定的域名
+  `domain_dir` varchar(100) NOT NULL default '',		静态页时,静态网页生成在哪个目录
+
+
+
+
+
+qb_comment	 评论表的字段信息讲解如下
+
+
+  `cid` mediumint(7) unsigned NOT NULL auto_increment,		自动增值ID,意义不大
+  `aid` int(10) unsigned NOT NULL default '0',			文章的ID
+  `fid` mediumint(7) unsigned NOT NULL default '0',		栏目的ID
+  `authorid` mediumint(7) NOT NULL default '0',			文章作者的ID
+  `uid` mediumint(7) unsigned NOT NULL default '0',		发布者的UID
+  `username` varchar(30) NOT NULL default '',			发布者帐号
+  `posttime` int(10) NOT NULL default '0',			评论日期
+  `content` text NOT NULL,					评论内容
+  `ip` varchar(15) NOT NULL default '',				评论者的IP
+  `icon` tinyint(3) NOT NULL default '0',			选择的表情
+  `yz` tinyint(1) NOT NULL default '0',				是否已审核,1为审核,0为未审核
+  `ifcom` tinyint(1) NOT NULL default '0',			是否为精华评论,1为精华,0为普通
+  `agree` mediumint(5) NOT NULL default '0',			支持票数
+  `disagree` mediumint(5) NOT NULL default '0',			反对的票数
+
+
+
+

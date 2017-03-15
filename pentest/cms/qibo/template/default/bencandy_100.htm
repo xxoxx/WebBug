@@ -1,0 +1,432 @@
+<!--
+<?php
+$backdb[subject] || ($backdb[subject]="没有了") && ($backdb[click]="return false;");
+$nextdb[subject] || ($nextdb[subject]="没有了") && ($nextdb[click]="return false;");
+$unsetdb[]=$rsdb[photourl];	//不需要再显示
+print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
+  <tr> 
+    <td width="70%" height="393" valign="top" class="Main"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable viewcontent" id="viewphoto">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG"><a editurl='$webdb[www_url]/do/job.php?job=bencandy&fid=$fid&id=$id&act=do'>TOP</a></span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+              <tr> 
+                <td align="center" class="a1" style="padding-left:5px;padding-top:2px;"><b>$rsdb[title]</b></td>
+              </tr>
+              <tr> 
+                <td class="a1" bgcolor="#FFFFFF" align="left" style="padding:5px;"> 
+
+<!--
+EOT;
+if(!$webdb[photoShowType]){
+print <<<EOT
+-->
+<LINK href="$webdb[www_url]/images/default/photo.css" type="text/css" rel="stylesheet">
+<SCRIPT language=JavaScript src="$webdb[www_url]/images/default/photo.js" type="text/javascript"></SCRIPT>
+<DIV id="wdsPhoto">
+  <DIV class="top"><A class="prev" id="prev" href="javascript:;"></A>
+  <DIV class="thum" id="thum"></DIV><A class="next" id="next" 
+  href="javascript:;"></A></DIV>
+  <DIV class="main" id="main5"></DIV></DIV>
+
+<!--
+EOT;
+}else{
+$ImgLinks=implode('","',$Mrsdb[photourl][url]);
+$ImgTitle=implode('","',$Mrsdb[photourl][name]);
+print <<<EOT
+-->
+
+
+		<table width="100%" border="0" cellspacing="5" cellpadding="5">
+			  <tr>
+				<td align="center"><a name='LOOK'></a><A HREF="#LOOK" onclick="showMorePic(1)"><img border="0" id="upfilePicUrl"></A></td>
+			  </tr>
+			  <tr>
+				<td align="center">
+				
+				<div id="pictitle"></div> <div>(<a href="#LOOK" onclick="showMorePic('head')">首张</a>) (<a href="#LOOK" onclick="showMorePic(-1)">上一张</a>) 【<span id="upfilePicNum">1/2</span>】(<a href="#LOOK" onclick="showMorePic(1)">下一张</a>) (<a href="#LOOK" onclick="showMorePic('end')">尾张</a>)</div>
+				
+				</td>
+			  </tr>
+			</table>
+<SCRIPT LANGUAGE="JavaScript">
+var upfilePicNumId=0;
+function showMorePic(todo){
+
+	var ImgLinks= new Array("$ImgLinks");
+	var ImgTitle= new Array("$ImgTitle");
+
+	if(todo==1){
+		upfilePicNumId++;
+	}else if(todo==-1){
+		upfilePicNumId--;
+	}else if(todo=='head'){
+		upfilePicNumId=0;
+	}else if(todo=='end'){
+		upfilePicNumId=ImgLinks.length-1;
+	}
+	if(upfilePicNumId<0){
+		alert("已经是第一张了!");
+		upfilePicNumId=0;
+	}
+	if( upfilePicNumId>(ImgLinks.length-1) ){
+		alert("已经是最后一张了!");
+		upfilePicNumId=ImgLinks.length-1;
+	}
+
+	document.getElementById("upfilePicNum").innerHTML="<font color=red>"+(upfilePicNumId+1)+"</font>/"+ImgLinks.length;
+	document.getElementById("upfilePicUrl").src=ImgLinks[upfilePicNumId];
+
+	var srcImage = new Image();
+	srcImage.src=ImgLinks[upfilePicNumId];
+	
+	srcImage.onload=function (){
+		document.getElementById("upfilePicUrl").width=srcImage.width
+		if(srcImage.width>500){document.getElementById("upfilePicUrl").width=500;}
+	}
+
+	document.getElementById("upfilePicUrl").alt=ImgTitle[upfilePicNumId];
+	document.getElementById("pictitle").innerHTML=ImgTitle[upfilePicNumId]+" (<A HREF='"+ImgLinks[upfilePicNumId]+"' target='blank'>原始尺寸</A>)"
+}
+showMorePic();
+</SCRIPT>
+
+ <!--
+EOT;
+}
+print <<<EOT
+--> 
+ 
+
+<!--
+EOT;
+if($rsdb[ifvote]){print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="content_vote">
+  <tr>
+    <td><SCRIPT src="$webdb[www_url]/vote/vote.php?job=js&aid=$rsdb[aid]"></SCRIPT></td>
+  </tr>
+</table>
+<!--
+EOT;
+}print <<<EOT
+-->
+            
+                </td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bgcolor="#F9F9F9">
+              <tr> 
+                <td class="a1" style="padding-left:5px;padding-top:2px;"> <b>{$fidDB[M_alias]}介绍</b></td>
+              </tr>
+             
+              <tr> 
+                <td  bgcolor="#FFFFFF">
+                  <table width="100%" cellspacing="3" cellpadding="0" style='TABLE-LAYOUT: fixed;WORD-WRAP: break-word'>
+                    <tr> 
+                <td>{$rsdb[content]}</td></tr></table></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">相关信息</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              
+              <tr> 
+                <td width="15%">浏览人次:</td>
+                <td width="85%"><font id="hits">{$rsdb[hits]}</font></td>
+              </tr>
+              <tr> 
+                <td width="15%">发 布 者:</td>
+                <td width="85%">{$rsdb[username]} </td>
+              </tr>
+              <tr> 
+                <td width="15%">发布日期:</td>
+                <td width="85%">{$rsdb[posttime]}</td>
+              </tr> 
+               
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+      
+      <!--include
+EOT;
+if($webdb[showComment] && $fidDB[allowcomment] && !$rsdb[forbidcomment]){@include(html("bencandy_tpl/comment"));}print <<<EOT
+include--></td>
+    <td width="30%" height="393" valign="top" class="Side" align="right"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable" id="sonSortName">
+        <tr> 
+          <td class="head" height="19"> 
+            <h3 class="L"></h3>
+            <span class="TAG">相关栏目</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" align="left"> 
+            <!--include
+EOT;
+//相关栏目名称
+@include("$sortnameTPL");print<<<EOT
+include-->           </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">最新{$fidDB[M_alias]}</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" align="left"> 
+            <!--
+EOT;
+if($webdb[ListPageTitle_nojs]){
+$shows=listpage_title($fid,'new',$webdb[JsListRows],$webdb[JsListLeng],$id);
+print <<<EOT
+-->
+$shows
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<span id="article_Newtopic">$Load_Msg</span>');
+document.write('<div style="display:none;"><iframe src="$webdb[www_url]/do/jsarticle.php?fid=$fid&type=new&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]&iframeID=article_Newtopic" width=0 height=0></iframe></div>');
+//-->
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">热门{$fidDB[M_alias]}</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" align="left"> 
+<!--
+EOT;
+if($webdb[ListPageTitle_nojs]){
+$shows=listpage_title($fid,'hot',$webdb[JsListRows],$webdb[JsListLeng],$id);
+print <<<EOT
+-->
+$shows
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<script language="JavaScript">
+<!--
+document.write('<div id="article_Hottopic">$Load_Msg</div>');
+document.write('<div style="display:none;"><iframe src="$webdb[www_url]/do/jsarticle.php?fid=$fid&type=hot&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]&iframeID=article_Hottopic" width=0 height=0></iframe></div>');
+//-->
+</script>
+<!--
+EOT;
+}print <<<EOT
+-->
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">推荐{$fidDB[M_alias]}</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" align="left"> 
+            <!--
+EOT;
+if($webdb[ListPageTitle_nojs]){
+$shows=listpage_title($fid,'com',$webdb[JsListRows],$webdb[JsListLeng],$id);
+print <<<EOT
+-->
+$shows
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<script language="JavaScript">
+<!--
+document.write('<div id="article_Comtopic">$Load_Msg</div>');
+document.write('<div style="display:none;"><iframe src="$webdb[www_url]/do/jsarticle.php?fid=$fid&type=com&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]&iframeID=article_Comtopic" width=0 height=0></iframe></div>');
+//-->
+</script>
+<!--
+EOT;
+}print <<<EOT
+-->
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">相关{$fidDB[M_alias]}</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" align="left"> 
+           <!--
+EOT;
+if($webdb[ListPageTitle_nojs]){
+$shows=listpage_title($fid,'like',$webdb[JsListRows],$webdb[JsListLeng],$id);
+print <<<EOT
+-->
+$shows
+<!--
+EOT;
+}else{print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write('<span id="article_Liketopic">$Load_Msg</span>');
+document.write('<div style="display:none;"><iframe src="$webdb[www_url]/do/jsarticle.php?fid=$fid&type=like&id=$id&rows=$webdb[JsListRows]&leng=$webdb[JsListLeng]&iframeID=article_Liketopic" width=0 height=0></iframe></div>');
+//-->
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">广告位</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle" valign="top" align="left"> {$AD_label['article_show']}
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<!--
+EOT;
+if(!$webdb[photoShowType]){
+$photocode='';
+foreach($Mrsdb[photourl][url] AS $key=>$url){
+	$photocode.="['$url',''],";
+}
+print <<<EOT
+-->
+<SCRIPT type="text/javascript">
+var c={
+    main:'main5',//Main Image Frame
+    thum:'thum',
+    prev:'prev',
+    next:'next',
+
+    interval:3000,
+    timeout:10000,//超时设置
+
+    data:[
+        {$photocode}
+    ]
+};
+if('object'!=typeof c.data[c.data.length-1])c.data.splice(c.data.length-1,1);
+var im=new RollingImages(c);
+//im.stop();
+im.start();
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+
+<!--
+EOT;
+?>
+-->

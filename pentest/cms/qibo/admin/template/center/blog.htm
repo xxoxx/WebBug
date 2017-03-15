@@ -1,0 +1,40 @@
+<!--
+<?php
+$alipay_partner[$webdb[alipay_service]]='selected';
+$transport[$webdb[alipay_transport]]='selected';
+print <<<EOT
+-->
+
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+  <form name="form_work" method="post" action="?lfj=$lfj&action=config">
+    <tr align="center" class="head"> 
+      <td colspan="3" height="19">AppKey设置</td>
+    </tr>
+    <tr> 
+      <td colspan="3" bgcolor="#cccccc">AppKey信息</td>
+    </tr>
+    <tr> 
+      <td width='28%' bgcolor='#FFFFFF'>新浪微博appkey：</td>
+      <td colspan='2' bgcolor='#FFFFFF'> 
+        <input  class=mmcinb  type='text' size='30' value='$webdb[sina_appkey]' name='webdbs[sina_appkey]'></td>
+    </tr>
+    <tr> 
+      <td width='28%' bgcolor='#FFFFFF'>腾讯微博appkey：</td>
+      <td colspan='2' bgcolor='#FFFFFF'> 
+        <input  class=mmcinb  type='text' size='30' value='$webdb[tenxu_appkey]' name='webdbs[tenxu_appkey]'>
+      </td>
+    </tr>
+    
+     
+    <tr bgcolor="#FFFFFF"> 
+      <td width="27%" align="center">&nbsp;</td>
+      <td width="73%"> 
+        <input type="submit" name="Submit" value="提交">
+      </td>
+    </tr>
+  </form>
+</table>
+<!--
+EOT;
+?>
+-->

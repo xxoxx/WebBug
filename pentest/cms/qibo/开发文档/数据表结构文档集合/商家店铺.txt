@@ -1,0 +1,204 @@
+
+
+qb_hy_company 公司基本信息
+   rid  mediumint(7)   否    auto_increment     自动增值ID,不是太重要          
+   title  varchar(200)   否                  	公司名称
+   host  varchar(32)   否                  	商铺二级域名
+   fname  varchar(100)   否                  	所属分类名,可同时属于多个分类
+   uid  mediumint(7)   否  0                	商家UID
+   username  varchar(32)   否                  	商家帐号
+   renzheng  tinyint(1)   否  0                	认证与否,0为没有认证,1普通认证,2为银牌认证,3为金牌认证
+   is_agent  tinyint(1)   否  0                	是否为代理商,没有使用
+   is_vip  tinyint(1)   否  0                	是否为VIP会员,没有使用
+   posttime  int(10)   否  0                	登记日期
+   list  int(10)   否  0                	排序值
+   listorder  int(10)   否  0                	暂时没使用
+   picurl  varchar(255)   否                  	暂时没使用
+   gz  varchar(248)   否                  	审核与否,1为审核,0为没有审核
+   yz  tinyint(1)   否  0                	暂时没使用
+   yzer  varchar(32)   否                  	暂时没使用
+   yztime  int(10)   否  0                	暂时没使用
+   hits  int(10)   否  0                	关注度
+   levels  tinyint(2)   否  0                	推荐与否,1为推荐,0为没有推荐
+   levelstime  int(10)   否  0                	推荐日期
+   lastview  int(10)   否  0                	暂时没使用
+   content  text   否                  		企业介绍
+   province_id  mediumint(7)   否  0            所在省份
+   city_id  mediumint(7)   否  0                所在城市
+   zone_id  mediumint(7)   否  0                所在区域
+   street_id  mediumint(7)   否  0              所在街道
+   qy_cate  varchar(32)   否                  	企业资金类型:如个人独资企业,个体经营
+   qy_saletype  varchar(48)   否                经营模式:如服务型,生产型
+   qy_regmoney  int(10)   否  0                	注册资本
+   qy_createtime  varchar(64)   否              注册日期
+   qy_regplace  varchar(128)   否               注册地址
+   qy_address  varchar(248)   否                联系地址
+   qy_postnum  varchar(8)   否                  邮政编码
+   qy_pro_ser  varchar(248)   否                主营产品或服务
+   my_buy  varchar(248)   否                  	主要采购产品
+   my_trade  varchar(32)   否                  	所属行业
+   qy_contact  varchar(16)   否                 联系人
+   qy_contact_zhiwei  varchar(16)   否          联系人职位  
+   qy_contact_sex  int(1)   否  1               联系人性别,1为男,2为女,0为未知
+   qy_contact_tel  varchar(248)   否            联系人电话
+   qy_contact_mobile  varchar(248)   否         联系人手机
+   qy_contact_fax  varchar(248)   否            联系人传真
+   qy_contact_email  varchar(248)   否          联系人邮箱
+   qy_website  varchar(248)   否                公司网址
+   qq  varchar(248)   否                  	联系QQ
+   msn  varchar(248)   否                  	联系MSN
+   skype  varchar(248)   否                  	联系skype
+   ww  varchar(248)   否                  	联系旺旺
+   bd_pics  varchar(248)   否                  	关联图片
+   toptime  int(10)   否  0                	置项日期,暂时没使用
+   if_homepage  tinyint(4)   否  0              是否有商铺,1为有,0为无
+   permit_pic  varchar(100)   否                营业执照扫描件
+   guo_tax_pic  varchar(100)   否               国税扫描件
+   di_tax_pic  varchar(100)   否                地税扫描件
+   organization_pic  varchar(100)   否          机构码扫描件
+   idcard_pic  varchar(100)   否             	法人身份证扫描件     
+   gg_maps  varchar(50)   否                 	谷歌地图位置
+
+
+qb_hy_company_fid	公司所属分类,可同时归属多个栏目
+
+   uid  mediumint(7)  UNSIGNED 否  0         公司UID       
+   fid  mediumint(7)  UNSIGNED 否  0         栏目ID
+
+
+qb_hy_config    商家黄页模型配置参数
+
+   c_key  varchar(50)   否              变量名
+   c_value  text   否                  	值
+   c_descrip  text   否                 
+
+
+qb_hy_friendlink	商铺友情链接
+   ck_id  int(10)  UNSIGNED 否    auto_increment        自动增值ID,意义不大    
+   uid  mediumint(7)  UNSIGNED 否  0                	商家UID
+   username  varchar(16)   否                  		商家帐号
+   companyName  varchar(64)   否                  	没用到
+   title  varchar(128)   否                  		网站名称
+   url  varchar(248)   否                  		网址地址
+   description  text   否                  		描述
+   yz  tinyint(1)   否  0               		审核与否
+
+
+qb_hy_guestbook  商铺会员留言
+   id  int(7)   否    auto_increment      		自动增值ID,意义不大
+   cuid  mediumint(7)   否  0                		商家UID
+   uid  int(7)   否  0                			留言者UID
+   username  varchar(30)   否                  		留言者帐号
+   ip  varchar(15)   否                  		留言者IP来源地
+   content  text   否                  			留言内容
+   yz  tinyint(1)   否  0                		审核与否
+   posttime  int(16)   否  0                		留言日期
+   list  int(10)   否  0               			排序值
+
+qb_hy_home	企业商铺,要申请才有的.
+   uid  mediumint(7)  UNSIGNED 否  0           		企业UID     
+   username  varchar(32)   否                  		企业登录帐号,不是企业名称
+   style  varchar(32)   否                  		使用风格
+   index_left  varchar(248)   否                  	左边放置的模块
+   index_right  varchar(248)   否                  	右边放置的内容模块
+   listnum  text   否                  			模块中显示几条记录
+   banner  varchar(248)   否                  		自定义模幅图片,有的风格可能不支持
+   bodytpl  varchar(8)   否  left                	暂时没使用
+   renzheng_show  tinyint(1)   否  0                	暂时没使用
+   visitor  text   否                  			访客
+   hits  mediumint(7)   否  0                		关注度
+   head_menu  text   否                  		头部导航菜单,序列化数组
+   gg_maps  varchar(255)   否                 		谷歌地图位置
+
+
+qb_hy_news 商家新闻
+   id  int(10)  UNSIGNED 否    auto_increment      	自动增值ID
+   uid  mediumint(7)  UNSIGNED 否  0                	企业UID
+   title  varchar(150)   否                  		新闻标题
+   content  text   否                  			新闻内容
+   hits  mediumint(7)   否  0                		浏览量
+   posttime  int(10)  UNSIGNED 否  0                	发布日期
+   list  int(10)  UNSIGNED 否  0                	排序值
+   username  varchar(30)   否                  		发布者帐号
+   titlecolor  varchar(15)   否                  	暂时没使用
+   fonttype  tinyint(1)   否  0                		暂时没使用
+   picurl  varchar(150)   否                  		暂时没使用
+   ispic  tinyint(1)   否  0                		暂时没使用
+   yz  tinyint(1)   否  0                		审核与否,1为审核,0为没审核
+   levels  tinyint(1)   否  0                		是否为推荐
+   keywords  varchar(100)   否                  	暂时没使用
+   bd_pics  varchar(248)   否                 		关联图片
+
+qb_hy_pic	商家图片
+   pid  int(10)  UNSIGNED 否    auto_increment     	自动增值ID         
+   psid  int(10)  UNSIGNED 否  0                	图片分类ID
+   uid  mediumint(7)  UNSIGNED 否  0                	企业UID
+   username  varchar(32)   否                  		企业登录帐号
+   title  varchar(128)   否                  		图片标题
+   url  varchar(248)   否                  		图片地址
+   level  tinyint(1)   否  0                		是否推荐,1为推荐,0为不推荐
+   yz  tinyint(1)   否  0                		审核与否
+   posttime  int(10)  UNSIGNED 否  0                	发布日期
+   isfm  tinyint(1)   否  0                		是否设置为封面图
+   orderlist  mediumint(5)   否  0                	排序值
+   type  varchar(8)   否                 		没有使用
+
+
+qb_hy_picsort	图片分类
+
+   psid  int(10)  UNSIGNED 否    auto_increment         自动增值分类ID       
+   psup  int(10)  UNSIGNED 否  0                	暂时没使用
+   name  varchar(16)   否                  		分类名称
+   remarks  varchar(248)   否                  		暂时没使用
+   uid  mediumint(7)  UNSIGNED 否  0                	企业UID
+   username  varchar(16)   否                  		企业登录帐号
+   level  tinyint(1)   否  0                		暂时没使用
+   posttime  int(10)  UNSIGNED 否  0                	暂时没使用
+   orderlist  mediumint(4)  UNSIGNED 否  0              排序值
+   faceurl  varchar(248)   否                 		封面图
+
+
+
+qb_hy_sort      企业分类
+   fid  mediumint(7)  UNSIGNED 否    auto_increment     分类ID,自动增值          
+   fup  mediumint(7)  UNSIGNED 否  0                	父ID
+   name  varchar(50)   否                  		分类名称
+   mid  smallint(4)   否  0                		暂时没使用
+   class  smallint(4)   否  0                		暂时没使用
+   sons  smallint(4)   否  0                		暂时没使用
+   type  tinyint(1)   否  0                		暂时没使用
+   admin  varchar(100)   否                  		暂时没使用
+   list  int(10)   否  0                		排序值
+   listorder  tinyint(2)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  		暂时没使用
+   logo  varchar(150)   否                  		暂时没使用
+   descrip  text   否                  			暂时没使用
+   style  varchar(50)   否                  		暂时没使用
+   template  text   否                  		暂时没使用
+   jumpurl  varchar(150)   否                  		暂时没使用
+   maxperpage  tinyint(3)   否  0                	暂时没使用
+   metatitle  varchar(250)   否                  	暂时没使用
+   metakeywords  varchar(255)   否                  	暂时没使用
+   metadescription  varchar(255)   否                  	暂时没使用
+   allowcomment  tinyint(1)   否  0                	暂时没使用
+   allowpost  varchar(150)   否                  	暂时没使用
+   allowviewtitle  varchar(150)   否                  	暂时没使用
+   allowviewcontent  varchar(150)   否                  暂时没使用
+   allowdownload  varchar(150)   否                  	暂时没使用
+   forbidshow  tinyint(1)   否  0                	暂时没使用
+   config  mediumtext   否                  		暂时没使用
+   index_show  tinyint(1)   否  0                	暂时没使用
+   contents  mediumint(4)   否  0                	暂时没使用
+   tableid  varchar(30)   否                  		暂时没使用
+   dir_name  varchar(50)   否                  		暂时没使用
+   ifcolor  tinyint(1)   否  0               		暂时没使用
+
+
+
+
+
+
+
+
+
+

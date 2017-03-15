@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<!--
+<?php
+print <<<EOT
+-->
+<head>
+<title>$titleDB[title] powered by www.qibosoft.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]">
+<link rel="stylesheet" type="text/css" href="$webdb[admin_url]/images/style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width=100% cellspacing=1 cellpadding=3  class="tablewidth">
+  <tr> 
+    <td class="head" bgcolor="#EAEAEA">请选择一个栏目</td>
+  </tr>
+  <tr> 
+    <td bgcolor=#FFFFFF align="left"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="background:#eeefff;">$show_guide</td>
+  </tr>
+</table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" id='list_sort'>
+        <!--
+EOT;
+foreach($sortdb AS $key=>$rs){
+if($ckfid==$rs[fid]){
+$ck=' checked ';
+}elseif($mid!=''&&$mid!=$rs[fmid]){
+$ck=' disabled  ';
+}else{
+$ck=' ';
+}
+print <<<EOT
+-->
+        <tr class="trA $tr_class" onmouseover="this.className='trB $tr_class'" onmouseout="this.className='trA $tr_class'"> 
+          <td bgcolor="#FFFFFF" style="border-bottom:1px dotted #ccc;">  
+            <input type="radio" name="fid" value="$rs[fid]" $ck style="border:0px;" onclick=choosefid($rs[fid],"$rs[name]")> $rs[icon]
+<!--
+EOT;
+if($rs[type]==1){ 
+print <<<EOT
+-->
+			
+           【<a href='?job=$job&url=$url&rand=$rand&mid=$mid&ckfid=$ckfid&fid=$rs[fid]' style="color:red;">{$rs[name]}</a>】
+<!--
+EOT;
+}else{ 
+print <<<EOT
+-->
+【{$rs[name]}】
+<!--
+EOT;
+}
+print <<<EOT
+-->
+			</td>
+        </tr>
+        <!--
+EOT;
+}print <<<EOT
+-->
+      </table>
+      <div align="center" style="margin:10px;">$showpage<br>
+        <input type="button" name="Submit" value="置空" onclick=choosefid(0,"请选择...")>
+      </div>
+    </td>
+  </tr>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function choosefid(fid,name){
+	url='$_GET[url]';
+	if(url!=''){
+		window.opener.location.href="$_GET[url]"+fid;
+	}else{
+		window.opener.document.getElementById("fid$rand").value=fid;
+		window.opener.document.getElementById("fname$rand").value=name;
+	}
+	window.self.close();
+}
+//-->
+</SCRIPT>
+</body>
+<!--
+EOT;
+?>
+-->
+</html>

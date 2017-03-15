@@ -1,0 +1,126 @@
+<!--
+<?php
+print <<<EOT
+--> 
+<style type="text/css">
+<!--
+.dragTable{
+	margin-top:5px;	
+}
+.dragTable a{
+	color:#333;
+}
+.dragTable .listcoment{
+	height:40px;
+	border-bottom:#DDD dotted 1px;
+	overflow:hidden;
+}
+.dragTable .listcoment span{
+	display:block;
+	float:left;
+}
+.dragTable .listcoment span.input{
+	width:30px;
+	height:30px;
+	padding-top:10px;
+	text-align:center;
+}
+.dragTable .listcoment span.com,.dragTable .listcoment span.art{
+	width:400px;
+	height:20px;
+	line-height:20px;
+	color:#f00;
+}
+.dragTable .listcoment span.art a{
+	color:#33CC00;
+}
+.dragTable .listcoment span.d{
+	float:right;
+	color:#999;
+	padding-top:8px;
+}
+.dragTable .page{
+	padding:8px;
+	text-align:center;
+}
+.dragTable .page a{
+	border:#DDD solid 1px;
+	padding:3px 5px 2px 5px;
+}
+.dragTable .submit{
+	text-align:center;
+}
+-->
+</style>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable" >
+  <tr>
+  	<td class="head">评论管理</td>
+  </tr>
+    <tr>
+  	<td class="middle">
+    <form name="formcc" method="post" action="?job=del">
+<!--
+EOT;
+foreach($listdb AS $key=>$rs){
+print <<<EOT
+-->
+		<div class="listcoment">
+        	<span class="input"><input type="checkbox" name="cidDB[]" value="$rs[cid]"></span>
+            <span class="com">评论:<a href="../do/comment.php?fid=$rs[fid]&id=$rs[aid]" target="_blank" title="$rs[content]">$rs[ctitle]</a></span>
+            <span class="d">日期:$rs[posttime] 评论者: $rs[username] {$rs[state]} <a href="?job=del&cidDB[]=$rs[cid]"><img src="images/del_icon2.gif"></a></span>
+            <span class="art">文章:<a href="..$webdb[path]/bencandy.php?fid=$rs[fid]&id=$rs[aid]" target="_blank">$rs[title]</a></span>            
+        </div>
+<!--
+EOT;
+}if($showpage){
+print <<<EOT
+-->
+		<div class="page">$showpage</div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+		<div class="submit"><br/>
+        	<a href="javascript:" onClick="CheckAll('all')">全选</a>/<a href="javascript:" onClick='CheckAll()'>反选</a> 
+            <input type="button" name="Submit" value="批量删除" onclick="postdel()">
+            <br/>
+        </div>
+    </form>    
+    </td>
+  </tr>
+</table>	
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function CheckAll(va){
+	form=document.formcc
+	for (var i=0;i<form.elements.length;i++){
+		var e = form.elements[i];
+		if(va=='all'){
+			e.checked = true;
+		}else{
+			e.checked == true ? e.checked = false : e.checked = true;
+		}
+	}
+}
+function postdel(){
+	form=document.formcc
+	var ck=false;
+	for (var i=0;i<form.elements.length;i++){
+		var e = form.elements[i];
+		if(e.checked == true){
+			ck = true;
+		}
+	}
+	if(ck==false){
+		alert('请选择一条记录');
+		return false;
+	}
+	form.submit();
+}
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

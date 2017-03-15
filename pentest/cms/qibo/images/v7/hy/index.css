@@ -1,0 +1,244 @@
+/*
+*第一栏开始
+*/
+.MainContainer .SideR{
+	width:250px;
+}
+.MainContainer .SideC{
+	width:470px;
+	padding:0 10px 0 10px;
+}
+.sidetable .head{
+	height:42px;
+	line-height:40px;
+	background:url(head1.gif) right top no-repeat;
+	padding-right:10px;
+}
+.sidetable .head .FL{
+	padding:0 0 2px 15px;
+	background:url(head1.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.sidetable .cont{
+	border:#CBCBCB solid 1px;
+	border-top:0;
+	padding:0 5px 5px 5px;
+}
+.Commentary{
+	height:100px;
+	background:url(icon1.gif) 10px 10px no-repeat;
+	overflow:hidden;
+}
+.Commentary .h{
+	line-height:30px;
+	padding-left:70px;
+}
+.Commentary .h a{
+	font-size:14px;
+	font-weight:bold;
+	color:#FF6400;
+}
+.Commentary .l{
+	line-height:20px;
+	padding-left:90px;
+}
+.sidetable .cont .Action{
+	border-top:#DDD dotted 1px;
+	height:35px;
+	line-height:35px;
+}
+.sidetable .cont .Action span{
+	display:block;
+	width:100px;
+	float:left;
+	padding-left:18px;
+	background:url(array1.gif) 8px 13px no-repeat;
+}
+.sidetable .cont .Action span a{
+	font-size:14px;
+	font-weight:bold;
+}
+.slidecont{
+	width:470px;
+	height:185px;
+	overflow:hidden;
+}
+.sidetable .cont .list{
+	height:23px;
+	line-height:23px;
+	padding-left:20px;
+	background:url(array2.gif) 5px 7px no-repeat;
+}
+/*
+*第一栏结束
+*/
+/*
+*第二栏开始
+*/
+.MainContainer .MainL{
+	padding-right:10px;
+}
+.hotcomany .head{
+	height:31px;
+	line-height:25px;
+	background:url(head1.gif) right top no-repeat;
+	padding-right:10px;
+}
+.hotcomany .head .FL{
+	padding:6px 0 0 20px;
+	display:block;
+	width:125px;
+	background:url(headl1.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.hotcomany .head .FR{
+	padding:6px 0 0 0px;
+}
+.hotcomany .cont{
+	border:#CBCBCB solid 1px;
+	padding:5px;
+}
+.hotcomany .cont .list{
+	width:220px;
+	height:23px;
+	overflow:hidden;
+	line-height:23px;
+	padding-left:15px;
+	background:url(array3.gif) 5px 8px no-repeat;
+	float:left;
+}
+.brandtable .head{
+	height:31px;
+	line-height:26px;
+	background:url(head2.gif) right top no-repeat;
+	padding-right:10px;
+}
+.brandtable .head .FL{
+	padding:5px 0 0 35px;
+	background:url(head2.gif) left top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.brandtable .head .FR{
+	padding:5px 0 0 0;
+}
+.brandtable .cont{
+	border:#E0E0E0 solid 1px;
+	padding:5px;
+}
+.brandtable .list1,.brandtable .list2,.brandtable .list3,.brandtable .list4{
+	width:118px;
+	height:69px;
+	overflow:hidden;
+	float:left;
+}
+.brandtable .list3,.brandtable .list4{
+	border-top:#DDD dotted 1px;
+}
+.brandtable .cont a{
+	display:block;
+	text-align:center;
+}
+.brandtable .cont a img{
+	margin:5px auto;
+}
+/*
+*第二栏结束
+*/
+/*
+*第四栏开始
+*/
+.comanysort{
+	margin-top:5px;
+}
+.comanysort .head{
+	height:35px;
+	background:url(head1.gif) right 4px no-repeat;
+}
+.comanysort .head .FL{
+	height:35px;
+	padding-left:40px;
+	background:url(headl2.gif) left top no-repeat;
+}
+.comanysort .head .FL span{
+	display:block;
+	padding:10px 40px 0 0;
+	line-height:25px;
+	background:url(headl2.gif) right top no-repeat;
+	font-size:14px;
+	font-weight:bold;
+}
+.comanysort .head .FR{
+	padding:10px 10px 0 0;
+	line-height:25px;
+}
+.comanysort .cont{
+	border:#CBCBCB solid 1px;
+}
+#ShowSortTable td{
+	width:50%;
+}
+#ShowSortTable .havebg{
+	background:#FAFAFA;
+}
+#ShowSortTable .choose{
+	background:#E4E0E0;
+}
+#ShowSortTable .big_name{
+	padding-left:15px;
+	line-height:30px;
+}
+#ShowSortTable .big_name a{
+	font-size:14px;
+	font-weight:bold;
+	color:#049;
+}
+#ShowSortTable .smll_name{
+	padding:0 10px 5px 15px;
+	line-height:20px;
+	color:#666;
+}
+#ShowSortTable .smll_name a{
+	color:#666;
+}
+#ShowSortTable .smll_name a.more{
+	color:#f60;
+}
+.listmun1,.listmun2,.listmun3,.listmun4,.listmun5,.listmun6,.listmun7,.listmun8,.listmun9,.listmun10{
+	height:25px;
+	line-height:25px;
+	padding-left:25px;
+	background:url(arraynum.gif) left -3px no-repeat;
+}
+.listmun2{
+	background:url(arraynum.gif) left -26px no-repeat;
+}
+.listmun3{
+	background:url(arraynum.gif) left -51px no-repeat;
+}
+.listmun4{
+	background:url(arraynum.gif) left -76px no-repeat;
+}
+.listmun5{
+	background:url(arraynum.gif) left -101px no-repeat;
+}
+.listmun6{
+	background:url(arraynum.gif) left -126px no-repeat;
+}
+.listmun7{
+	background:url(arraynum.gif) left -151px no-repeat;
+}
+.listmun8{
+	background:url(arraynum.gif) left -176px no-repeat;
+}
+.listmun9{
+	background:url(arraynum.gif) left -201px no-repeat;
+}
+.listmun10{
+	background:url(arraynum.gif) left -226px no-repeat;
+}
+/*
+*第四栏结束
+*/

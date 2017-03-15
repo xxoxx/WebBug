@@ -1,0 +1,144 @@
+<!--
+<?php
+print <<<EOT
+--> 
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth" style="display:none">
+
+  <tr> 
+    <td align="center"> 
+      <input type="button" name="Submit22" value="选择类型" onClick="window.location=('index.php?lfj=$lfj&hack=$hack&job=list')">
+      　　 
+      <input type="button" name="Submit2" value="获取调用代码" onClick="window.location=('index.php?lfj=$lfj&hack=$hack&job=getcode')">
+      　　 </td>
+  </tr>
+</table>
+<br>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+    <tr class="head"> 
+      <td align="center" colspan="10"><font color="#FFFFFF">站内数据统计信息</font></td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td width="7%">&nbsp;</td>
+      	<td><span style="font-weight:bold">文章</span></td>
+        <td><span style="font-weight:bold">图片</span></td>
+        <td><span style="font-weight:bold">下载</span></td>
+        <td><span style="font-weight:bold">视频</span></td>
+        <td><span style="font-weight:bold">FLASH</span></td>
+        <td><span style="font-weight:bold">评论</span></td>
+        <td><span style="font-weight:bold">会员</span></td>
+        <td><span style="font-weight:bold">举报</span></td>
+        <td><span style="font-weight:bold">推广</span></td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">今&nbsp;&nbsp;&nbsp;天</span></td>
+      	<td>$listdb[article_today]</td>
+        <td>$listdb[tupian_today]</td>
+        <td>$listdb[xiazai_today]</td>
+        <td>$listdb[vedio_today]</td>
+        <td>$listdb[flash_today]</td>
+      	<td>$listdb[comment_today]</td>
+        <td>$listdb[member_today]</td>
+        <td>$listdb[report_today]</td>
+        <td>$listdb[propagandize_today]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">昨&nbsp;&nbsp;&nbsp;天</span></td>
+      	<td>$listdb[article_yestoday]</td>
+        <td>$listdb[tupian_yestoday]</td>
+        <td>$listdb[xiazai_yestoday]</td>
+        <td>$listdb[vedio_yestoday]</td>
+        <td>$listdb[flash_yestoday]</td>
+      	<td>$listdb[comment_yestoday]</td>
+        <td>$listdb[member_yestoday]</td>
+        <td>$listdb[report_yestoday]</td>
+        <td>$listdb[propagandize_yestoday]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">本&nbsp;&nbsp;&nbsp;周</span></td>
+      	<td>$listdb[article_week]</td>
+        <td>$listdb[tupian_week]</td>
+        <td>$listdb[xiazai_week]</td>
+        <td>$listdb[vedio_week]</td>
+        <td>$listdb[flash_week]</td>
+      	<td>$listdb[comment_week]</td>
+        <td>$listdb[member_week]</td>
+        <td>$listdb[report_week]</td>
+        <td>$listdb[propagandize_week]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">上&nbsp;&nbsp;&nbsp;周</span></td>
+      	<td>$listdb[article_lweek]</td>
+        <td>$listdb[tupian_lweek]</td>
+        <td>$listdb[xiazai_lweek]</td>
+        <td>$listdb[vedio_lweek]</td>
+        <td>$listdb[flash_lweek]</td>
+      	<td>$listdb[comment_lweek]</td>
+        <td>$listdb[member_lweek]</td>
+        <td>$listdb[report_lweek]</td>
+        <td>$listdb[propagandize_lweek]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">本&nbsp;&nbsp;&nbsp;月</span></td>
+      	<td>$listdb[article_month]</td>
+        <td>$listdb[tupian_month]</td>
+        <td>$listdb[xiazai_month]</td>
+        <td>$listdb[vedio_month]</td>
+        <td>$listdb[flash_month]</td>
+      	<td>$listdb[comment_month]</td>
+        <td>$listdb[member_month]</td>
+        <td>$listdb[report_month]</td>
+        <td>$listdb[propagandize_month]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">上&nbsp;&nbsp;&nbsp;月</span></td>
+      	<td>$listdb[article_lmonth]</td>
+        <td>$listdb[tupian_lmonth]</td>
+        <td>$listdb[xiazai_lmonth]</td>
+        <td>$listdb[vedio_lmonth]</td>
+        <td>$listdb[flash_lmonth]</td>
+      	<td>$listdb[comment_lmonth]</td>
+        <td>$listdb[member_lmonth]</td>
+        <td>$listdb[report_lmonth]</td>
+        <td>$listdb[propagandize_lmonth]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">今&nbsp;&nbsp;&nbsp;年</span></td>
+      	<td>$listdb[article_year]</td>
+        <td>$listdb[tupian_year]</td>
+        <td>$listdb[xiazai_year]</td>
+        <td>$listdb[vedio_year]</td>
+        <td>$listdb[flash_year]</td>
+      	<td>$listdb[comment_year]</td>
+        <td>$listdb[member_year]</td>
+        <td>$listdb[report_year]</td>
+        <td>$listdb[propagandize_year]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">去&nbsp;&nbsp;&nbsp;年</span></td>
+      	<td>$listdb[article_lyear]</td>
+        <td>$listdb[tupian_lyear]</td>
+        <td>$listdb[xiazai_lyear]</td>
+        <td>$listdb[vedio_lyear]</td>
+        <td>$listdb[flash_lyear]</td>
+      	<td>$listdb[comment_lyear]</td>
+        <td>$listdb[member_lyear]</td>
+        <td>$listdb[report_lyear]</td>
+        <td>$listdb[propagandize_lyear]</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" style="display:block;" align="center"> 
+    	<td><span style="font-weight:bold; color:#00F">总&nbsp;&nbsp;&nbsp;计</span></td>
+      	<td>$listdb[article_total]</td>
+        <td>$listdb[tupian_total]</td>
+        <td>$listdb[xiazai_total]</td>
+        <td>$listdb[vedio_total]</td>
+        <td>$listdb[flash_total]</td>
+      	<td>$listdb[comment_total]</td>
+        <td>$listdb[member_total]</td>
+        <td>$listdb[report_total]</td>
+        <td>$listdb[propagandize_total]</td>
+    </tr>
+</table>
+<!--
+EOT;
+?>
+-->

@@ -1,0 +1,89 @@
+   		qb_exam_cache	用户进入考卷开始统计时间
+uid 			用户UID
+form_id 		试卷ID
+jointime 		打开考卷的时间
+
+
+  
+  		 qb_exam_config 	考试系统参数配置文件
+
+
+
+  		 qb_exam_form		试卷
+id  	试卷ID
+type	暂时未使用
+fid	试卷分类ID
+name  	试卷名称
+config  试题分数组成
+uid  	出卷者UID
+username  出卷者帐号
+ifshare   暂时未使用，试卷是否共享
+ifclose   试卷是否关闭考试
+creattime 试卷创建日期
+list      排序值
+recommend 是否为推荐精华试卷
+levelstime 推荐日期
+yz  	  试卷是否已审核
+joins     试卷被考生考的次数
+money     试卷收费
+totaltime  试卷考试时间限制
+allowjoin  允许参试的用户组
+begintime  允许考试的最开始日期
+endtime    允许考试的结束日期
+hidefen    未经批阅，是否显示系统自动评分结果
+content    介绍
+hits	   浏览次数
+
+
+
+   			qb_exam_form_element		所有试卷中的所有试题元素
+
+element_id  自动增值ID
+form_id     试卷ID
+title_id    试题ID	
+list  	    试题排序值
+
+   			qb_exam_sort  试卷与试题共用的分类
+
+   			qb_exam_student 所有试卷与所有参试考生信息
+
+student_id  自动增值ID  与参试考生的提交试题qb_exam_student_title有个对应的
+student_uid  考生UID
+student_name  考生姓名
+form_id  	试卷ID
+total_fen  	总分
+posttime  	交卷时间
+yz 		批阅与否
+totaltime       考试所花时间
+
+
+   			qb_exam_student_title   
+st_id        自动增值ID
+title_id     题库中的试题ID
+student_id   与表qb_exam_student中的student_id  相对应某个考生考过某个试卷就会生成一个student_id  
+form_id      试卷ID
+answer       考生回复的答案
+fen          该题得分
+comment      管理员点评
+
+
+   			qb_exam_title  
+
+id  	试题ID
+fid  	试题分类
+type  	试题的类型 "1"=>"单选题","2"=>"多选题","3"=>"判断题","4"=>"填空题","5"=>"排序题","6"=>"计算题","7"=>"简答题","8"=>"问答题","9"=>"作文题"
+question  	题目
+config  	针对选择题类型的可选参数
+answer  	答案
+uid  		出卷者UID
+username 	出卷者帐号
+ifshare  	试题是否共享，暂时未使用
+yz  		试题审核与否
+difficult  	试题难度
+star 		试题优秀程度的星级
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!--
+<?php
+print <<<EOT
+--> <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable" >
+        <tr> 
+          <td class="head"> 
+            <h3 class="L"></h3>
+            <span class="TAG">À¸Ä¿½éÉÜ</span> 
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <!--
+EOT;
+if($fidDB[logo]){
+$fidDB[logo]=tempdir($fidDB[logo]);
+print <<<EOT
+-->
+                <td width="11%" style="padding-right:1em;"><img src="$fidDB[logo]" width="80" height="80"></td>
+                <!--
+EOT;
+}print <<<EOT
+-->
+                <td width="89%" align="left" valign="top">$fidDB[descrip]</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td class="foot"> 
+            <h3 class="L"></h3>
+            <h3 class="R"></h3>
+          </td>
+        </tr>
+      </table>
+<!--
+EOT;
+?>
+-->

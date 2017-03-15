@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+$bodyondblclick = (function_exists('label_array')&&$web_admin&&!$MakeIndex) ?"dblclick_label();":"";
+print <<<EOT
+--> 
+<head>
+<title>$titleDB[title]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]"> 
+<link rel="stylesheet" type="text/css" href="$webdb[www_url]/images/special/car/css.css">
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+</head>
+<body ondblclick="$bodyondblclick">
+<div class="DINGBU"> 
+  <div class="Cpage DIBU2"> 
+    <div class="L" style="width:600px;"> <span class="L"><a href="$webdb[www_url]/"><img src="$webdb[www_url]/images/special/car/logo.gif" border="0" /></a></span> 
+      <span class="L TJULI"> <span class="Tziju"> 
+      <!--
+EOT;
+$i=0;
+$detail=explode("\r\n",$webdb[guide_word]);
+foreach($detail AS $key=>$value){if($i>5)break;
+$i++;
+$icon=$i>1?'|':'';
+list($name,$url,$blank,$color,$lid)=explode("|",$value);
+if(ereg("^\/",$url)){
+	$url="$webdb[www_url]$url";
+}elseif(!ereg("://",$url)){
+	$url="$webdb[www_url]/$url";
+}
+$blank=$blank?"_blank":'';
+$color=$color?"$color":'';
+print <<<EOT
+-->
+      $icon <a href="$url" target="$blank" style="color:$color;">$name</a> 
+      <!--
+EOT;
+}
+print <<<EOT
+-->
+      </span></span></div>
+    <div class="R TOUBU_R">$label[special_car_1]</div>
+  </div>
+</div>
+<div class="BANNER"> 
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        
+      <td align="center">$label[special_car_2]</td>
+      </tr>
+    </table>
+  
+</div>
+<div class="CBJ"> 
+  <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td valign="top"> 
+        <table width="365" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td> 
+              <div class="HDP">$label[special_car_3]</div>
+              <div class="Cshiping"> 
+                <div class="Ca5"> 
+                  <div class="Cfont">$label[special_car_5]</div>
+                </div>
+                <div class="Ctu">$label[special_car_4]</div>
+              </div>
+              <div class="ZHUANF"> 
+                <div class="L LEFT">专访</div>
+                <div class="R RIGHT">更多..</div>
+              </div>
+              <div style="clear:both;"> $label[special_car_13]
+                
+                
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        <table width="363" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td valign="top"> 
+              
+			  
+			  
+			  $label[special_car_7]
+			   <div id="topmo">$label[special_car_6]</div>
+              
+              <div class="ALIGN_size"> $label[special_car_8]
+               
+                
+                 
+              </div>
+              <div class="CALIGN_C2 Fiz4">$label[special_car_9]</div>
+              <div style="clear:both; padding-bottom:8px;"> 
+                
+               $label[special_car_10]
+              </div>
+              <div class="CALIGN_C2 Fiz4" style="margin-top:5px;">$label[special_car_11]</div>
+              <div class="ALIGN_size"> 
+			 	 $label[special_car_12]
+			 	 
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top"> 
+        <table width="250" border="0" align="right" cellpadding="0" cellspacing="0" style="background:#F0F0F0;">
+          <tr> 
+            <td>
+              <table width="230" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td> 
+                    <div class="Cright"> 
+                      <div class="Car_xian" style="font-size:14px;">$label[special_car_14]</div>
+                      <div class="CANGJIA"> 
+                        <ul>$label[special_car_15]
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div class="Cright Ctop FENGHUANG"> 
+                      <div class="Fsoz">$label[special_car_16]</div>
+                      <div> $label[special_car_17]</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div class="Cright Ctop Cbottom"> 
+                      <div class="Car_xian" style="font-size:14px;">$label[special_car_18]</div>
+                      <div class="auto_10"> 
+                       $label[special_car_19]</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div class="Cright Ctop"> 
+                      <div class="DIAOCHA"><img src="$webdb[www_url]/images/special/car/c7.gif" style="margin-right:7px;" />$label[special_car_20]</div>
+                      <div class="DA1">$label[special_car_21] </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div class="Cright Ctop Cbottom"> 
+                      <div class="Car_xian"> <span class="L" style="font-size:14px;">$label[special_car_22] </span> 
+                        <span class="R">更多...</span></div>
+                      <div class="YOUHUI"> $label[special_car_23]
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="CTUKU1">
+  <tr> 
+    <td> 
+      <div class="YANS1"> <span class="L">$label[special_car_26]</span> <span class="R">更多...</span></div>
+      <div class="MARG7"> 
+        
+        $label[special_car_24]
+      </div>
+    </td>
+  </tr>
+</table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:7px;">
+  <tr> 
+    <td width="375" valign="top"> 
+      <div class="YANS1 bor6" style="width:350px;"> <span class="L">$label[special_car_27]</span></div>
+      
+         $label[special_car_25]
+    </td>
+    <td width="351" valign="top"> 
+      <div class="YANS1 bor6" style="width:330px;"> <span class="L">$label[special_car_28]</span></div>
+      <div class="ALIGN_size"> $label[special_car_29]
+        
+      </div>
+    </td>
+    <td width="274" valign="top"> 
+      <div class="YANS1 bor6" style="width:250px;margin-left:7px;"> <span class="L">$label[special_car_30]</span></div>
+      <div style="text-align:center; margin-top:10px;">$label[special_car_31]</div>
+      <div class="SHANG2">
+         $label[special_car_32]
+      </div>
+    </td>
+  </tr>
+</table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="CTUKU1">
+  <tr> 
+    <td valign="top"> 
+      <div class="YANS1"> <span class="L">网友评论</span></div>
+      <div id="commenttable" style=" ">
+	  
+	  
+	  
+	  <div id="comment"></div>
+	  
+	  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="16%"><span class="L">称　　呼:</span><span class="R"></span></td>
+                <td width="84%">
+                  <input type="text" name="textfield2" id="comment_username" value="$lfjid">
+                  </td>
+              </tr>
+ 
+              <tr> 
+                <td width="16%"><span class="L">验 证 码:</span></td>
+                <td width="84%"> 
+                  <input id="yzImgNum" type="text" name="yzimg" size="8">
+                  <img border="0" id="yz_Img" name="imageField" src="$webdb[www_url]/do/yzimg.php"> 
+                </td>
+              </tr>
+ 
+              <tr> 
+                <td width="16%"><span class="L">内　　容:</span></td>
+                
+            <td width="84%" align="left" >
+              <textarea name="textfield" cols="50" rows="5" id="comment_content" onKeyDown="quickpost(event)"></textarea>
+              </td>
+              </tr>
+              <tr> 
+                <td width="16%"> 
+                  <script language="JavaScript">
+<!--
+
+getcomment("$webdb[www_url]/do/special_comment_ajax.php?cid=$id");
+cnt = 0;
+function quickpost(event)
+{
+	if((event.ctrlKey && event.keyCode == 13)||(event.altKey && event.keyCode == 83))
+	{
+		cnt++;
+		if (cnt==1){
+			postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id')
+		}else{
+			alert('内容正在提交...');
+		}
+	}	
+}
+//-->
+</script>
+                </td>
+                <td width="84%"> 
+                  <input type="button" id="comment_submit" name="Submit" value="提交" onClick="postcomment('$webdb[www_url]/do/special_comment_ajax.php?action=post&cid=$id','1')" class="button">
+                  </td>
+              </tr>
+            </table>
+          
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  </div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">$webdb[copyright]<br>
+      Copyright@{$webdb[www_url]} all rights reserved <a href="http://www.miibeian.gov.cn" target="_blank">{$webdb[miibeian_gov_cn]}</a> 
+      <br>
+      Powered by <a href="http://www.qibosoft.com" target="_blank">qibosoft {$qibosoft_Edition}</a> 
+      Code &copy; 2003-10 <a href="http://bbs.qibosoft.com/" target="_blank">qibosoft</a> <br><br><br><br></td>
+  </tr>
+</table>
+</body>
+</html>
+<!--
+EOT;
+?>
+-->

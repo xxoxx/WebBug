@@ -1,0 +1,1 @@
+INSERT INTO `qb_hack` (`keywords`, `name`, `isclose`, `author`, `config`, `htmlcode`, `hackfile`, `hacksqltable`, `adminurl`, `about`, `class1`, `class2`, `list`, `linkname`, `isbiz`) VALUES ('article_more_avoidgather', '防采集设置', 0, '', '', '', '', '', 'index.php?lfj=article_more&job=avoidgather', '', 'other', '内容模型插件功能', 5, '', 1);

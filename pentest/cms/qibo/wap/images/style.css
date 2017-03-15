@@ -1,0 +1,117 @@
+/*
+*样式初始化
+*/
+body, form, ul, li, dl, dd, dt ,td,th{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size:12px;
+}
+li,ul{
+	list-style: none;
+} 
+TD {
+	color: #333333;
+	VERTICAL-ALIGN: top;
+}
+img{
+	border:0;
+}
+a {
+	color:#0030F0;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+/*
+*用户登录
+*/
+.logocont{
+	padding:2px 0 2px 5px;
+}
+.logocont img{
+	vertical-align:middle;
+	padding-right:5px;
+}
+.usercont,.head{
+	height:25px;
+	line-height:25px;
+	padding:3px 0 0 5px;
+	background:url(userbg.gif) repeat-x;	
+}
+.usercont .input{
+	height:14px;
+}
+.showsort{
+	padding:8px 0 8px 5px;
+	line-height:20px;
+}
+.showsort .m{
+	color:red;
+}
+.cont{
+	padding:5px;
+	line-height:20px;
+	color:#888;
+}
+.cont .f{
+	color:#666;
+	padding-right:5px;
+}
+.copyright{
+	padding:10px 0 10px 5px;
+	line-height:20px;
+	background:url(footbg.gif) repeat-x;
+	color:#888;
+}
+.page{
+	background:#efefef;
+}
+.page a{
+	color:#666;
+}
+.nav_guide{
+	padding:5px 0 3px 5px;
+	line-height:18px;
+	border-bottom:#DDD solid 1px;
+	background:#fafafa;
+}
+.main_title{
+	padding:8px 0 3px 5px;
+	line-height:18px;
+	border-bottom:#DDD solid 1px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.info{
+	line-height:18px;
+	color:#666;
+	padding-left:5px;
+}
+.content{
+	padding:0 5px 0 5px;
+	line-height:16px;
+}
+.content *{
+	font-size:12px;	
+	color:#333;
+	padding:0;	
+	color:#666;
+}
+/*控制内容页的图片，不能超过250像素*/
+.content img { 
+    width:250px;  
+} 
+.up,.dowm{
+	padding-left:5px;
+}

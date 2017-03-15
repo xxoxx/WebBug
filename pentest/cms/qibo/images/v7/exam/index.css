@@ -1,0 +1,510 @@
+.MainTable td{
+	vertical-align:top;
+}
+.MainTable .SideL{
+	width:310px;
+}
+.MainTable .SideC{
+	padding:0 10px 0 10px;
+}
+.MainTable .SideR{
+	width:250px;
+}
+/*
+*幻灯片
+*/
+.slidecont{
+	border:#DDD solid 1px;
+	width:300px;
+	height:160px;
+	padding:5px 4px 5px 4px;
+}
+/*
+*考试分类
+*/
+.sortcont .head{
+	height:40px;
+	background:url(sort_head.gif) right top no-repeat;
+}
+.sortcont .head .FL{
+	display:block;
+	width:100px;
+	line-height:30px;
+	padding-bottom:10px;
+	text-align:center;
+	background:url(sort_head.gif) left top no-repeat;
+}
+.sortcont .head .FR{
+	display:block;
+	padding:15px 10px 0 0;
+	line-height:25px;
+}
+.sortcont .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:0 10px 10px 10px;
+}
+.sortcont .cont dl{
+	height:30px;
+	overflow:hidden;
+	background:url(dotted.gif) left 29px repeat-x;
+}
+.sortcont .cont dt,.sortcont .cont dd{
+	float:left;
+	padding-top:5px;
+	line-height:25px;
+}
+.sortcont .cont dt{
+	width:90%;
+	color:#999;
+}
+.sortcont .cont dt a{
+	color:#555;
+}
+.sortcont .cont dt a.bigsort{
+	padding-left:9px;
+	background:url(array.gif) 2px 3px no-repeat;
+	font-weight:bold;
+	color:#E17000;
+}
+.sortcont .cont dd {
+	float:right;
+}
+.sortcont .cont dd a{
+	display:block;
+	width:20px;
+	text-decoration:none;
+	color:#E17000;
+	font-size:10px;
+	text-align:center;
+}
+/*
+*今日焦点
+*/
+.CenterCont{
+	background:url(centercont.gif) left top no-repeat;
+	padding-left:2px;
+}
+.CenterCont .Center_In{
+	background:url(centercont.gif) right top no-repeat;
+}
+.CenterCont .Center_In .head{
+	height:30px;
+	padding:0 10px 0 10px;
+}
+.CenterCont .Center_In .head .FL{
+	padding-top:10px;
+}
+.CenterCont .Center_In .head .FR{
+	padding-top:12px;
+}
+.CenterCont .Center_In .cont{
+	padding:0 5px 0 5px;
+}
+
+.Center_In .list1 a,.Center_In .list4{
+	text-align:center;
+}
+.Center_In .list1 a,.Center_In .list4 a{
+	display:block;
+	padding:3px 5px 5px 10px;
+	font-size:14px;
+	font-weight:bold;
+	color:#188ABC;
+}
+.Center_In .list2 a,.Center_In .list5 a{
+	display:block;
+	padding:0 5px 5px 10px;
+	color:#666;
+}
+.Center_In .list3 a,.Center_In .list6 a{
+	display:block;
+	padding:0 5px 8px 10px;
+	background:url(dotted.gif) left bottom repeat-x;
+	margin-bottom:5px;
+	color:#666;
+}
+.Center_In .list7 a,.Center_In .list8 a,.Center_In .list9 a,.Center_In .list10 a{
+	display:block;
+	width:330px;
+	height:25px;
+	line-height:25px;
+	padding-left:15px;
+	font-size:14px;
+	background:url(Point.gif) 5px 11px no-repeat;
+}
+/***************/
+.topt .L{
+	float:left;
+}
+.topt .R{
+	float:right;
+}
+.topt div{
+	clear:both;
+}
+.topt .uu1 .L,.topt .uu4 .L{
+	width:99%;
+}
+.topt .uu1,.topt .uu4{
+	margin-top:6px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:2px;
+	text-align:center;
+	background:url(dotted.gif) 0 23px repeat-x;
+	height:28px;
+}
+.topt .uu2 a,.topt .uu3 a,.topt .uu2,.topt .uu3{
+	color:#666666;
+}
+.topt .uu2,.topt .uu3,.topt .uu5,.topt .uu6,.topt .uu7,.topt .uu8,.topt .uu9,.topt .uu10{
+	line-height:21px;
+}
+.topt .uu1 .R,.topt .uu4 .R{
+	display:none;
+}
+.topt .uu1 a,.topt .uu4 a{
+	font-size:14px;
+	font-weight:bold;
+	color:#188ABC;
+}
+/*
+*最近更新
+*/
+.Center_In .lista1 a{
+	display:block;
+	padding:3px 5px 8px 10px;
+	font-size:14px;
+	font-weight:bold;
+	color:#188ABC;
+	background:url(dotted.gif) left bottom repeat-x;
+	margin-bottom:5px;
+}
+.Center_In .lista2,.Center_In .lista3,
+.Center_In .lista4,.Center_In .lista5,
+.Center_In .lista6,.Center_In .lista7,
+.Center_In .lista8,.Center_In .lista9,
+.Center_In .lista10,.Center_In .lista11,
+.Center_In .lista12,.Center_In .lista13{
+	width:49%;
+	height:24px;
+	line-height:24px;
+	overflow:hidden;
+	float:left;
+}
+.Center_In .lista2 a,.Center_In .lista4 a,.Center_In .lista6 a,.Center_In .lista8 a,.Center_In .lista10 a,.Center_In .lista12 a{
+	display:block;
+	padding-left:12px;
+	background:url(Point.gif) 3px 11px no-repeat;
+	font-size:14px;
+}
+.Center_In .lista3 a,.Center_In .lista5 a,.Center_In .lista7 a,.Center_In .lista9 a,.Center_In .lista11 a,.Center_In .lista13 a{
+	display:block;
+	padding-left:9px;
+	font-size:14px;
+}
+
+.mt10 .cont .lista1{
+	text-align:center;
+}
+
+/*
+*用户中心通道
+*/
+.usercenter .head{
+	height:35px;
+	line-height:35px;
+	background:url(userhead.gif) right bottom no-repeat;
+}
+.usercenter .head .FL{
+	display:block;
+	width:160px;
+	background:url(userhead.gif) left bottom no-repeat;
+	padding-left:15px;
+	color:#EBF7FF;
+}
+.usercenter .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+}
+.usercenter .Button{
+	width:95%;
+}
+.usercenter .Button td{
+	padding-top:10px;
+}
+.usercenter .Button span{
+	display:block;
+	width:49%;
+	height:32px;
+	line-height:28px;
+	float:left;
+	background:url(botton.gif) center top no-repeat;
+}
+.usercenter .Button span a{
+	display:block;
+	padding-left:35px;
+	color:#666;
+	height:28px;
+	text-decoration:none;
+}
+.usercenter .Button span.but1 a{
+	background:url(icon.gif) 8px -3px no-repeat;
+}
+.usercenter .Button span.but2 a{
+	background:url(icon.gif) 8px -29px no-repeat;
+}
+.usercenter .Button span.but3 a{
+	background:url(icon.gif) 8px -60px no-repeat;
+}
+.usercenter .Button span.but4 a{
+	background:url(icon.gif) 10px -90px no-repeat;
+}
+.usercenter .Button span.but5 a{
+	background:url(icon.gif) 10px -115px no-repeat;
+}
+.usercenter .Button span.but6 a{
+	background:url(icon.gif) 10px -146px no-repeat;
+}
+.usercenter .listtitle td{
+	padding-bottom:5px;
+}
+.usercenter .listtitle .list{
+	width:49%;
+	height:23px;
+	line-height:23px;
+	overflow:hidden;
+	float:left;
+	background:url(Point.gif) 10px 11px no-repeat;
+}
+.usercenter .listtitle .list a{
+	padding-left:20px;
+}
+/*
+*试题下载排行
+*/
+.TopQuestions .head{
+	height:35px;
+	line-height:35px;
+	background:url(tophead.gif) right bottom no-repeat;
+}
+.TopQuestions .head .FL{
+	display:block;
+	width:160px;
+	background:url(tophead.gif) left bottom no-repeat;
+	padding-left:15px;
+}
+.TopQuestions .head .FR a{
+	padding-right:10px;
+	color:#888;
+}
+.TopQuestions .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.TopQuestions .cont div{
+	height:23px;
+	line-height:23px;
+	overflow:hidden;
+	background:url(dotted.gif) left 10px repeat-x;
+}
+.TopQuestions .cont div a{
+	display:block;
+	float:left;
+	height:23px;
+	padding:0 5px 0 25px;
+	background:#FFF;
+	color:#666;
+}
+.TopQuestions .cont div span{
+	display:block;
+	float:right;
+	padding:0 5px 0 5px;
+	background:#FFF;
+	color:#E17000;
+}
+.TopQuestions .cont div.list1 a{
+	background:#FFF url(listnum.gif) left 2px no-repeat;
+}
+.TopQuestions .cont div.list2 a{
+	background:#FFF url(listnum.gif) left -20px no-repeat;
+}
+.TopQuestions .cont div.list3 a{
+	background:#FFF url(listnum.gif) left -43px no-repeat;
+}
+.TopQuestions .cont div.list4 a{
+	background:#FFF url(listnum.gif) left -65px no-repeat;
+}
+.TopQuestions .cont div.list5 a{
+	background:#FFF url(listnum.gif) left -89px no-repeat;
+}
+.TopQuestions .cont div.list6 a{
+	background:#FFF url(listnum.gif) left -112px no-repeat;
+}
+.TopQuestions .cont div.list7 a{
+	background:#FFF url(listnum.gif) left -135px no-repeat;
+}
+.TopQuestions .cont div.list8 a{
+	background:#FFF url(listnum.gif) left -158px no-repeat;
+}
+.TopQuestions .cont div.list9 a{
+	background:#FFF url(listnum.gif) left -181px no-repeat;
+}
+.TopQuestions .cont div.list10 a{
+	background:#FFF url(listnum.gif) left -205px no-repeat;
+}
+/*
+*中间广告
+*/
+.MiddleAd{
+	height:80px;
+	margin:10px auto;
+}
+.MiddleAd .adl{
+	height:80px;
+	width:490px;
+	float:left;
+	overflow:hidden;
+}
+.MiddleAd .adr{
+	height:80px;
+	width:490px;
+	float:right;
+	overflow:hidden;
+}
+/*
+*计算机等级考试
+*/
+.MainTable .Mainhead{
+	height:38px;
+	background:url(mainhead.gif) right top no-repeat;
+}
+.MainTable .Mainhead .FL{
+	background:url(mainhead.gif) left top no-repeat;
+	padding:8px 0 0 60px;
+	line-height:30px;
+	font-size:24px;
+	color:#1688BA;
+}
+.MainTable .Mainhead .FR{
+	padding:5px 10px 0 0;
+	line-height:33px;
+	color:#1688BA;
+}
+.MainTable .Mainhead .FR a{
+	color:#1688BA;
+}
+/*
+*考试内容
+*/
+.MainContainer{
+	clear:both;
+	margin:10px auto 0 auto;
+}
+.MainContainer td{
+	vertical-align:top;
+}
+.MainContainer .SideTdL{
+	width:360px;
+}
+.MainContainer .SideTdC{
+	padding:0 10px 0 10px;
+}
+.MainContainer .SideTdR{
+	width:250px;
+}
+.sidecontainer .head{
+	height:35px;
+	background:url(headbg.gif) right bottom no-repeat;
+}
+.sidecontainer .head .FB{
+	display:block;
+	float:left;
+	background:url(headbg.gif) left bottom no-repeat;
+	padding-left:35px;
+	padding-top:5px;
+	line-height:30px;
+}
+.sidecontainer .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.sidecontainer .cont .sort{
+	line-height:30px;
+	background:url(dotted.gif) left bottom repeat-x;
+	color:#999;
+	margin-bottom:5px;
+}
+.sidecontainer .cont .list{
+	line-height:23px;
+	height:23px;
+	overflow:hidden;
+	background:url(Point.gif) 3px 10px no-repeat;
+}
+.sidecontainer .cont .list a{
+	display:block;
+	float:left;
+}
+.sidecontainer .cont .list a.s{
+	padding:0 5px 0 15px;
+	color:#1688BA;
+}
+.sidecontainer .cont .list span{
+	display:block;
+	float:right;
+	color:#999;
+	padding-right:5px;
+}
+/*
+*模拟试题
+*/
+.sidercontainer .head{
+	height:35px;
+	line-height:35px;
+	background:url(tophead.gif) right bottom no-repeat;
+}
+.sidercontainer .head .FL{
+	display:block;
+	width:160px;
+	background:url(tophead.gif) left bottom no-repeat;
+	padding-left:15px;
+}
+.sidercontainer .head .FR a{
+	padding-right:10px;
+	color:#888;
+}
+.sidercontainer .cont{
+	border:#DDD solid 1px;
+	border-top:0;
+	padding:10px;
+}
+.sidercontainer .cont div{
+	height:25px;
+	line-height:25px;	
+	overflow:hidden;
+	background:url(array1.gif) left 5px no-repeat;
+}
+.sidercontainer .cont div a{
+	display:block;
+	padding-left:20px;
+	padding-right:30px;
+	background:url(icon1.gif) right 5px no-repeat;
+}
+.sidercontainer .cont div a.s{
+	background:url(icon1.gif) right -23px no-repeat;
+}
+.sidercontainer .cont div.list2,.sidercontainer .cont div.list4{
+	border-bottom:#DDD dotted 1px;
+	padding-bottom:5px;
+	margin-bottom:5px;
+}
+
+.FootAd{
+	width:990px;
+	height:60px;
+	overflow:hidden;
+	margin:10px auto 0 auto;
+}

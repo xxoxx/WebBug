@@ -1,0 +1,176 @@
+qb_crontab定时任务
+
+  `id` mediumint(7) NOT NULL auto_increment,		随机增值ID,不太重要
+  `title` varchar(100) NOT NULL default '',		功能说明
+  `minutetime` mediumint(4) NOT NULL default '0',	每隔多少分钟执行一次
+  `daytime` mediumint(4) NOT NULL default '0',		每天的某个时候执行一次
+  `whiletime` int(10) NOT NULL default '0',		未来某个时间执行一次
+  `lasttime` int(10) NOT NULL default '0',		最后执行日期
+  `filepath` varchar(50) NOT NULL default '',		程序所在路径
+  `ifstop` tinyint(1) NOT NULL default '0',		是否关闭
+
+
+
+qb_label标签数据表
+
+  `lid` int(10) NOT NULL auto_increment,		随机增值ID,不太重要
+  `name` varchar(100) NOT NULL default '',		标签名称,一般为空
+  `ch` smallint(4) NOT NULL default '0',		所属频道,CMS系统主页为1,其它一般都是O
+  `chtype` tinyint(2) NOT NULL default '0',		头部与尾部模板的标签为99,其它一般为0
+  `tag` varchar(50) NOT NULL default '',		标签的关键字,也是变量名,只能是英文或数字,同一个模板不能有雷同
+  `type` varchar(30) NOT NULL default '',		调用数据的类型,纯代码还是单图片或者是系统的文章数据等等
+  `typesystem` tinyint(1) NOT NULL default '0',		是否调用内容的列表,即是否要读数据库,图片与代码这些是不必的,所以为0,否则为1
+  `code` text NOT NULL,					标签中的重要内容,如果是系统数据的话,会以数据方式序列化.
+  `divcode` text,					标签半透明层的样式,不是太重要
+  `hide` tinyint(1) NOT NULL default '0',		是否隐藏标签内容,1为隐藏,默认是0不隐藏
+  `js_time` int(10) NOT NULL default '0',		JS调用标签,定期更新标签内容的读取数据库的时间间隔
+  `uid` mediumint(7) NOT NULL default '0',		更新标签的用户UID,不太重要
+  `username` varchar(30) NOT NULL default '',		更新标签的用户帐号,不太重要
+  `posttime` int(10) NOT NULL default '0',		更新标签的日期,不太重要
+  `pagetype` tinyint(3) NOT NULL default '0',		所在页面,0或1都是主页,主页一般是0,2是列表页,3是内容页
+  `module` mediumint(6) NOT NULL default '0',		系统模块的ID,装一个模块就会生成一个ID,文章的话,为0
+  `fid` mediumint(7) NOT NULL default '0',		是否指定某栏目只使用特定的标签,否则一般依照模板而定.
+  `if_js` tinyint(1) NOT NULL default '0',		是否是后台特别创建的JS标签,JS方式调用
+  `style` varchar(40) NOT NULL default '',		当前所使用的风格,意义不大,目前不根据风格判断,
+
+
+
+qb_template 系统默认可供选择的列表页,内容页,专题页模板
+
+
+  `id` mediumint(5) NOT NULL auto_increment,		自动增值ID,意义不大
+  `name` varchar(50) NOT NULL default '',		模板名称
+  `type` smallint(4) NOT NULL default '0',		适合于哪些页面调用,1为主页模板,2为列表页,3为内容页,9为独立页,11为专题页
+  `filepath` varchar(100) NOT NULL default '',		模板保存路径,格式如template/default/index.htm
+  `descrip` text NOT NULL,				描述,可为空,不重要
+  `list` int(10) NOT NULL default '0',			排序值,可为空,不重要
+
+
+qb_module系统模块配置文件
+
+  `id` mediumint(5) NOT NULL auto_increment,		自动增值ID，很重要，不要随便修改，因为标签那里用到
+  `type` tinyint(1) NOT NULL default '0',		一般是为2，以前旧版是为1
+  `name` varchar(30) NOT NULL default '',		系统模块名称
+  `pre` varchar(20) NOT NULL default '',		数据表前缀
+  `dirname` varchar(30) NOT NULL default '',		系统模块存放目录
+  `domain` varchar(100) NOT NULL default '',		模块二级域名
+  `admindir` varchar(20) NOT NULL default '',		已作废
+  `config` text NOT NULL,				扩展字段
+  `list` mediumint(5) NOT NULL default '0',		排序值
+  `admingroup` varchar(150) NOT NULL default '',	暂时没使用
+  `adminmember` text NOT NULL,				已作废
+  `ifclose` tinyint(1) NOT NULL default '0',		是否关闭此模块
+
+
+qb_hack插件中心
+
+  `keywords` varchar(30) NOT NULL default '',		此插件的关键字，也是存放目录，也是后台权限的变量名
+  `name` varchar(30) NOT NULL default '',		插件名称
+  `isclose` tinyint(1) NOT NULL default '0',		是否关闭此插件，暂时没使用此功能
+  `author` varchar(30) NOT NULL default '',		插件作者
+  `config` text NOT NULL,				扩展字段，很少用
+  `htmlcode` text NOT NULL,				扩展字段，很少用
+  `hackfile` text NOT NULL,				涉及到的目录与文件名，卸载时方便删除
+  `hacksqltable` text NOT NULL,				涉及到的数据表，卸载时方便删除
+  `adminurl` varchar(150) NOT NULL default '',		后台管理地址
+  `about` text NOT NULL,				介绍
+  `class1` varchar(30) NOT NULL default '',		分类所属类型
+  `class2` varchar(30) NOT NULL default '',		父栏目
+  `list` int(10) NOT NULL default '0',			排序值
+  `linkname` text NOT NULL,				后台自定义链接网址，极少用
+  `isbiz` tinyint(1) NOT NULL default '0',		是否为商业功能
+
+
+
+qb_channel 频道页
+
+  `id` smallint(4) NOT NULL auto_increment,		频道ID，不能随意修改，牵涉到标签
+  `type` tinyint(2) NOT NULL default '0',		暂时没使用
+  `sort` smallint(4) NOT NULL default '0',		暂时没使用
+  `name` varchar(30) NOT NULL default '',		频道名称
+  `path` varchar(30) NOT NULL default '',		静态页存放路径
+  `phpname` varchar(255) NOT NULL default '',		使用的PHP程序，留空即使用index.php
+  `htmlname` varchar(255) NOT NULL default '',		生成静态的文件名
+  `fids` varchar(255) NOT NULL default '',		要调取的栏目ID
+  `showfid` varchar(150) NOT NULL default '',		暂时没用到
+  `style` varchar(15) NOT NULL default '',		使用的风格
+  `head_tpl` varchar(255) NOT NULL default '',		头部模板
+  `main_tpl` varchar(255) NOT NULL default '',		内容模板
+  `foot_tpl` varchar(255) NOT NULL default '',		底部模板
+  `url` varchar(150) NOT NULL default '',		暂时没使用
+  `logo` varchar(150) NOT NULL default '',		暂时没使用
+  `descrip` text NOT NULL,				暂时没使用
+  `admin` varchar(150) NOT NULL default '',		暂时没使用
+  `list` int(10) NOT NULL default '0',			排序值
+  `config` text NOT NULL,				扩展参数
+
+
+qb_admin_menu	后台与会员中心菜单，会员中心菜单的话，groupid为负数，后台菜单则为正数
+
+  `id` mediumint(5) NOT NULL auto_increment,		自动增值ID，也是作为父类的父ID
+  `fid` mediumint(5) NOT NULL default '0',		父ID，也是上面的ID
+  `name` text NOT NULL,					菜单名称
+  `linkurl` varchar(150) NOT NULL default '',		链接地址
+  `color` varchar(15) NOT NULL default '',		链接颜色
+  `target` tinyint(1) NOT NULL default '0',		是否新窗口打开
+  `list` smallint(4) NOT NULL default '0',		排序值
+  `groupid` mediumint(5) NOT NULL default '0',		用户组ID，会员中心菜单为负的，后台则为正的
+  `iftier` tinyint(1) NOT NULL default '0',		是否与前一链接菜单同一行
+
+
+
+qb_alonepage	独立页
+
+  `id` mediumint(5) NOT NULL auto_increment,		自动增值ID
+  `fid` mediumint(5) NOT NULL default '0',		暂时没使用
+  `name` varchar(100) NOT NULL default '',		独立页名称
+  `title` varchar(100) NOT NULL default '',		标题
+  `posttime` int(10) NOT NULL default '0',		发布日期
+  `uid` mediumint(7) NOT NULL default '0',		发布者UID
+  `username` varchar(30) NOT NULL default '',		发布者帐号
+  `style` varchar(15) NOT NULL default '',		使用的风格
+  `tpl_head` varchar(50) NOT NULL default '',		头部模板
+  `tpl_main` varchar(50) NOT NULL default '',		内容模板
+  `tpl_foot` varchar(50) NOT NULL default '',		尾部模板
+  `filename` varchar(100) default NULL,			静态文件名
+  `filepath` varchar(30) NOT NULL default '',		存放目录
+  `descrip` text NOT NULL,				描述
+  `keywords` varchar(255) NOT NULL default '',		关键字
+  `content` text NOT NULL,				内容
+  `hits` int(7) NOT NULL default '0',			点击数
+  `ishtml` tinyint(1) NOT NULL default '0',		已作废
+
+
+
+
+qb_menu 网站导航菜单
+
+  `id` mediumint(5) NOT NULL auto_increment,		自动增值ID，也是下面的父ID
+  `fid` mediumint(5) NOT NULL default '0',		父ID，对于二级菜单而言
+  `name` varchar(80) NOT NULL default '',		菜单名称
+  `linkurl` varchar(150) NOT NULL default '',		连接地址
+  `color` varchar(15) NOT NULL default '',		链接颜色
+  `target` tinyint(1) NOT NULL default '0',		是否新窗口打开
+  `moduleid` tinyint(2) NOT NULL default '0',		暂时没使用
+  `type` tinyint(2) NOT NULL default '0',		暂时没使用
+  `hide` tinyint(1) NOT NULL default '0',		是否隐藏不显示
+  `list` smallint(4) NOT NULL default '0',		排序值
+
+
+
+
+
+
+qb_pm 短消息表,如果整合了论坛,可能就使用论坛的,这个表用不到
+
+  `mid` int(10) unsigned NOT NULL auto_increment,			自动增值ID,不太重要
+  `touid` mediumint(8) unsigned NOT NULL default '0',			收信人UID
+  `togroups` varchar(80) NOT NULL default '',				暂时没用到
+  `fromuid` mediumint(8) unsigned NOT NULL default '0',			发信人UID
+  `username` varchar(15) NOT NULL default '',				发信人帐号
+  `type` enum('rebox','sebox','public') NOT NULL default 'rebox',	暂时没用到
+  `ifnew` tinyint(1) NOT NULL default '0',				消息查阅与否
+  `title` varchar(130) NOT NULL default '',				消息标题
+  `mdate` int(10) unsigned NOT NULL default '0',			消息发送的日期
+  `content` text NOT NULL,						消息内容
+

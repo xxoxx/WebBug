@@ -1,0 +1,174 @@
+qb_shoptg_comments,qb_shoptg_pic,qb_shoptg_report暂时没使用到这三个表
+
+qb_shoptg_collection	收藏夹
+
+   cid  mediumint(7)   否    auto_increment     自动增值ID,意义不大         
+   id  mediumint(7)   否  0                	关联团购信息的ID
+   uid  mediumint(7)   否  0                	收藏者的UID
+   posttime  int(10)   否  0     		收藏日期
+
+
+qb_shoptg_config	模块参数配置文件
+
+   c_key  varchar(50)   否                  	变量名
+   c_value  text   否                  		值
+   c_descrip  text   否                 	暂时没使用
+          
+qb_shoptg_content	团购信息主表
+
+   id  int(10)   否    auto_increment           自动增值ID   
+   title  varchar(100)   否                  	团购信息标题
+   mid  smallint(4)   否  0                	模型ID,强制为1
+   fid  mediumint(7)   否  0                	所属栏目ID
+   fname  varchar(50)   否                  	栏目名称
+   hits  mediumint(7)   否  0                	关注度
+   comments  mediumint(7)   否  0               评论数,暂时没使用
+   posttime  int(10)   否  0                	发布日期
+   list  varchar(10)   否                  	排序值
+   uid  mediumint(7)   否  0                	发布者的UID
+   username  varchar(30)   否                  	发布者的帐号
+   titlecolor  varchar(15)   否                 暂时没使用
+   picurl  varchar(150)   否                  	介绍图
+   ispic  tinyint(1)   否  0                	是否有介绍图,有的话为1
+   yz  tinyint(1)   否  0                	审核与否,1为审核
+   levels  tinyint(2)   否  0                	推荐与否,1为推荐
+   levelstime  int(10)   否  0                	推荐日期
+   keywords  varchar(100)   否                  暂时没使用
+   ip  varchar(15)   否                  	发布者的IP
+   lastfid  mediumint(7)   否  0                暂时没使用
+   money  mediumint(7)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  	暂时没使用
+   begintime  int(10)   否  0                	暂时没使用
+   endtime  int(10)   否  0                	暂时没使用
+   lastview  int(10)   否  0                	暂时没使用
+   city_id  mediumint(7)   否  0                所在城市ID
+   picnum  smallint(4)   否  0                	暂时没使用
+   price  varchar(20)   否                  	现在的价格
+   join_num  mediumint(5)   否  0               报名人数
+   pay_num  mediumint(5)   否  0                确认参加人数
+   gg_maps  varchar(50)   否       		谷歌地图位置
+
+
+qb_shoptg_content_1	团购信息副表
+
+   rid  mediumint(7)   否    auto_increment     自动增值ID,意义不重要          
+   id  mediumint(7)   否  0                	关联主表的ID
+   fid  mediumint(7)   否  0                	所属分类
+   uid  mediumint(7)   否  0                	发布者的UID
+   content  mediumtext   否                  	详情
+   market_price  varchar(10)   否               市场价格
+   shoptype  varchar(10)   否                  	折扣,多少折
+   min_num  int(4)   否  0                	最低团购人数
+   about  mediumtext   否                  	简介
+   end_time  varchar(20)   否                  	结束日期
+   address  varchar(150)   否                 	商家地址
+
+
+qb_shoptg_join	参加团购订单主表
+   id  mediumint(7)   否    auto_increment      自动增值ID,意义不重要       
+   mid  smallint(4)   否  0                	所属模型ID,强制为2
+   cid  mediumint(7)   否  0                	关联的团购信息ID
+   cuid  mediumint(7)   否  0                	关联的团购信息的发布者UID
+   fid  mediumint(7)   否  0                	关联的团购信息所属的栏目ID
+   posttime  int(10)   否  0                	下单日期
+   uid  mediumint(7)   否  0                	下单用户的UID
+   username  varchar(30)   否                  	下单用户的帐号
+   yz  tinyint(1)   否  0                	审核与否
+   ip  varchar(15)   否                  	来源IP
+   shopnum  mediumint(7)   否  0                预定数量
+   ifpay  tinyint(1)   否  0                	付款与否
+   ifsend  tinyint(1)   否  0                	发货与否
+   totalmoney  varchar(10)   否                 付款总额
+   banktype  varchar(15)   否                  	付款银行
+   emscode  varchar(32)   否                  	付款方式,在线支付还是其它方式支付
+   password  varchar(32)   否                 	消费密码,凭密码消费
+
+
+qb_shoptg_content_2 参加团购订单副表
+   rid  mediumint(7)   否    auto_increment     自动增值ID,意义不重要      
+   id  int(10)   否  0                		关联主表ID
+   fid  mediumint(7)   否  0                	关联的团购信息所属的栏目ID
+   uid  mediumint(7)   否  0                	下单用户的UID
+   content  mediumtext   否                  	附注留言
+   order_username  varchar(20)   否             顾客姓名     
+   order_phone  varchar(20)   否                联系电话
+   order_mobphone  varchar(15)   否             联系手机
+   order_email  varchar(50)   否                联系邮箱
+   order_qq  varchar(11)   否                  	联系QQ
+   order_postcode  varchar(6)   否              邮政编码
+   order_sendtype  tinyint(1)   否  0           配送方式
+   order_paytype  tinyint(1)   否  0            支付方式
+   order_address  varchar(100)   否   		联系地址
+
+qb_shoptg_sort
+   fid  mediumint(7)  UNSIGNED 否    auto_increment    	分类的ID
+   fup  mediumint(7)  UNSIGNED 否  0                   	父ID
+   name  varchar(50)   否                  		分类名称
+   mid  smallint(4)   否  0                		分类属于哪个模型ID
+   class  smallint(4)   否  0                		暂时没使用
+   sons  smallint(4)   否  0                		暂时没使用
+   type  tinyint(1)   否  0                		是分类不审终级栏目,1是大分类,0是终级栏目
+   admin  varchar(100)   否                  		栏目管理员,暂时没使用
+   list  int(10)   否  0                		排序值
+   listorder  tinyint(2)   否  0                	暂时没使用
+   passwd  varchar(32)   否                  		暂时没使用
+   logo  varchar(150)   否                  		暂时没使用
+   descrip  text   否                  			暂时没使用
+   style  varchar(50)   否                  		暂时没使用
+   template  text   否                  		暂时没使用
+   jumpurl  varchar(150)   否                  		暂时没使用
+   maxperpage  tinyint(3)   否  0                	暂时没使用
+   metatitle  varchar(250)   否                  	SEO标题关键字
+   metakeywords  varchar(255)   否                  	SEO关键字
+   metadescription  varchar(255)   否                  	SEO描述
+   allowcomment  tinyint(1)   否  0                	暂时没使用
+   allowpost  varchar(150)   否                  	暂时没使用
+   allowviewtitle  varchar(150)   否                  	暂时没使用
+   allowviewcontent  varchar(150)   否                  暂时没使用
+   allowdownload  varchar(150)   否                  	暂时没使用
+   forbidshow  tinyint(1)   否  0                	暂时没使用
+   config  mediumtext   否                  		暂时没使用
+   index_show  tinyint(1)   否  0                	暂时没使用
+   contents  mediumint(4)   否  0                	暂时没使用
+   tableid  varchar(30)   否                  		暂时没使用
+   dir_name  varchar(50)   否                  		暂时没使用
+   ifcolor  tinyint(1)   否  0               		暂时没使用           
+
+
+qb_shoptg_module	模型表       
+   id  smallint(4)   否    auto_increment         	自动增值的模型ID,很多地方要关联用到     
+   sort_id  mediumint(5)   否  0                	暂时没使用
+   name  varchar(50)   否                  		模型名称
+   list  smallint(4)   否  0                		排序值
+   style  varchar(50)   否                  		暂时没用到
+   config  text   否                  			扩展字段1
+   config2  text   否                  			扩展字段2,暂时没用到
+   comment_type  tinyint(1)   否  0                	暂时没用到
+   ifdp  tinyint(1)   否  0                		暂时没用到
+   template  text   否                 			指定的母模板       
+
+qb_shoptg_field		模型字段详细表
+   id  mediumint(7)   否    auto_increment      	自动增值的ID,意义不大      
+   mid  mediumint(5)   否  0                		对应上面这个表的ID
+   title  varchar(50)   否                  		字段中文名称
+   field_name  varchar(30)   否                  	字段名,MSYQL中使用的字段名
+   field_type  varchar(15)   否                  	字段类似,整型还是字符串
+   field_leng  smallint(3)   否  0                	字段长度
+   orderlist  int(10)   否  0                		排序值
+   form_type  varchar(15)   否                  	表单的类型
+   field_inputwidth  smallint(3)   是  NULL             表单长度
+   field_inputheight  smallint(3)   否  0               表单的高度
+   form_set  text   否                  		针对下拉,多选,单选的参数设置
+   form_value  text   否                  		表单默认值
+   form_units  varchar(30)   否                  	界面中显示的单位
+   form_title  text   否                  		界面中显示的标题
+   mustfill  tinyint(1)   否  0                		是否为必填
+   listshow  tinyint(1)   否  0                		是否在列表显示
+   listfilter  tinyint(1)   是  NULL                	是否在列表筛选
+   search  tinyint(1)   否  0                		是否为搜索字段
+   allowview  varchar(255)   否                  	允许查看字段的用户组
+   allowpost  varchar(255)   否                  	允许发布字段内容的用户组
+   js_check  text   否                  		JS特效检查输入内容是否合法
+   js_checkmsg  varchar(255)   否                  	JS特效提示信息
+   classid  mediumint(7)   否  0                	联级字段扩展使用
+   form_js  text   否                 			JS扩展使用

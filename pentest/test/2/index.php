@@ -1,0 +1,29 @@
+<?php
+//禁用错误报告
+error_reporting(0);
+header("Content-Type: text/html;charset=utf-8");
+$url=$_REQUEST['url'];
+if($url!=null||$url!=""){
+	echo "<script type='text/javascript'>alert('成功跳转！');location.href='".$url."'</script>";
+}
+?>
+<!DOCTYPE html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<title>登录测试</title>
+<meta name="description" content="slick Login">
+<meta name="author" content="MRYE+">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="jquery-latest.min.js"></script>
+<script type="text/javascript" src="placeholder.js"></script>
+</head>
+<body>
+<!--<a href="index.php?url=#">I</a>-->
+<form id="slick-login" action="verify.php" method="post" >
+<label for="username">username</label><input type="text" id="username" name="username" class="placeholder" placeholder="登录用户名">
+<label for="password">password</label><input type="password" id="password" name="password" class="placeholder" placeholder="密码">
+<input type="submit" value="submit">
+
+</form>
+</body>
+</html>

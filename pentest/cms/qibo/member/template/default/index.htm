@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+print <<<EOT
+-->
+<head>
+<title>会员中心 </title>
+<link rel="stylesheet" type="text/css" href="images/default/css.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<script type="text/javascript">
+function SetCwinHeight(){
+	var obj=document.getElementById("member_mainiframe"); //iframe id
+	if (document.getElementById){
+		if (obj && !window.opera){
+			if (obj.contentDocument && obj.contentDocument.body.offsetHeight){
+				obj.height = obj.contentDocument.body.offsetHeight;
+			}else if(obj.Document && obj.Document.body.scrollHeight){
+				obj.height = obj.Document.body.scrollHeight;
+			}
+			if(obj.height<1400){
+				obj.height=1400;
+			}
+		}else {
+			obj.height = 1400;
+		}
+		//navigator.userAgent.toLowerCase().indexOf("msie 8.0") != -1
+		//obj.document.getElementById("footer").style.display='none';
+	}
+}
+</script>
+<body>
+<div id="TopDiv">
+<ul>
+<!--
+EOT;
+$detail=explode("\r\n",$webdb[guide_word]);
+foreach($detail AS $key=>$value){
+if(!$value)continue;
+list($name,$url,$blank,$color,$lid)=explode("|",$value);
+if(ereg("^\/",$url)){
+	$url="$webdb[www_url]$url";
+}elseif(!ereg("://",$url)){
+	$url="$webdb[www_url]$webdb[path]/$url";
+}
+print <<<EOT
+-->
+	<li><a href="$url" target="_blank">$name</a></li> 
+<!--
+EOT;
+}print <<<EOT
+-->
+</ul>
+</div>
+<div id="Iframe"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="header">
+    <tr> 
+      <td> 
+        <div class="Logo"><a href="index.php?SystemId=$SystemId"><img src="images/default/logo.gif"></a></div>
+        <div class="welcome">
+            您好,$lfjid 
+<!--
+EOT;
+if($ModuleDB['blog_']){print <<<EOT
+-->
+			<a HREF="$webdb[www_url]/blog/?uid=$lfjuid" target="_blank">我的博客</a> 
+<!--
+EOT;
+}print <<<EOT
+-->
+            <a HREF="homepage.php?uid=$lfjuid" target="_blank">个人信息</a> 
+            <a href="$webdb[www_url]/do/login.php?action=quit">安全退出</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="MainContainer">
+    <tr> 
+      <td class="LeftMenu">     
+      	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="sidetable">
+          <tr>
+            <td class="head"><span>会员功能菜单</span></td>
+          </tr>
+          <tr> 
+            <td class="middle"> 
+<!--
+EOT;
+$i=0;
+foreach($base_menudb AS $MenuName=>$array2){
+$i++;
+if($power<$array2[power])continue;
+if(strstr($array2[link],'../')||strstr($array2[link],'homepage.php')){
+$target='_blank';
+}else{
+$target='member_mainiframe';
+}print<<<EOT
+-->
+              <div class="div$i"><span><A HREF='$array2[link]' onclick="self.scroll(0,0);" target='$target'>$MenuName</A></span></div>
+<!--
+EOT;
+}print <<<EOT
+-->
+            </td>
+          </tr>
+        </table>
+<!--
+EOT;
+$jj = 0;
+foreach($menudb AS $SortName=>$array){
+$jj++;
+$class = $jj<3 ? "class=\"Show\"" : "class=\"hidden\"";
+print<<<EOT
+-->
+        <dl id="TheDl{$jj}" $class> 
+           <dt onclick='showson("TheDl{$jj}")'>$SortName</dt>
+<!--
+EOT;
+foreach($array AS $MenuName=>$array2){
+if($power<$array2[power])continue;
+if(strstr($array2[link],'../')){
+$target='_blank';
+}else{
+$target='member_mainiframe';
+}
+print<<<EOT
+-->
+          <dd><A HREF='$array2[link]' onclick="self.scroll(0,0);" target='$target'>$MenuName</A></dd>
+<!--
+EOT;
+}print<<<EOT
+-->
+        </dl>
+<!--
+EOT;
+}print<<<EOT
+--> 
+
+      </td>
+      <td class="RightMain">      
+      	<iframe width="100%" name="member_mainiframe" id="member_mainiframe" height="100"  onload="Javascript:SetCwinHeight();self.scroll(0,0);" scrolling="no" marginwidth=0 marginheight=0 frameborder="0" src="$MainUrl"></iframe>
+      </td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="copyright">
+    <tr> 
+      <td>
+        {$webdb[copyright]}<br>
+        Powered by <a href="http://www.qibosoft.com" target="_blank">qibosoft {$qibosoft_Edition}</a> 
+        Code &copy; 2003-10 <a href="http://bbs.qibosoft.com/" target="_blank">qibosoft</a> 
+      </td>
+    </tr>
+  </table>
+</div>
+<SCRIPT language=javascript>
+<!--
+function showson(ss){
+	if (document.getElementById(ss).className=='hidden'){
+		document.getElementById(ss).className = 'Show';
+	}else{
+		document.getElementById(ss).className = 'hidden';
+	}
+}
+
+var objDl=document.getElementById("SideMenu").getElementsByTagName("dl");
+function ShowAll(){	
+	for(var i=0;i< objDl.length;i++ ){
+		objDl[i].className='Show';
+	}
+}
+function HiddenAll(){	
+	for(var i=0;i< objDl.length;i++ ){
+		objDl[i].className='';
+	}
+}
+//-->
+</script>
+
+</SCRIPT>
+</body>
+</html>
+<!--
+EOT;
+?>
+-->

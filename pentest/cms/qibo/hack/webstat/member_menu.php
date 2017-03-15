@@ -1,0 +1,7 @@
+<?php
+return array(
+	'name'=>'信息统计',
+	'url'=>'hack.php?hack=webstat&job=list'
+);
+
+?>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HDWiki Install Readme</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="images/install.css" type="text/css" />
+</head>
+<body>
+<h1 id="logo" style="text-align: center">
+	<img src="./images/logo.gif" alt="HDWiki"/>
+	<br /> 
+	版本4.1</h1>
+<p style="text-align: center"> 强大易用的WIKI 建站系统</p>
+
+<h1>前言</h1>
+<p>互动维客欢迎您使用HDWiki系统。互动维客开源系统（HDWiki）作为中国第一家拥有自主知识产权的中文WIKI 系统，由互动在线（北京）科技有限公司（www.hudong.com）于2006年11月28日正式推出，力争为给国内外众多的中小站长和WIKI 爱好者提供一个开源、免费、易用、功能强大的WIKI 系统。感谢您选择它<strong>互动我们的世界，WIKI你的生活。</strong></p>
+<p style="text-align: right;">&#8212; 互动维客开源 </p>
+
+<h1>安装</h1>
+<p>一、系统推荐：</p>
+<p>安装互动维客，你的服务器（或者虚拟主机）必须满足以下条件：</p>
+<ol>
+	<li>PHP版本最低要求4.1.0以上，推荐PHP版本<strong>5.0</strong>或更高版本。</li>
+	<li>MySQL版本最低3.23，推荐<strong>4.1</strong>或更高版本。</li>
+	<li>支持session和cookie。</li>
+	<li>您的网站上一个到 <a href="http://kaiyuan.hudong.com/">http://kaiyuan.hudong.com</a> 的链接。</li>
+</ol>
+<p>二、安装步骤：</p>
+<p><strong>A、</strong>推荐您下载使用UTF-8版本的HDWiki，GBK版本不支持多语言文字和某些特殊符号。<br />将下载的压缩包解压，其中有三个文件夹，document文件夹里是安装升级说明文档。upgrade文件夹是升级程序，这两个文件夹不要上传。请将hdwiki文件夹下的所有文件上传到你的服务器（或虚拟主机）的根目录或者您自建的wiki目录中。</p><p>保证下列文件或目录可读写(Unix和Linux服务器请设置以下文件夹的属性为777）：</p>
+<ol>
+	<li>/uploads</li>
+	<li>/uploads/userface</li>
+	<li>/data</li>
+	<li>/plugins</li>
+	<li>/config.php</li>
+	<li>/style/default/logo.gif</li>
+</ol>
+<p><strong>B、</strong>上传完毕后，开始在浏览器中安装 HDWiki ，比如你要安装 HDWiki 的访问地址为：http://www.yourwebsite.com/wiki ，那么在浏览器地址栏应该填写为：http://www.yourwebsite.com/wiki，输入完之后则显示 HDWiki 的安装页面，如下图所示：</p>
+<p><strong>C、</strong>安装时系统会自动检查安装配置，如果配置不对，将不能进入下一步。</p>
+<p>注：安装如果出现错误，请检查您的服务器（或者虚拟主机）PHP是否支持GD库，或者文件夹的属性设置是否有误，并重试。如果还是不成功，请访问<a href="http://kaiyuan.hudong.com/">HDWiki网站</a>，并向我们提供您能收集到的尽可能多的数据信息，以方便我们尽快解决问题。</p>
+<p>（1）安装协议</p>
+<p><img src="images/image001.gif" width="700" alt="安装协议" class="center" /></p>
+<p>（2）检查安装设置</p>
+<p><img src="images/image002.gif" width="700" alt="检查安装设置" class="center" /></p>
+<p>（3）设置数据库</p>
+<p><img src="images/image003.gif" width="700" alt="设置数据库" class="center" /></p>
+<p>（4）设置管理员</p>
+<p><img src="images/image004.gif" width="700" alt="设置管理员" class="center" /></p>
+<p>（4.1）数据库重名会提示<strong>数据库中已经安装过 HDWiki, 继续安装会清空原有数据。</strong></p>
+<p><img src="images/image006.gif" width="700" alt="数据库重名会提示重新设置" class="center" /></p>
+<p>（4.2）如果您坚持点击下一步则会提示：<strong>继续安装会清空全部原有数据，您确定要继续吗?</strong></p>
+<p><img src="images/image007.gif" width="700" alt="清空全部原有数据" class="center" /></p>
+<p>（5）创建数据库表</p>
+<p><img src="images/image005.gif" width="700" alt="创建数据库表" class="center" /></p>
+<p>（6.1）完成安装--添加测试数据</p>
+<p><img src="images/6-1.gif" width="700" alt="完成安装--添加测试数据表" class="center" /></p>
+<p>（6.2）完成安装--提交站长信息</p>
+<p><img src="images/6-2.gif" width="700" alt="完成安装--提交站长信息" class="center" /></p>
+
+<p>恭喜您，安装成功！</p>
+<h1>在线资源</h1>
+<p>如果您有在本文中未提及的问题，请充分利用好 HDWiki的在线资源:</p>
+<dl>
+	<dt><strong>HDWiki<span lang="zh-cn">&nbsp; Demo：</span></strong><a href="http://kaiyuan.hudong.com/"><strong>http://kaiyuan.hudong.com</strong></a></dt>
+	<dd>这是互动维客开源系统的主站，是HDWiki最全面的信息来源。</dd>
+	<dt><strong>HDWiki&nbsp; 论坛<span lang="zh-cn">：</span><a href="http://kaiyuan.hudong.com/bbs/">http://kaiyuan.hudong.com/bbs/</a></strong></dt>
+		<dd>如果您在各个地方都没有找到答案，您可以到这里寻求帮助。在您寻求帮助时请使用简明扼要的主题标题，并尽量详细的描述您的问题。谢谢。</dd>
+	<dt><strong>邮件：hdwiki@hudong.com</strong></dt>
+		<dd>如果问题中涉及个人信息，请发邮件到hdwiki@hudong.com。</dd>
+	    <dt>&nbsp;</dt>
+</dl>
+
+
+<h1> 最后注意事项</h1>
+<ul>
+	<li>如果您有任何建议、好点子、评论，或者您发现了一个 Bug，请在<a href="http://kaiyuan.hudong.com/bbs/">HDWiki论坛</a>里发贴告诉我们。</li>
+</ul>
+
+<h1>版权</h1>
+<p>在开始安装和使用 HDWiki 之前，请务必仔细阅读本授权文档，在确定您理解和同意以下全部条款后， 方可继续安装和使用。</p>
+<p>互动在线（北京）科技有限公司为互动维客产品的开发商，依法独立拥有互动维客产品著作权。互动在线（北京）科技有限公司网址为 http://www.hudong.com。</p>
+<p>互动维客著作权已在中华人民共和国国家版权局注册，著作权受到法律和国际公约保护。使用者无论个人或组织、盈利与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，在理解、同意、并遵守本协议的全部条款后，方可开始使用互动维客软件。</p>
+<p>本授权协议适用且仅适用于不同版本的互动维客产品，互动在线（北京）科技有限公司拥有对本授权协议的最终解释权。</p>
+<h2>I. 协议许可的权利</h2>
+<ol>
+	<li>您可以在完全遵守本最终用户授权协议的基础上应用本软件，而不必支付软件版权授权费用。</li>
+	<li>您可以在本协议规定的约束和限制范围内修改互动维客源代码（如果被提供的话）或界面风格以适应您的网站要求。</li>
+	<li>您可以在协议规定的约束和限制范围内为互动维客提供相关的插件，插件版权归作者所有。您可以将拥有版权的插件无偿提供给互动在线（北京）科技有限公司，但没有一定被采纳的承诺或保证。如若在新版本里采用了您开发的插件，插件源代码部分将标注作者的名字。</li>
+	<li>您若需要本协议授权外的技术支持，可以和互动在线（北京）科技有限公司签订有偿技术支持的协议，并且享有反映和提出意见的权力，相关意见将被作为首要考虑，但没有一定被采纳的承诺或保证。 自协议签订时刻起，您可以在技术支持期限内拥有通过指定的方式获得指定范围内的技术支持服务。</li>
+	<li>您若是没有和互动在线（北京）科技有限公司签订有偿技术支持协议的授权用户，您也同样享有反映和提出意见的权力，但没有一定被采纳的承诺或保证。</li>
+</ol>
+<h2>II. 协议规定的约束和限制</h2>
+<ol>
+	<li>不得对本软件或与之关联的授权进行出租、出售、抵押或发放子许可证。</li>
+	<li>无论如何，即无论用途如何、是否经过修改或美化、修改程度如何，只要使用互动维客的整体或任何部分，未经书面许可，系统页面页脚处的互动维客名称和互动在线（北京）科技有限公司下属网站（http://www.hudong.com） 的链接都必须保留，而不能清除或修改。</li>
+	<li>禁止在互动维客的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。</li>
+	<li>如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。</li>
+</ol>
+<h2>III. 有限担保和免责声明</h2>
+<ol>
+	<li>本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。</li>
+	<li>用户出于自愿而使用本软件，您必须了解使用本软件的风险，在尚未购买产品技术服务之前，我们不承诺提供任何形式的技术支持、使用担保，也不承担任何因使用本软件而产生问题的相关责任。</li>
+	<li>互动在线（北京）科技有限公司不对使用本软件构建的系统中的文章或信息承担任何责任。</li>
+</ol>
+<p>有关互动维客最终用户授权协议、授权与技术服务的详细内容，均由互动维客官方网站独家提供。互动在线（北京）科技有限公司拥有在不事先通知的情况下，修改授权协议和技术服务价目表的权力，修改后的协议或价目表对自改变之日起的新授权用户生效。</p>
+<p>电子文本形式的授权协议如同双方书面签署的协议一样，具有完全的和等同的法律效力。您一旦开始安装互动维客，即被视为完全理解并接受本协议的各项条款，在享有上述条款授予的权力的同时，受到相关的约束和限制。协议许可范围以外的行为，将直接违反本授权协议并构成侵权，我们有权随时终止授权，责令停止损害，并保留追究相关责任的权力。</p>
+</body>
+</html>

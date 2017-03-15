@@ -1,0 +1,314 @@
+/*
+*样式初始化开始
+*/
+*{ 
+	padding: 0; 
+	margin: 0; 
+} 
+table{ 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+} 
+fieldset,img { 
+	border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+	font-weight: normal; 
+	font-style: normal; 
+} 
+ol,ul { 
+	list-style: none; 
+} 
+caption,th { 
+	text-align: left; 
+} 
+q:before,q:after { 
+	content:”; 
+} 
+abbr,acronym { 
+	border: 0; 
+}
+body{
+	font-size:12px;
+}
+td{
+	font-size:12px;
+}
+a,a:link,a:visited{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+/*
+*样式初始化结束
+*/
+.baseinfo {
+	margin-top:5px;
+}
+.baseinfo td{
+	vertical-align:top;
+}
+.baseinfo .inforight{
+	width:280px;
+	background:url(tdright.gif) center bottom no-repeat;
+}
+.memberdt{
+	border-collapse:separate;
+}
+.memberdt .head{
+	height:40px;
+	line-height:40px;
+	background:url(head1.gif) left top repeat-x;
+}
+.memberdt .head .FL{
+	width:170px;
+	float:left;
+	padding-left:60px;
+	background:url(headl.gif) left top no-repeat;
+	color:#1C4E86;
+	font-weight:bold;
+	font-size:14px;
+}
+.memberdt .head .FR{
+	float:right;
+	padding:0 10px 0 20px;
+	background:url(icon_msg.gif) left 10px no-repeat;
+}
+.memberdt .cont{
+	border-left:#C9E0FE solid 1px;
+	border-bottom:#C9E0FE solid 1px;
+	padding:10px;
+}
+.memberdt .cont .info1{
+	border-bottom:#C9E0FE dotted 1px;
+	margin-bottom: 5px;
+}
+.memberdt .cont .info1 td{
+	padding-bottom: 5px;
+}
+.memberdt .cont .info1 div{
+	width:45%;
+	height:22px;
+	line-height:22px;
+	float:left;
+	padding-left:5px;
+	overflow:hidden;
+}
+.memberdt .cont .spaceTable td{
+	padding:5px;
+	line-height:22px;
+}
+#ifcompany{
+	height:35px;
+	line-height:35px;
+	padding-left:30px;
+	background:url(icon_favitorie.gif) 5px 5px no-repeat;
+}
+#ifcompany a{
+	color:red;
+}
+#ifcompany span{
+	color:blue;
+}
+#ifcompany em{
+	color:#999;
+}
+.myinfo .head{
+	height:40px;
+	background:url(righthead.gif) center bottom no-repeat;
+	line-height:40px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+}
+.myinfo .cont{
+	padding:5px 8px 5px 8px;
+}
+.myinfo .cont .picword{
+	border-bottom:#CCC dotted 1px;
+}
+.myinfo .cont .picword .pic{
+	width:10%;
+	padding:5px 10px 10px 5px;
+}
+.myinfo .cont .picword .pic img{
+	border:#CCC solid 1px;
+}
+.myinfo .cont .picword .word{
+	line-height:20px;
+	padding-top:3px;
+}
+.myinfo .cont .picword .word span{
+	color:#06c;
+}
+.myinfo .cont .more{
+	padding:5px;
+	line-height:20px;
+}
+.myinfo .cont .more span{
+	color:#888;
+}
+.myinfo .cont .more em{
+	color:blue;
+}
+.usersorttable{
+	background:url(serverbg.gif) center top no-repeat;
+	margin-top:10px;
+}
+.usersorttable .head{
+	color:#1C4E86;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	padding-left:20px;
+}
+.usersorttable .cont .listsort{
+	width:197px;
+	height:160px;
+	background:url(sortbg.gif) center top no-repeat;
+	float:left;
+	margin-top:8px;
+}
+.usersorttable .cont .listsort div{
+	padding:0 30px 0 30px;
+	line-height:20px;
+	color:#777;
+}
+.usersorttable .cont .listsort div.m{
+	padding-top:80px;
+}
+.usersorttable .cont .div1 div.m{
+	background:url(icons1.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div2 div.m{
+	background:url(icons2.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div3 div.m{
+	background:url(icons3.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div4 div.m{
+	background:url(icons4.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div5 div.m{
+	background:url(icons5.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div6 div.m{
+	background:url(icons6.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div7 div.m{
+	background:url(icons7.gif) center 5px no-repeat;
+}
+.usersorttable .cont .div8 div.m{
+	background:url(icons8.gif) center 5px no-repeat;
+}
+
+#guide{
+	margin-top:5px;
+	border:#C9E0FE solid 1px;
+	color:#666;
+}
+#guide a{
+	color:#666;
+}
+#guide td{
+	padding-left:15px;
+	line-height:25px;
+}
+.MainTable{
+	margin-top:10px;
+}
+.dragTable{
+	border-collapse:separate;
+}
+.dragTable .head{
+	padding:5px 0 0 20px;
+	line-height:25px;
+	background:url(head2.gif) center bottom no-repeat;
+	color:#1C4E86;
+	font-weight:bold;
+}
+.dragTable .middle{
+	border:#C9E0FE solid 1px;
+	border-top:0;
+	padding:5px;
+}
+
+/*发表页*/
+#post_top{
+	padding:0px;
+	padding-top:9px;
+	height:22px;
+	border-bottom:#99D3FB solid 2px;
+}
+#post_top span{
+	width:75px;
+	padding-top:2px;
+	height:20px;
+	display:block;
+	float:left;
+	margin-right:3px;
+	text-align:center;
+	background:url(../../../images/default/button_b.gif);
+	cursor:hand;
+}
+#post_top .choosebutton{
+	color:#fff;
+	font-weight:bold;
+	background:url(../../../images/default/button_a.gif);
+}
+
+/**自定义表单**/
+.formlist_head td{
+	line-height:24px;
+	color:red;
+	background:#eee;
+}
+.formlist_tr td{
+	line-height:26px;
+}
+.formlist_table{
+	background:#eee;
+}
+
+
+
+/*内表格*/
+.linetable{
+	background:#eee;
+}
+.linetable td{
+	line-height:24px;
+	background:#fff;
+}
+.linetable .head3 td{
+	color:red;
+	background:#eee;
+}
+
+/************************************评论样式***************************/
+
+#comment .content,#comment_show .content{
+	width:99%;
+	border:dotted 1px #ddd;
+	margin-bottom:10px;
+}
+#comment .content .word,#comment_show .content .word{
+	border-bottom:solid 1px #eee;
+	padding-left:5px;
+	height:50px;
+}
+#comment .content .img,#comment_show .content .img{
+	border-right:dotted 1px #ddd;
+	padding:1em;
+}
+#comment .content .info,#comment_show .content .info{
+	padding:2px 0 0 5px;
+}
+
+.head_in{
+	background:#eee;
+}
+.head_in td{
+	line-height:23px;
+}
